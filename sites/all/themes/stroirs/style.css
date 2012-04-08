@@ -2,13 +2,13 @@ body { font: 0.8em/165% "Lucida Grande","Lucida Sans Unicode",Segoe UI,Helvetica
 
 h1, h2, h3, h4, h5, h6 { margin:25px 0 20px 0; line-height:120%; text-shadow: 1px 1px 1px #EAF1EA; font-family: Myriad Pro,"Lucida Grande","Lucida Sans Unicode",Segoe UI,Helvetica,Arial,sans-serif; }
 
-h1 { font-size: 32px; margin:0 0 20px 0; }
+h1 { font-size: 24px; margin:0 0 20px 0; }
 
-h2 { font-size: 20px; color:#1487d4; font-weight:normal; }
+h2 { font-size: 18px; color:#1487d4; font-weight:normal; }
 
-h3 { font-size: 130%; }
+h3 { font-size: 16px; }
 
-h4 { font-size: 110%; }
+h4 { font-size: 14px; }
 
 .front .node h1 { font-size:30px; color:#494d4f; font-weight:normal; }
 
@@ -490,6 +490,4 @@ ul.social-bookmarks li.delicious a { background:url('images/social-media-delicio
 
 /* Custom */
 
-#block-menu-menu-bottom-menu ul li{
-    float: left;
-}
+#block-menu-menu-bottom-menu ul li { float: left; }
