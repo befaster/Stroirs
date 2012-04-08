@@ -218,7 +218,8 @@
         </div><!-- EOF: .footer-area -->
         
         <div class="footer-area third">
-        <?php print render($page['footer_third']); ?>
+            <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('class' => array('secondary-menu', 'links', 'clearfix')))); ?>
+            <?php print render($page['footer_third']); ?>
         </div><!-- EOF: .footer-area -->
        
     </div><!-- EOF: #footer-inside -->
@@ -232,11 +233,7 @@
     <div id="footer-bottom-inside">
     
     	<div id="footer-bottom-left">
-        
-            <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('class' => array('secondary-menu', 'links', 'clearfix')))); ?>
-            
             <?php print render($page['footer']); ?>
-            
         </div>
         
         <div id="footer-bottom-right">
