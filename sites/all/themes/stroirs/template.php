@@ -7,7 +7,7 @@
  * @return
  *   A string containing the breadcrumb output.
  */
-function corporateclean_breadcrumb($variables){
+function stroirs_breadcrumb($variables){
   $breadcrumb = $variables['breadcrumb'];
   if (!empty($breadcrumb)) {
     $breadcrumb[] = drupal_get_title();
@@ -18,7 +18,7 @@ function corporateclean_breadcrumb($variables){
 /**
  * Override or insert variables into the html template.
  */
-function corporateclean_process_html(&$vars) {
+function stroirs_process_html(&$vars) {
   // Hook into color.module
   if (module_exists('color')) {
     _color_html_alter($vars);
@@ -28,7 +28,7 @@ function corporateclean_process_html(&$vars) {
 /**
  * Override or insert variables into the page template.
  */
-function corporateclean_process_page(&$variables) {
+function stroirs_process_page(&$variables) {
   // Hook into color.module.
   if (module_exists('color')) {
     _color_page_alter($variables);
@@ -36,7 +36,7 @@ function corporateclean_process_page(&$variables) {
  
 }
 
-function corporateclean_form_alter(&$form, &$form_state, $form_id) {
+function stroirs_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'search_block_form') {
   
     unset($form['search_block_form']['#title']);
@@ -53,11 +53,11 @@ function corporateclean_form_alter(&$form, &$form_state, $form_id) {
 /**
  * Add javascript files for jquery slideshow.
  */
-drupal_add_js(drupal_get_path('theme', 'corporateclean') . '/js/jquery.cycle.all.min.js');
+drupal_add_js(drupal_get_path('theme', 'stroirs') . '/js/jquery.cycle.all.min.js');
 
 //Initialize slideshow using theme settings
-$effect=theme_get_setting('slideshow_effect','corporateclean');
-$effect_time=theme_get_setting('slideshow_effect_time','corporateclean')*1000;
+$effect=theme_get_setting('slideshow_effect','stroirs');
+$effect_time=theme_get_setting('slideshow_effect_time','stroirs')*1000;
 
 //Defined the initial height (300) of slideshow and then the slideshow inherits the height of each slider item dynamically
 drupal_add_js('jQuery(document).ready(function($) {  

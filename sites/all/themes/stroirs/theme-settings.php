@@ -7,7 +7,7 @@
  * @param $form_state
  *   The form state.
  */
-function corporateclean_form_system_theme_settings_alter(&$form, &$form_state) {
+function stroirs_form_system_theme_settings_alter(&$form, &$form_state) {
 
   $form['mtt_settings'] = array(
     '#type' => 'fieldset',
@@ -27,7 +27,7 @@ function corporateclean_form_system_theme_settings_alter(&$form, &$form_state) {
     '#type' => 'checkbox',
     '#title' => t('Show breadcrumb'),
   	'#description'   => t('Use the checkbox to enable or disable Breadcrumb.'),
-	'#default_value' => theme_get_setting('breadcrumb_display','corporateclean'),
+	'#default_value' => theme_get_setting('breadcrumb_display','stroirs'),
     '#collapsible' => TRUE,
 	'#collapsed' => FALSE,
   );
@@ -42,14 +42,14 @@ function corporateclean_form_system_theme_settings_alter(&$form, &$form_state) {
   $form['mtt_settings']['slideshow']['slideshow_display'] = array(
     '#type' => 'checkbox',
     '#title' => t('Show slideshow'),
-	'#default_value' => theme_get_setting('slideshow_display','corporateclean'),
+	'#default_value' => theme_get_setting('slideshow_display','stroirs'),
   );
   
   $form['mtt_settings']['slideshow']['slideshow_effect'] = array(
     '#type' => 'select',
     '#title' => t('Effects'),
   	'#description'   => t('From the drop-down menu, select the slideshow effect you prefer.'),
-	'#default_value' => theme_get_setting('slideshow_effect','corporateclean'),
+	'#default_value' => theme_get_setting('slideshow_effect','stroirs'),
     '#options' => array(
 		'blindX' => t('blindX'),
 		'blindY' => t('blindY'),
@@ -84,7 +84,7 @@ function corporateclean_form_system_theme_settings_alter(&$form, &$form_state) {
   $form['mtt_settings']['slideshow']['slideshow_effect_time'] = array(
     '#type' => 'textfield',
     '#title' => t('Effect duration (sec)'),
-	'#default_value' => theme_get_setting('slideshow_effect_time','corporateclean'),
+	'#default_value' => theme_get_setting('slideshow_effect_time','stroirs'),
   );
   
 }

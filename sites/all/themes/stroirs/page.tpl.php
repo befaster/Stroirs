@@ -51,7 +51,7 @@
 
 	<?php print render($page['banner']); ?>
 	
-    <?php if (theme_get_setting('slideshow_display','corporateclean')): ?>
+    <?php if (theme_get_setting('slideshow_display','stroirs')): ?>
     
     <?php if ($is_front): ?>
     
@@ -64,7 +64,7 @@
                 
                 <!--slider-item content-->
                 <div style="float:left; padding:0 30px 0 0;">
-                <img height="250px" class="masked" src="<?php print base_path() . drupal_get_path('theme', 'corporateclean') ;?>/mockup/slide-1.jpg"/>
+                <img height="250px" class="masked" src="<?php print base_path() . drupal_get_path('theme', 'stroirs') ;?>/mockup/slide-1.jpg"/>
                 </div>
                 <h2>Sample product name</h2>
                 <strong>General</strong><br/>
@@ -84,7 +84,7 @@
             
                 <!--slider-item content-->
                 <div style="float:right; padding:0 0 0 30px;">
-                <img height="250px" class="masked" src="<?php print base_path() . drupal_get_path('theme', 'corporateclean') ;?>/mockup/slide-2.jpg"/>
+                <img height="250px" class="masked" src="<?php print base_path() . drupal_get_path('theme', 'stroirs') ;?>/mockup/slide-2.jpg"/>
                 </div>
                 <h2>Sample service name</h2>
                 <strong>General</strong><br/>
@@ -120,7 +120,7 @@
             <div class="content">
                 
                 <!--slider-item content-->
-                <img height="250px" class="masked" src="<?php print base_path() . drupal_get_path('theme', 'corporateclean') ;?>/mockup/slide-3.jpg"/>
+                <img height="250px" class="masked" src="<?php print base_path() . drupal_get_path('theme', 'stroirs') ;?>/mockup/slide-3.jpg"/>
                 <!--EOF:slider-item content-->
             
             </div>
@@ -157,7 +157,7 @@
     
         <div id="main">
             
-            <?php if (theme_get_setting('breadcrumb_display','corporateclean')): print $breadcrumb; endif; ?>
+            <?php if (theme_get_setting('breadcrumb_display','stroirs')): print $breadcrumb; endif; ?>
             
             <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
        
