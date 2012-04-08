@@ -235,7 +235,7 @@ font-family: Myriad Pro,"Lucida Grande","Lucida Sans Unicode",Segoe UI,Helvetica
 #header-menu ul.menu li.expanded ul ul { display: none; left: 230px; top:0; padding:0; }
 
 /* Footer menu */
-#footer .block ul.menu { margin: 0; padding: 0; }
+#footer .block ul.menu { margin: 0; padding: 0; display: inline; }
 
 #footer .block ul.menu ul.menu { margin: 0 0 0 15px; }
 
