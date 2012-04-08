@@ -203,6 +203,7 @@
 
 </div><!-- EOF: #content -->
 
+<?php if($page['footer_first'] || $page['footer_second'] || $page['footer_third']) : ?>
 <!-- Footer -->    
 <div id="footer">
 
@@ -223,6 +224,7 @@
     </div><!-- EOF: #footer-inside -->
 
 </div><!-- EOF: #footer -->
+<?php endif; ?>
 
 <!-- Footer -->    
 <div id="footer-bottom">
