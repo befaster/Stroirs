@@ -43,30 +43,31 @@
                 </ul>
             </nav>
             <div class="clear"></div>
+            <!--
             <div class="round_box">
                 <div class="inner-slider">
                     <ul class="round">
                         <li>
-                            <img src="images/slider-1.jpg" width="201" height="175" alt="">
+                            <img src="<?php print path_to_theme(); ?>/images/slider-1.jpg" width="201" height="175" alt="">
                             <div class="descripton">
                                 <span>Project Name:</span> <strong>Lorem ipsum dolore massa as laoreetum</strong>
                                 <a class="button1" href="#">Detail</a>
                             </div>
                         </li>
                         <li>
-                            <img src="images/slider-2.jpg" width="201" height="175" alt="">
+                            <img src="<?php print path_to_theme(); ?>/images/slider-2.jpg" width="201" height="175" alt="">
                             <div class="descripton">
                                 <span>Project Name:</span> <strong>Sint occaecati cupiditate non provident</strong>
                                 <a class="button1" href="#">Detail</a>
                             </div>
                         </li>
-                        <li><img src="images/slider-3.jpg" width="201" height="175" alt="">
+                        <li><img src="<?php print path_to_theme(); ?>/images/slider-3.jpg" width="201" height="175" alt="">
                             <div class="descripton">                              
                                 <span>Project Name:</span> <strong>At vero eos et accusamus et iusto</strong>
                                 <a class="button1" href="#">Detail</a>                              
                             </div>
                         </li>  
-                        <li><img src="images/slider-4.jpg" width="201" height="175" alt="">
+                        <li><img src="<?php print path_to_theme(); ?>/images/slider-4.jpg" width="201" height="175" alt="">
                             <div class="descripton">                              
                                 <span>Project Name:</span><strong>Nam libero temporede cum soluta nobis </strong>
                                 <a class="button1" href="#">Detail</a>
@@ -77,7 +78,8 @@
                 </div>
                 <a href="#" class="round_prev"></a>
                 <a href="#" class="round_next"></a>
-            </div>
+            </div>    
+            -->
         </div>
     </header>        
     
@@ -133,7 +135,7 @@
                                     <div id="tab1" class="tab_content">
                                         <div class="page1-box1">
                                             <div class="inner">
-                                                <figure class="page1-img1"><img src="images/page1-img1.jpg" alt=""></figure>
+                                                <figure class="page1-img1"><img src="<?php print path_to_theme(); ?>/images/page1-img1.jpg" alt=""></figure>
                                                 <p><span>At vero eos et accusamus et iusto odio dignissimos duci mus qui blanditiis praesentium destiumomste.</span>
 
                                                     Sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt <a href="#">mollitia animid estum</a> laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. </p>
@@ -147,7 +149,7 @@
                                     <div id="tab2" class="tab_content">
                                         <div class="page1-box1">
                                             <div class="inner">
-                                                <figure class="page1-img1"><img src="images/page1-img2.jpg" alt=""></figure>
+                                                <figure class="page1-img1"><img src="<?php print path_to_theme(); ?>/images/page1-img2.jpg" alt=""></figure>
                                                 <p><span>At vero eos et accusamus et iusto odio dignissimos duci mus qui blanditiis praesentium destiumomste.</span>
 
                                                     Sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt <a href="#">mollitia animid estum</a> laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. </p>
@@ -182,21 +184,21 @@
                         <article class="grid_16 alpha">
                             <h3 class="p7">News and events</h3>
                             <div class="page1-box2">
-                                <figure class="page1-img2"><img src="images/page1-img6.png" alt=""></figure>
+                                <figure class="page1-img2"><img src="<?php print path_to_theme(); ?>/images/page1-img6.png" alt=""></figure>
                                 <div class="extra-wrap">
                                     <a href="#">March 20, 2012</a>
                                     <p>Sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animid estum laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio...  </p>
                                 </div>
                             </div>
                             <div class="page1-box2">
-                                <figure class="page1-img2"><img src="images/page1-img6.png" alt=""></figure>
+                                <figure class="page1-img2"><img src="<?php print path_to_theme(); ?>/images/page1-img6.png" alt=""></figure>
                                 <div class="extra-wrap">
                                     <a href="#">March 12, 2012</a>
                                     <p>Sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animid estum laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio...  </p>
                                 </div>
                             </div>
                             <div class="page1-box2 p8">
-                                <figure class="page1-img2"><img src="images/page1-img6.png" alt=""></figure>
+                                <figure class="page1-img2"><img src="<?php print path_to_theme(); ?>/images/page1-img6.png" alt=""></figure>
                                 <div class="extra-wrap">
                                     <a href="#">March 05, 2012</a>
                                     <p>Sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animid estum laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio...  </p>
@@ -209,16 +211,16 @@
                             <h2>Featured Projects<span></span></h2>
                             <div class="page1-box3">                                    
                                 <div class="page1-box7">
-                                    <a href="images/image-blank.png" data-gal="prettyPhoto[pp_gal]" class="lightbox-image"><div class="img-hover"></div><figure class="page1-img3"><img src="images/page1-img3.jpg" alt=""></figure></a>
+                                    <a href="<?php print path_to_theme(); ?>/images/image-blank.png" data-gal="prettyPhoto[pp_gal]" class="lightbox-image"><div class="img-hover"></div><figure class="page1-img3"><img src="<?php print path_to_theme(); ?>/images/page1-img3.jpg" alt=""></figure></a>
                                 </div>
                                 <div class="page1-box7 last2">
-                                    <a href="images/image-blank.png" data-gal="prettyPhoto[pp_gal]" class="lightbox-image"><div class="img-hover"></div><figure class="page1-img3"><img src="images/page1-img4.jpg" alt=""></figure></a>
+                                    <a href="<?php print path_to_theme(); ?>/images/image-blank.png" data-gal="prettyPhoto[pp_gal]" class="lightbox-image"><div class="img-hover"></div><figure class="page1-img3"><img src="<?php print path_to_theme(); ?>/images/page1-img4.jpg" alt=""></figure></a>
                                 </div>
                                 <div class="page1-box7">
-                                    <a href="images/image-blank.png" data-gal="prettyPhoto[pp_gal]" class="lightbox-image"><div class="img-hover"></div><figure class="page1-img3"><img src="images/page1-img5.jpg" alt=""></figure></a>
+                                    <a href="<?php print path_to_theme(); ?>/images/image-blank.png" data-gal="prettyPhoto[pp_gal]" class="lightbox-image"><div class="img-hover"></div><figure class="page1-img3"><img src="<?php print path_to_theme(); ?>/images/page1-img5.jpg" alt=""></figure></a>
                                 </div>
                                 <div class="page1-box7 last2">
-                                    <a href="images/image-blank.png" data-gal="prettyPhoto[pp_gal]" class="lightbox-image"><div class="img-hover"></div><figure class="page1-img3"><img src="images/page1-img7.jpg" alt=""></figure></a>
+                                    <a href="<?php print path_to_theme(); ?>/images/image-blank.png" data-gal="prettyPhoto[pp_gal]" class="lightbox-image"><div class="img-hover"></div><figure class="page1-img3"><img src="<?php print path_to_theme(); ?>/images/page1-img7.jpg" alt=""></figure></a>
                                 </div>
                             </div>
                         </article>
@@ -265,20 +267,20 @@
                 <div class="soc-icons">
                     <ul class="soc-icon">
                         <li>
-                            <a class="tooltip" title="Twitter" href="#"><img src="images/soc-icon1.gif" class="grey" alt="" />
-                                <img src="images/soc-icon1-grey.gif" class="color" alt="" /></a>
+                            <a class="tooltip" title="Twitter" href="#"><img src="<?php print path_to_theme(); ?>/images/soc-icon1.gif" class="grey" alt="" />
+                                <img src="<?php print path_to_theme(); ?>/images/soc-icon1-grey.gif" class="color" alt="" /></a>
                         </li>
                         <li>
-                            <a class="tooltip" title="Facebook" href="#"><img src="images/soc-icon2.gif" class="grey" alt="" />
-                                <img src="images/soc-icon2-grey.gif" class="color" alt="" /></a>
+                            <a class="tooltip" title="Facebook" href="#"><img src="<?php print path_to_theme(); ?>/images/soc-icon2.gif" class="grey" alt="" />
+                                <img src="<?php print path_to_theme(); ?>/images/soc-icon2-grey.gif" class="color" alt="" /></a>
                         </li>
                         <li>
-                            <a class="tooltip" title="Linkedin" href="#"><img src="images/soc-icon3.gif" class="grey" alt="" />
-                                <img src="images/soc-icon3-grey.gif" class="color" alt="" /></a>
+                            <a class="tooltip" title="Linkedin" href="#"><img src="<?php print path_to_theme(); ?>/images/soc-icon3.gif" class="grey" alt="" />
+                                <img src="<?php print path_to_theme(); ?>/images/soc-icon3-grey.gif" class="color" alt="" /></a>
                         </li>
                         <li>
-                            <a class="tooltip" title="Flickr" href="#"><img src="images/soc-icon4.gif" class="grey" alt="" />
-                                <img src="images/soc-icon4-grey.gif" class="color" alt="" /></a>
+                            <a class="tooltip" title="Flickr" href="#"><img src="<?php print path_to_theme(); ?>/images/soc-icon4.gif" class="grey" alt="" />
+                                <img src="<?php print path_to_theme(); ?>/images/soc-icon4-grey.gif" class="color" alt="" /></a>
                         </li>                            
                     </ul>
 
