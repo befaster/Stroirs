@@ -1,46 +1,56 @@
 <!--==============================header=================================-->
 <div class="bg">
-    
+
     <header>
         <div class="head-line"></div>            
         <div class="main">
-            <div class="head-link"><a href="#">www.demolink.org</a></div>
+            <div class="head-link"><a href="#">www.stroirs.com.ua</a></div>
             <div class="login-box">
-                <a href="#">Log in</a>
-                <a href="#">sign up</a>
+                <?php print render($page['search_area']); ?>
             </div>
             <div class="clear"></div>
             <div class="head-box">
-                <h1><a href="#">Architex</a><span>most creative architectural bureau</span></h1>
+                <?php if ($logo): ?>
+                    <a href="<?php print check_url($front_page); ?>" title="<?php print t('Home'); ?>"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
+                <?php endif; ?>
+
+                <?php if ($site_name || $site_slogan): ?>
+                    <div class="clearfix">
+                        <?php if ($site_name): ?>
+                            <span id="site-name"><a href="<?php print check_url($front_page); ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a></span>
+                        <?php endif; ?>
+                        <?php if ($site_slogan): ?>
+                            <span id="slogan"><?php print $site_slogan; ?></span>
+                        <?php endif; ?>
+                    </div><!-- /site-name-wrapper -->
+                <?php endif; ?>    
+
                 <ul class="social-links">
                     <li><a href="#" class="link-1 tooltip" title="Twitter"></a></li>
                     <li><a href="#" class="link-2 tooltip" title="Facebook"></a></li>
                     <li><a href="#" class="link-3 tooltip" title="Linkedin"></a></li>
                     <li><a href="#" class="link-4 tooltip" title="Flickr"></a></li>
                 </ul>
+
                 <div class="clear"></div> 
             </div>
             <nav>
-                <ul class="sf-menu">
-                    <li class="first active"><a href="#">Home</a></li>
-                    <li><a href="#">Company</a></li>
-                    <li><a href="#">Services</a>
-                        <ul>
-                            <li><a href="#">Services List</a></li>
-                            <li><a href="#">Special Services</a>
-                                <ul>
-                                    <li><a href="#">Predesign</a></li>
-                                    <li><a href="#">Technical Support</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">New Services</a></li>
-                            <li><a href="#">Rendering</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">projects</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li class="last"><a href="#">Contacts</a></li>
-                </ul>
+                <?php if ($main_menu): ?>
+                    <?php
+                    print theme('links__system_main_menu', array(
+                                'links' => $main_menu,
+                                'attributes' => array(
+                                    'id' => 'main-menu-links',
+                                    'class' => array('sf-menu', 'clearfix'),
+                                ),
+                                'heading' => array(
+                                    'text' => t('Main menu'),
+                                    'level' => 'h2',
+                                    'class' => array('element-invisible'),
+                                ),
+                            ));
+                    ?>
+                <?php endif; ?>
             </nav>
             <div class="clear"></div>
             <!--
@@ -82,37 +92,40 @@
             -->
         </div>
     </header>        
-    
+
     <!--==============================content================================-->
     <section id="content">
         <div class="main">
             <div class="container_24">
                 <div id="main">
-                    <?php if (theme_get_setting('breadcrumb_display','stroirs')): print $breadcrumb; endif; ?>
+                    <?php
+                    if (theme_get_setting('breadcrumb_display', 'stroirs')): print $breadcrumb;
+                    endif;
+                    ?>
 
                     <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
 
                     <?php if ($messages): ?>
-                            <div id="console" class="clearfix">
-                    <?php print $messages; ?>
-                            </div>
+                        <div id="console" class="clearfix">
+                            <?php print $messages; ?>
+                        </div>
                     <?php endif; ?>
 
                     <?php if ($page['help']): ?>
-                            <div id="help">
-                    <?php print render($page['help']); ?>
-                            </div>
+                        <div id="help">
+                            <?php print render($page['help']); ?>
+                        </div>
                     <?php endif; ?>
 
                     <?php if ($action_links): ?>
-                            <ul class="action-links">
-                    <?php print render($action_links); ?>
-                            </ul>
+                        <ul class="action-links">
+                            <?php print render($action_links); ?>
+                        </ul>
                     <?php endif; ?>
 
-                                <?php print render($title_prefix); ?>
+                    <?php print render($title_prefix); ?>
                     <?php if ($title): ?>
-                            <h1><?php print $title ?></h1>
+                        <h1><?php print $title ?></h1>
                     <?php endif; ?>
                     <?php print render($title_suffix); ?>
 
@@ -122,7 +135,8 @@
 
                     <?php print $feed_icons; ?>
                 </div><!-- EOF: #main -->
-                
+
+                <!--
                 <article class="grid_24">
                     <div class="wrapper p6">
                         <article class="grid_16 alpha">
@@ -176,7 +190,7 @@
                                 <li><a href="#">online support</a></li>
                                 <li><a href="#">online forum</a></li>
                             </ul>
-                        </article>
+                        </article>                        
                     </div>
                 </article>
                 <article class="grid_24">
@@ -226,6 +240,7 @@
                         </article>
                     </div>
                 </article>
+                -->
             </div>
         </div>
         
