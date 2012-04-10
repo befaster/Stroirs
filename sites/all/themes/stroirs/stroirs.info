@@ -4,7 +4,6 @@ version = VERSION
 core = 7.x
 
 stylesheets[all][] = style.css
-stylesheets[all][] = color/colors.css
 
 regions[search_area] = Search area
 regions[highlighted] = Highlighted
@@ -20,14 +19,9 @@ regions[help] = Help
 regions[page_top] = Page top
 regions[page_bottom] = Page bottom
 
-settings[breadcrumb_display]= 1
-settings[slideshow_display]= 1
-settings[slideshow_effect]='scrollHorz'
-settings[slideshow_effect_time]='10'
-
 project = "stroirs"
 ; Information added by drupal.org packaging script on 2012-02-29
-version = "7.x-1.4"
+version = "7.x-1.0"
 core = "7.x"
 project = "stroirs"
 datestamp = "1330527642"
