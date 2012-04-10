@@ -1,5 +1,6 @@
 <!--==============================header=================================-->
 <div class="bg">
+    
     <header>
         <div class="head-line"></div>            
         <div class="main">
@@ -79,49 +80,47 @@
             </div>
         </div>
     </header>        
+    
     <!--==============================content================================-->
     <section id="content">
         <div class="main">
             <div class="container_24">
                 <div id="main">
+                    <?php if (theme_get_setting('breadcrumb_display','stroirs')): print $breadcrumb; endif; ?>
 
-            <?php if (theme_get_setting('breadcrumb_display','stroirs')): print $breadcrumb; endif; ?>
+                    <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
 
-            <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
+                    <?php if ($messages): ?>
+                            <div id="console" class="clearfix">
+                    <?php print $messages; ?>
+                            </div>
+                    <?php endif; ?>
 
-            <?php if ($messages): ?>
-                    <div id="console" class="clearfix">
-            <?php print $messages; ?>
-                    </div>
-            <?php endif; ?>
+                    <?php if ($page['help']): ?>
+                            <div id="help">
+                    <?php print render($page['help']); ?>
+                            </div>
+                    <?php endif; ?>
 
-            <?php if ($page['help']): ?>
-                    <div id="help">
-            <?php print render($page['help']); ?>
-                    </div>
-            <?php endif; ?>
+                    <?php if ($action_links): ?>
+                            <ul class="action-links">
+                    <?php print render($action_links); ?>
+                            </ul>
+                    <?php endif; ?>
 
-            <?php if ($action_links): ?>
-                    <ul class="action-links">
-            <?php print render($action_links); ?>
-                    </ul>
-            <?php endif; ?>
+                                <?php print render($title_prefix); ?>
+                    <?php if ($title): ?>
+                            <h1><?php print $title ?></h1>
+                    <?php endif; ?>
+                    <?php print render($title_suffix); ?>
 
-			<?php print render($title_prefix); ?>
-            <?php if ($title): ?>
-                    <h1><?php print $title ?></h1>
-            <?php endif; ?>
-            <?php print render($title_suffix); ?>
+                    <?php if ($tabs): ?><?php print render($tabs); ?><?php endif; ?>
 
-            <?php if ($tabs): ?><?php print render($tabs); ?><?php endif; ?>
+                    <?php print render($page['content']); ?>
 
-            <?php print render($page['content']); ?>
-
-            <?php print $feed_icons; ?>
-
+                    <?php print $feed_icons; ?>
                 </div><!-- EOF: #main -->
-
-
+                
                 <article class="grid_24">
                     <div class="wrapper p6">
                         <article class="grid_16 alpha">
@@ -227,6 +226,7 @@
                 </article>
             </div>
         </div>
+        
         <div class="bg-2">
             <aside>
                 <div class="main">
@@ -285,9 +285,8 @@
                 </div>
                 <div class="clear"></div>
             </div>
-            <div class="foot"><!-- {%FOOTER_LINK} --></div>
+            <div class="foot"></div>
         </div>
         <div class="foot-bot"></div>
     </footer>
-    <?php print $page_bottom; ?>
 </div>

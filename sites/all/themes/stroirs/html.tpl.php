@@ -3,9 +3,9 @@
     <head>
         <title><?php print $head_title; ?></title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
+        <!--<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
         <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
-        <link rel="stylesheet" href="css/grid.css" type="text/css" media="screen"> 
+        <link rel="stylesheet" href="css/grid.css" type="text/css" media="screen"> -->
         <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
         <link rel="icon" href="images/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="all">
