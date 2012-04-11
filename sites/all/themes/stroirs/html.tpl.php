@@ -5,15 +5,7 @@
         <?php print $head; ?>
         <?php print $styles; ?>
         <?php print $scripts; ?>
-        
-        <link rel="stylesheet" href="<?php print path_to_theme(); ?>/css/reset.css" type="text/css" media="screen">
-        <link rel="stylesheet" href="<?php print path_to_theme(); ?>/css/style.css" type="text/css" media="screen">
-        <link rel="stylesheet" href="<?php print path_to_theme(); ?>/css/grid.css" type="text/css" media="screen"> 
-        <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="<?php print path_to_theme(); ?>/css/prettyPhoto.css" type="text/css" media="all">
-        <link rel="stylesheet" href="<?php print path_to_theme(); ?>/css/ui.totop.css">
-        <link rel="shortcut icon" href="<?php print path_to_theme(); ?>/images/favicon.ico" type="image/x-icon" />  
+
         <!--[if lt IE 8]>
         <div style=' clear: both; text-align:center; position: relative;'>
             <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">

@@ -3,7 +3,12 @@ description = Stroirs: A flexible, recolorable theme with many regions.
 version = VERSION
 core = 7.x
 
-stylesheets[all][] = style.css
+stylesheets[all][] = css/reset.css
+stylesheets[all][] = css/style.css
+stylesheets[all][] = css/grid.css
+stylesheets[all][] = http://fonts.googleapis.com/css?family=Oswald
+stylesheets[all][] = css/prettyPhoto.css
+stylesheets[all][] = css/ui.totop.css
 
 regions[search_area] = Search area
 regions[highlighted] = Highlighted
