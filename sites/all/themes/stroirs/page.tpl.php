@@ -1,19 +1,21 @@
 <!--==============================header=================================-->
 <div class="bg">
-
     <header>
-        <div class="head-line"></div>            
+        <div class="head-line"></div>   
+        <?php if ($logo): ?>
+            <div id="logo">
+                <a href="<?php print check_url($front_page); ?>" title="<?php print t('Home'); ?>"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
+            </div>  
+        <?php endif; ?>
+
         <div class="main">
-            <div class="head-link"><a href="#">www.stroirs.com.ua</a></div>
+
+
             <div class="login-box">
                 <?php print render($page['search_area']); ?>
             </div>
             <div class="clear"></div>
             <div class="head-box">
-                <?php if ($logo): ?>
-                    <a href="<?php print check_url($front_page); ?>" title="<?php print t('Home'); ?>"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
-                <?php endif; ?>
-
                 <?php if ($site_name || $site_slogan): ?>
                     <div class="clearfix">
                         <?php if ($site_name): ?>
@@ -243,7 +245,7 @@
                 -->
             </div>
         </div>
-        
+
         <div class="bg-2">
             <aside>
                 <div class="main">
