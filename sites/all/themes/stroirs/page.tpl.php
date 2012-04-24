@@ -130,13 +130,19 @@
                     <?php if ($title): ?>
                         <h1><?php print $title ?></h1>
                     <?php endif; ?>
+
                     <?php print render($title_suffix); ?>
 
-                    <?php if ($tabs): ?><?php print render($tabs); ?><?php endif; ?>
+                    <?php if ($tabs): ?>    
+                        <div class="block-tabks">
+                            <?php print render($tabs); ?>
+                        </div>
+                        <div class="clearfix"></div>
+                    <?php endif; ?>
 
                     <?php print render($page['content']); ?>
 
-                    <?php print $feed_icons; ?>
+                    <?php //print $feed_icons; ?>
                 </div><!-- EOF: #main -->
 
                 <!--
@@ -281,8 +287,9 @@
     <footer>
         <div class="main">
             <div class="page-foot">
-                <div class="foot-logo"></div><div class="foot-text">&copy; 2012 | <a href="#">Privacy policy</a></div>
+                <div class="foot-logo"></div><div class="foot-text">&copy; <?php print date('Y'); ?> | <a href="/">stroirs.com.ua</a></div>
                 <div class="soc-icons">
+                    <!--
                     <ul class="soc-icon">
                         <li>
                             <a class="tooltip" title="Twitter" href="#"><img src="<?php print path_to_theme(); ?>/images/soc-icon1.gif" class="grey" alt="" />
@@ -301,8 +308,27 @@
                                 <img src="<?php print path_to_theme(); ?>/images/soc-icon4-grey.gif" class="color" alt="" /></a>
                         </li>                            
                     </ul>
-
+                    -->
+                    <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('class' => array('secondary-menu', 'links', 'clearfix')))); ?>
                 </div>
+                
+                <!--
+                <div id="footer-inside">
+                    <div class="footer-area first">
+                        <?php  print render($page['footer_first']); ?>
+                    </div>
+
+                    <div class="footer-area second">
+                        <?php //print render($page['footer_second']); ?>
+                    </div>
+
+                    <div class="footer-area third">
+                        <?php print render($page['footer_third']); ?>
+                    </div>
+                    <?php print render($page['footer']); ?>
+                </div>
+                -->
+
                 <div class="clear"></div>
             </div>
             <div class="foot"></div>
