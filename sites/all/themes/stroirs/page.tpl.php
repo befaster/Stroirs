@@ -9,8 +9,6 @@
         <?php endif; ?>
 
         <div class="main">
-
-
             <div class="login-box">
                 <?php print render($page['search_area']); ?>
             </div>
@@ -36,6 +34,7 @@
 
                 <div class="clear"></div> 
             </div>
+
             <nav>
                 <?php if ($main_menu): ?>
                     <?php
@@ -54,50 +53,77 @@
                     ?>
                 <?php endif; ?>
             </nav>
-            <div class="clear"></div>
-            <!--
-            <div class="round_box">
-                <div class="inner-slider">
-                    <ul class="round">
-                        <li>
-                            <img src="<?php print path_to_theme(); ?>/images/slider-1.jpg" width="201" height="175" alt="">
-                            <div class="descripton">
-                                <span>Project Name:</span> <strong>Lorem ipsum dolore massa as laoreetum</strong>
-                                <a class="button1" href="#">Detail</a>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="<?php print path_to_theme(); ?>/images/slider-2.jpg" width="201" height="175" alt="">
-                            <div class="descripton">
-                                <span>Project Name:</span> <strong>Sint occaecati cupiditate non provident</strong>
-                                <a class="button1" href="#">Detail</a>
-                            </div>
-                        </li>
-                        <li><img src="<?php print path_to_theme(); ?>/images/slider-3.jpg" width="201" height="175" alt="">
-                            <div class="descripton">                              
-                                <span>Project Name:</span> <strong>At vero eos et accusamus et iusto</strong>
-                                <a class="button1" href="#">Detail</a>                              
-                            </div>
-                        </li>  
-                        <li><img src="<?php print path_to_theme(); ?>/images/slider-4.jpg" width="201" height="175" alt="">
-                            <div class="descripton">                              
-                                <span>Project Name:</span><strong>Nam libero temporede cum soluta nobis </strong>
-                                <a class="button1" href="#">Detail</a>
-                            </div>
-                        </li>                           
-                    </ul>
-                    <div class="under-descr"></div>
-                </div>
-                <a href="#" class="round_prev"></a>
-                <a href="#" class="round_next"></a>
-            </div>    
-            -->
 
+            <div class="clear"></div>
         </div>
     </header>        
 
     <!--==============================content================================-->
     <section id="content">
+
+        <div class="bg-2">
+            <div class="slider">
+                <div class="sliderContent">
+                    <div class="item">
+                        <div calss="details">
+                            <h3>test 1</h3>
+                            <p>description<p>
+                        </div>
+                        <div class="slider-img">
+                            <img src="<?php print path_to_theme(); ?>/images/img1.jpg" alt="" />
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div calss="details">
+                            <h3>test 2</h3>
+                            <p>description<p>
+                        </div>
+                        <div class="slider-img">
+                            <img src="<?php print path_to_theme(); ?>/images/img2.jpg" alt="" />
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div calss="details">
+                            <h3>test 3</h3>
+                            <p>description<p>
+                        </div>
+                        <div class="slider-img">
+                            <img src="<?php print path_to_theme(); ?>/images/img3.jpg" alt="" />
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div calss="details">
+                            <h3>test 4</h3>
+                            <p>description<p>
+                        </div>
+                        <div class="slider-img">
+                            <img src="<?php print path_to_theme(); ?>/images/img4.jpg" alt="" />
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div calss="details">
+                            <h3>test 5</h3>
+                            <p>description<p>
+                        </div>
+                        <div class="slider-img">
+                            <img src="<?php print path_to_theme(); ?>/images/img5.jpg" alt="" />
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div calss="details">
+                            <h3>test 6</h3>
+                            <p>description<p>
+                        </div>
+                        <div class="slider-img">
+                            <img src="<?php print path_to_theme(); ?>/images/img6.jpg" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
         <div class="main">
             <div class="container_24">
                 <div id="main">
@@ -145,7 +171,7 @@
                     <?php //print $feed_icons; ?>
                 </div><!-- EOF: #main -->
 
-                <!--
+
                 <article class="grid_24">
                     <div class="wrapper p6">
                         <article class="grid_16 alpha">
@@ -249,7 +275,7 @@
                         </article>
                     </div>
                 </article>
-                -->
+
             </div>
         </div>
 
@@ -311,21 +337,21 @@
                     -->
                     <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('class' => array('secondary-menu', 'links', 'clearfix')))); ?>
                 </div>
-                
+
                 <!--
                 <div id="footer-inside">
                     <div class="footer-area first">
-                        <?php  print render($page['footer_first']); ?>
+                <?php print render($page['footer_first']); ?>
                     </div>
 
                     <div class="footer-area second">
-                        <?php //print render($page['footer_second']); ?>
+                <?php //print render($page['footer_second']); ?>
                     </div>
 
                     <div class="footer-area third">
-                        <?php print render($page['footer_third']); ?>
+                <?php print render($page['footer_third']); ?>
                     </div>
-                    <?php print render($page['footer']); ?>
+                <?php print render($page['footer']); ?>
                 </div>
                 -->
 
