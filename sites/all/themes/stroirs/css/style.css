@@ -1645,13 +1645,20 @@ input[type=submit].form-submit:hover {
 }
 #block-menu-menu-bottom-menu ul li{
     display: inline;
-    padding: 5px 100px 5px 100px;
+    padding: 5px 50px 5px 50px;
+    margin: 0 0 0 100px;
     width: 150px;
+    border: 1px solid #D6D6D6;
 }
 
 #block-menu-menu-bottom-menu {
     position: absolute;
-    top:-38px;
+    top:-39px;
     z-index: 999;
         
+}
+
+#block-menu-menu-bottom-menu ul li.first,
+#block-menu-menu-bottom-menu ul li {
+   border-radius: 10px 10px 0 0px;
 }
