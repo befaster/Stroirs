@@ -357,7 +357,7 @@ h5 {
     float:left;
     text-align:center;
     position:relative;
-    width:170px;
+    width:157px;
     border-right:1px solid #d6d6d6;
     /*background:url(../images/menu-bg1.gif) repeat-x 0 0 #ebebeb;	*/
 }
@@ -1692,7 +1692,7 @@ ul#main-menu-links {
     box-shadow: 0px 0px 20px #7c7c7c;
     -webkit-box-shadow: 0px 0px 20px #7c7c7c;
     -moz-box-shadow: 0px 0px 20px #7c7c7c;
-    padding: 0 0 0 4px;
+    padding: 0 0 0 40px;
 }
 
 body.front #content {
