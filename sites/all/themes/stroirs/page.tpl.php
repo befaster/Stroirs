@@ -145,7 +145,8 @@
     <footer>
         <div class="main">
             <div class="page-foot">
-                <div class="foot-logo"></div><div class="foot-text">&copy; <?php print date('Y'); ?> | <a href="/">stroirs.com.ua</a></div>
+                <!--<div class="foot-logo"></div>--->
+                <div class="foot-text">&copy; <?php print date('Y'); ?> | <a href="/">stroirs.com.ua</a></div>
                 <div class="soc-icons">
                     <!--
                     <ul class="soc-icon">
@@ -191,6 +192,6 @@
             </div>
             <div class="foot"></div>
         </div>
-        <div class="foot-bot"></div>
+        <!--<div class="foot-bot"></div>-->
     </footer>
 </div>

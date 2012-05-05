@@ -1420,7 +1420,7 @@ dd a {
 /****************************footer************************/
 footer {
     width:100%; 
-    padding:33px 0 0px;
+    padding:15px 0 15px 0;
     background:#2a2a2a;
 }
 
@@ -1621,16 +1621,16 @@ input[type=submit].form-submit {
     text-transform:uppercase;
     font-size:12px;
     line-height:18px;
-    padding:3px 20px 4px 20px;
+    padding:1px 20px 3px 20px;
     border: 1px solid #d6d6d6;
-    background-color: #f9f9f9;
+    background-color: #f9f9f9;  
 }
 input[type=submit].form-submit:hover { 
     background-color:#f1f1f1; color:#a3c900;
 }
 
 #block-search-form input[type=text] {
-    height: 21px;
+    height: 20px;
     width: 150px;
     border: 1px solid #d6d6d6;
 }
