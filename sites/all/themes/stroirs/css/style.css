@@ -1676,11 +1676,9 @@ input[type=submit].form-submit:hover {
 #block-menu-menu-bottom-menu ul li:hover,
 #block-menu-menu-bottom-menu ul li.active-trail {
     background: #2A2A2A;  
-    /*
-    box-shadow: 0 -5px 10px #7c7c7c;
-    -webkit-box-shadow:0 -5px 20px #7c7c7c;;
-    -moz-box-shadow: 0 -5px 20px #7c7c7c;
-    */
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
 }
 #block-menu-menu-bottom-menu ul li a {
     color: #959494;
