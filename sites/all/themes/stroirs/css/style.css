@@ -1421,7 +1421,7 @@ dd a {
 /****************************footer************************/
 footer {
     width:100%; 
-    padding:15px 0 15px 0;
+    padding:15px 0 0 0;
     background:#2a2a2a;
 }
 
@@ -1550,7 +1550,7 @@ body.front h1 {
     color:#7c7c7c;
 }
 .node-teaser .node-readmore a:hover {
-   color:#a3c900;
+    color:#a3c900;
 }
 
 .block-tabks ul.tabs {
@@ -1656,17 +1656,31 @@ input[type=submit].form-submit:hover {
     position: absolute;
     top:-38px;
     z-index: 999;
-        
 }
 
 #block-menu-menu-bottom-menu ul li.first,
 #block-menu-menu-bottom-menu ul li {
-   border-radius: 10px 10px 0 0px;
-   background: white;
+    border-radius: 10px 10px 0 0px;
+    box-shadow: 0 -2px 5px #7c7c7c;
+    -webkit-box-shadow:0 -2px 5px #7c7c7c;;
+    -moz-box-shadow: 0 -2px 5px #7c7c7c;
+    background: white;
+
 }
+#block-menu-menu-bottom-menu ul li.last.leaf {
+    border: 1px solid #D6D6D6!important;
+    border-bottom: none!important;
+}
+
+
 #block-menu-menu-bottom-menu ul li:hover,
 #block-menu-menu-bottom-menu ul li.active-trail {
     background: #2A2A2A;  
+    /*
+    box-shadow: 0 -5px 10px #7c7c7c;
+    -webkit-box-shadow:0 -5px 20px #7c7c7c;;
+    -moz-box-shadow: 0 -5px 20px #7c7c7c;
+    */
 }
 #block-menu-menu-bottom-menu ul li a {
     color: #959494;
