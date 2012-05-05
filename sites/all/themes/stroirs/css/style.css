@@ -1698,3 +1698,6 @@ ul#main-menu-links {
 body.front #content {
     padding: 0 0 50px 0;
 }
+#logo img {
+    width: 180px;
+}
