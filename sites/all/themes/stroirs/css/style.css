@@ -385,8 +385,9 @@ nav {
     border-radius:5px;
     -moz-border-radius:5px;
     -webkit-border-radius:5px;
-    margin-left:4px;
-    width:950px	 
+    margin-left:-31px;
+    width:1020px;
+    background: white;
 }
 
 .sf-menu a {
@@ -1691,4 +1692,8 @@ ul#main-menu-links {
     box-shadow: 0px 0px 20px #7c7c7c;
     -webkit-box-shadow: 0px 0px 20px #7c7c7c;
     -moz-box-shadow: 0px 0px 20px #7c7c7c;
+}
+
+body.front #content {
+    padding: 0 0 30px 0;
 }
