@@ -1649,11 +1649,12 @@ input[type=submit].form-submit:hover {
     margin: 0 0 0 100px;
     width: 150px;
     border: 1px solid #D6D6D6;
+    border-bottom: none;
 }
 
 #block-menu-menu-bottom-menu {
     position: absolute;
-    top:-39px;
+    top:-38px;
     z-index: 999;
         
 }
@@ -1661,4 +1662,16 @@ input[type=submit].form-submit:hover {
 #block-menu-menu-bottom-menu ul li.first,
 #block-menu-menu-bottom-menu ul li {
    border-radius: 10px 10px 0 0px;
+   background: white;
+}
+#block-menu-menu-bottom-menu ul li:hover,
+#block-menu-menu-bottom-menu ul li.active-trail {
+    background: #2A2A2A;  
+}
+#block-menu-menu-bottom-menu ul li a {
+    color: #959494;
+}
+#block-menu-menu-bottom-menu ul li a:hover,
+#block-menu-menu-bottom-menu ul li.active-trail a {
+    color: #8EB02B;
 }
