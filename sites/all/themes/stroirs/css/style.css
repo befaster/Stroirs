@@ -1420,7 +1420,7 @@ dd a {
 /****************************footer************************/
 footer {
     width:100%; 
-    padding:15px 0 0 0;
+    padding:15px 0 15px 0;
     background:#2a2a2a;
 }
 
