@@ -9,9 +9,7 @@
         <?php endif; ?>
 
         <div class="main">
-            <div class="login-box">
-                <?php print render($page['search_area']); ?>
-            </div>
+            <div class="login-box">&nbsp;</div>
             <div class="clear"></div>
             <div class="head-box">
                 <?php if ($site_name || $site_slogan): ?>
@@ -25,13 +23,7 @@
                     </div><!-- /site-name-wrapper -->
                 <?php endif; ?>    
 
-                <ul class="social-links">
-                    <li><a href="#" class="link-1 tooltip" title="Twitter"></a></li>
-                    <li><a href="#" class="link-2 tooltip" title="Facebook"></a></li>
-                    <li><a href="#" class="link-3 tooltip" title="Linkedin"></a></li>
-                    <li><a href="#" class="link-4 tooltip" title="Flickr"></a></li>
-                </ul>
-
+                <?php print render($page['search_area']); ?>
                 <div class="clear"></div> 
             </div>
 
@@ -61,68 +53,12 @@
     <!--==============================content================================-->
     <section id="content">
 
-        <div class="bg-2">
-            <div class="slider">
-                <div class="sliderContent">
-                    <div class="item">
-                        <div calss="details">
-                            <h3>test 1</h3>
-                            <p>description<p>
-                        </div>
-                        <div class="slider-img">
-                            <img src="<?php print path_to_theme(); ?>/images/img1.jpg" alt="" />
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div calss="details">
-                            <h3>test 2</h3>
-                            <p>description<p>
-                        </div>
-                        <div class="slider-img">
-                            <img src="<?php print path_to_theme(); ?>/images/img2.jpg" alt="" />
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div calss="details">
-                            <h3>test 3</h3>
-                            <p>description<p>
-                        </div>
-                        <div class="slider-img">
-                            <img src="<?php print path_to_theme(); ?>/images/img3.jpg" alt="" />
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div calss="details">
-                            <h3>test 4</h3>
-                            <p>description<p>
-                        </div>
-                        <div class="slider-img">
-                            <img src="<?php print path_to_theme(); ?>/images/img4.jpg" alt="" />
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div calss="details">
-                            <h3>test 5</h3>
-                            <p>description<p>
-                        </div>
-                        <div class="slider-img">
-                            <img src="<?php print path_to_theme(); ?>/images/img5.jpg" alt="" />
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div calss="details">
-                            <h3>test 6</h3>
-                            <p>description<p>
-                        </div>
-                        <div class="slider-img">
-                            <img src="<?php print path_to_theme(); ?>/images/img6.jpg" alt="" />
-                        </div>
-                    </div>
-                </div>
+        <?php if ($page['banner']): ?>
+            <div class="bg-3">
+                <div id="banner"><?php print render($page['banner']); ?></div>
             </div>
+        <?php endif; ?>   
 
-
-        </div>
 
         <div class="main">
             <div class="container_24">
@@ -170,115 +106,10 @@
 
                     <?php //print $feed_icons; ?>
                 </div><!-- EOF: #main -->
-
-
-                <article class="grid_24">
-                    <div class="wrapper p6">
-                        <article class="grid_16 alpha">
-                            <div class="tabs-box">
-                                <ul class="tabs">
-                                    <li><a href="#tab1">what we do</a></li>
-                                    <li><a href="#tab2">advantages</a></li>
-                                </ul>
-                                <div class="tab_container">
-                                    <div id="tab1" class="tab_content">
-                                        <div class="page1-box1">
-                                            <div class="inner">
-                                                <figure class="page1-img1"><img src="<?php print path_to_theme(); ?>/images/page1-img1.jpg" alt=""></figure>
-                                                <p><span>At vero eos et accusamus et iusto odio dignissimos duci mus qui blanditiis praesentium destiumomste.</span>
-
-                                                    Sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt <a href="#">mollitia animid estum</a> laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. </p>
-
-                                                <p>Nam libero temporede cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat.    </p>
-                                            </div>
-                                            <div class="clear"></div>
-                                            <a class="button2" href="#">more</a>
-                                        </div>
-                                    </div>
-                                    <div id="tab2" class="tab_content">
-                                        <div class="page1-box1">
-                                            <div class="inner">
-                                                <figure class="page1-img1"><img src="<?php print path_to_theme(); ?>/images/page1-img2.jpg" alt=""></figure>
-                                                <p><span>At vero eos et accusamus et iusto odio dignissimos duci mus qui blanditiis praesentium destiumomste.</span>
-
-                                                    Sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt <a href="#">mollitia animid estum</a> laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. </p>
-
-                                                <p>Nam libero temporede cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat.    </p>
-                                            </div>
-                                            <div class="clear"></div>
-                                            <a class="button2" href="#">more</a>
-                                        </div>
-                                    </div>              
-                                </div>
-                            </div>                
-                        </article>
-                        <article class="grid_7 push_1 omega">
-                            <h2>categories<span></span></h2>
-                            <ul class="list1">
-                                <li><a href="#">our news</a></li>
-                                <li><a href="#">publication archive</a></li>
-                                <li><a href="#">new services</a></li>
-                                <li><a href="#">our ideas</a></li>
-                                <li><a href="#">our staff</a></li>
-                                <li><a href="#">information for clients</a></li>
-                                <li><a href="#">our events</a></li>
-                                <li><a href="#">online support</a></li>
-                                <li><a href="#">online forum</a></li>
-                            </ul>
-                        </article>                        
-                    </div>
-                </article>
-                <article class="grid_24">
-                    <div class="wrapper p9">
-                        <article class="grid_16 alpha">
-                            <h3 class="p7">News and events</h3>
-                            <div class="page1-box2">
-                                <figure class="page1-img2"><img src="<?php print path_to_theme(); ?>/images/page1-img6.png" alt=""></figure>
-                                <div class="extra-wrap">
-                                    <a href="#">March 20, 2012</a>
-                                    <p>Sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animid estum laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio...  </p>
-                                </div>
-                            </div>
-                            <div class="page1-box2">
-                                <figure class="page1-img2"><img src="<?php print path_to_theme(); ?>/images/page1-img6.png" alt=""></figure>
-                                <div class="extra-wrap">
-                                    <a href="#">March 12, 2012</a>
-                                    <p>Sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animid estum laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio...  </p>
-                                </div>
-                            </div>
-                            <div class="page1-box2 p8">
-                                <figure class="page1-img2"><img src="<?php print path_to_theme(); ?>/images/page1-img6.png" alt=""></figure>
-                                <div class="extra-wrap">
-                                    <a href="#">March 05, 2012</a>
-                                    <p>Sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animid estum laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio...  </p>
-                                </div>                            
-                            </div>
-                            <a class="button2" href="#">archive</a>
-                            <a class="link1" href="#">Newsletter Signup</a>
-                        </article>
-                        <article class="grid_7 push_1">
-                            <h2>Featured Projects<span></span></h2>
-                            <div class="page1-box3">                                    
-                                <div class="page1-box7">
-                                    <a href="<?php print path_to_theme(); ?>/images/image-blank.png" data-gal="prettyPhoto[pp_gal]" class="lightbox-image"><div class="img-hover"></div><figure class="page1-img3"><img src="<?php print path_to_theme(); ?>/images/page1-img3.jpg" alt=""></figure></a>
-                                </div>
-                                <div class="page1-box7 last2">
-                                    <a href="<?php print path_to_theme(); ?>/images/image-blank.png" data-gal="prettyPhoto[pp_gal]" class="lightbox-image"><div class="img-hover"></div><figure class="page1-img3"><img src="<?php print path_to_theme(); ?>/images/page1-img4.jpg" alt=""></figure></a>
-                                </div>
-                                <div class="page1-box7">
-                                    <a href="<?php print path_to_theme(); ?>/images/image-blank.png" data-gal="prettyPhoto[pp_gal]" class="lightbox-image"><div class="img-hover"></div><figure class="page1-img3"><img src="<?php print path_to_theme(); ?>/images/page1-img5.jpg" alt=""></figure></a>
-                                </div>
-                                <div class="page1-box7 last2">
-                                    <a href="<?php print path_to_theme(); ?>/images/image-blank.png" data-gal="prettyPhoto[pp_gal]" class="lightbox-image"><div class="img-hover"></div><figure class="page1-img3"><img src="<?php print path_to_theme(); ?>/images/page1-img7.jpg" alt=""></figure></a>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                </article>
-
             </div>
         </div>
 
+        <!--
         <div class="bg-2">
             <aside>
                 <div class="main">
@@ -307,6 +138,7 @@
                 </div>
             </aside>
         </div>
+        -->
     </section>
 
     <!--==============================footer=================================-->

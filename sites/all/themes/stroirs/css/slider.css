@@ -2,91 +2,103 @@
 -----------------------------------------------*/
 
 .slider {
-float:left;
-width:800px;
-height:350px;
-position:relative;
-padding-bottom:26px;
-background:url(../images/bottom_shadow.png) no-repeat bottom center;
+    float:left;
+    width:470px;
+    height:370px;
+    position:relative;    
+    background:url(../images/bottom_shadow2.png) no-repeat bottom center;
+    margin: 0 0 0 0px;
+    padding: 0 0 26px 0;
 }
 
 .sliderContent {
-float:left;
-width:800px;
-height:350px;
-clear:both;
-position:relative;
-overflow:hidden;
+    float:left;
+    width:450px;
+    height:350px;
+    clear:both;
+    position:relative;
+    overflow:hidden;
+    background: white;
+    padding: 10px;
 }
 
 .sliderArrows a {
-display:block;
-text-indent:-9999px;
-outline:none;
-z-index:50;
-background-image:url(../images/prev_next.png);
-width:42px;
-height:42px;
-position:absolute;
-top:50%;
-margin-top:-34px;
+    display:block;
+    text-indent:-9999px;
+    outline:none;
+    z-index:50;
+    background-image:url(../images/prev_next.png);
+    width:42px;
+    height:42px;
+    position:absolute;
+    top:50%;
+    margin-top:-34px;
 }
 
 .prev {
-background-position:0 0;
-left:15px;
+    background-position:0 0;
+    left:15px;
 }
 
 .prev:hover {
-background-position:0 -44px;
+    background-position:0 -44px;
 }
 
 .next {
-right:15px;
-background-position:-44px 0;
+    right:15px;
+    background-position:-44px 0;
 }
 
 .next:hover {
-background-position:-44px -44px;
+    background-position:-44px -44px;
 }
 
 .sliderContent .item {
-position:absolute;
-width:800px;
-height:350px;
-background:#fff;
+    position:absolute;
+    width:450px;
+    height:350px;
+    background:#fff;
 }
 
 .sliderBullets {
-position:absolute;
-bottom:0;
-left:50%;
-z-index:50;
-margin-left:-45px;
+    position:absolute;
+    bottom:0;
+    left:50%;
+    z-index:50;
+    margin-left:-45px;
 }
 
 .sliderBullets a {
-display:block;
-float:left;
-text-indent:-9999px;
-outline:none;
-margin-left:5px;
-width:10px;
-height:11px;
-background:url(../images/bullets.png) no-repeat;
+    display:block;
+    float:left;
+    text-indent:-9999px;
+    outline:none;
+    margin-left:5px;
+    width:10px;
+    height:11px;
+    background:url(../images/bullets.png) no-repeat;
 }
 
 .sliderBullets .active {
-background-position:0 -11px;
+    background-position:0 -11px;
 }
 
 .sliderContent a {
-outline:none;
+    outline:none;
 }
 
 
 
 .sliderContent a img {
-border:none;
+    border:none;
 }
 
+.sliderContent .details {
+    position: absolute;
+    min-width: 234px;    
+    top: 40px;
+    left: -7px;
+    padding: 20px;
+    color: white;
+    background: url("../images/gray-trns-bg.png") 0 0 repeat;
+}

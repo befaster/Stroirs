@@ -10,8 +10,9 @@ body {
     font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
     font-size:100%; 
     color:#4b4b4b;
-    min-width:1236px;
+    min-width:1000px;
     background:url(../images/main-bg.gif) repeat 0 0;
+    padding: 10px 0 0 0;
 }
 
 .bg {
@@ -19,6 +20,9 @@ body {
     background:#fefefe;
     margin:0 auto;
     position:relative;
+    -webkit-box-shadow: 0px 0px 6px 6px rgba(50,50,50, 0.1);
+    -moz-box-shadow: 0px 0px 6px 6px rgba(50,50,50, 0.1);
+    box-shadow: 0px 0px 6px 6px rgba(50,50,50, 0.1);
 }
 
 .bg:after {
@@ -307,7 +311,7 @@ h5 {
     overflow:hidden;
     margin-bottom:18px;
     padding-top:1px;
-    min-height:85px; 
+    min-height:70px; 
 }
 
 /*** MENU ***/
@@ -782,9 +786,9 @@ html ul.tabs li.active a {
     font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
     font-size:13px;
     color:#222222;
-    text-transform:uppercase;
+    /*text-transform:uppercase;*/
     background:#f9f9f9;	
-    letter-spacing: -1px;
+    /*letter-spacing: -1px;*/
     padding-bottom: 5px;
     padding-left: 43px;
     padding-top: 5px;
@@ -941,8 +945,16 @@ html ul.tabs li.active a {
     background:url(../images/bg-2.gif) repeat-x 0 0 #f7f7f7;
     width:100%;
     overflow:hidden;
-    padding-top: 34px;
-    padding-bottom: 38px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.bg-3 {
+    background:url(../images/bg-2.gif) repeat-x 0 0 #f9f9f9;
+    width:100%;
+    overflow:hidden;
+    padding-top: 30px;
+    padding-bottom: 10px;
 }
 
 .p9 {
@@ -1500,17 +1512,125 @@ img.color {
     background:#1b1b1b;
 }
 
+/* front page*/
+body.front .node-teaser {
+    border: none;
+    background: none;
+    padding-left:  0;
+}
+
+body.front #first-time{
+    display: none;
+}
+body.front h1 {
+    display:none;
+}
+
 /* blog nodes*/
 .node-teaser {
     border-bottom: 1px dashed #c7c7c7;
+    background: url(../images/page1-img6.png) no-repeat 0 12px;
+    padding-left: 36px;
 }
+
+.node-teaser h2 {
+    padding-bottom: 0;
+}
+
 .node-teaser div.links {
     float: right;
     padding: 0 0 10px 0;
 }
 .node-teaser div.links a {
-    color:#7c7c7c
+    color:#7c7c7c;
 }
+.node-teaser .node-readmore a:hover {
+   color:#a3c900;
+}
+
 .block-tabks ul.tabs {
-    border-bottom: 1px dashed #c7c7c7;;
+    border-bottom: 1px dashed #c7c7c7;
+}
+
+#block-views-remont-block {
+    width: 200px;
+    margin: 0 0 0 25px;
+    float: left;
+}
+#block-views-mebel-block {
+    width: 200px;
+    margin: 0 25px 0 0px;
+    float: right;
+}
+
+#block-views-gallery-block {
+    width: 500px;
+    margin: 0 250px 0 267px;
+}
+
+#block-views-mebel-block .content,
+#block-views-remont-block .content,
+#block-views-gallery-block .sliderContent {
+    box-shadow: 0px 0px 20px #7c7c7c;
+    -webkit-box-shadow:0px 0px 20px #7c7c7c;
+    -moz-box-shadow:0px 0px 20px #7c7c7c;
+}
+
+#block-views-remont-block ul.list1,
+#block-views-mebel-block ul.list1 {
+    padding: 0;
+    margin: 0;
+}
+#block-views-remont-block ul.list1 li,
+#block-views-mebel-block ul.list1 li{
+    margin: 0;    
+}
+#block-views-remont-block ul.list1 li a,
+#block-views-mebel-block ul.list1 a {
+    padding: 6px 2px 6px 15px;
+    font-size: 13px;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0px;
+}
+
+#block-views-remont-block ul.list1 li a:hover,
+#block-views-mebel-block ul.list1 li a:hover{
+    color:#a3c900;
+}
+
+#block-views-remont-block h2, #block-views-mebel-block h2 {
+    font-family: 'Oswald', sans-serif;
+    /*color:#a3c900;*/
+    color:#7c7c7c;
+}
+
+.head-box .region-search-area {
+    float: right;
+    margin: 18px 10px 0 0;
+}
+.head-box .region-search-area #block-search-form .content {
+    /*
+    box-shadow: 0px 0px 20px #7c7c7c;
+    -webkit-box-shadow:0px 0px 20px #7c7c7c;
+    -moz-box-shadow:0px 0px 20px #7c7c7c;
+    padding: 2px;*/
+}
+
+input[type=submit].form-submit {
+    font-family: 'Oswald', sans-serif;
+    text-transform:uppercase;
+    font-size:12px;
+    line-height:18px;
+    padding:3px 20px 4px 20px;
+    border: 1px solid #d6d6d6;
+    background-color: #f9f9f9;
+}
+input[type=submit].form-submit:hover { 
+    background-color:#f1f1f1; color:#a3c900;
+}
+
+#block-search-form input[type=text] {
+    height: 21px;
+    width: 150px;
+    border: 1px solid #d6d6d6;
 }
