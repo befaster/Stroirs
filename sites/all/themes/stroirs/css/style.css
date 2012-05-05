@@ -1571,9 +1571,9 @@ body.front h1 {
 #block-views-mebel-block .content,
 #block-views-remont-block .content,
 #block-views-gallery-block .sliderContent {
-    box-shadow: 0px 0px 20px #7c7c7c;
-    -webkit-box-shadow:0px 0px 20px #7c7c7c;
-    -moz-box-shadow:0px 0px 20px #7c7c7c;
+    box-shadow: 0px 8px 20px #7c7c7c;
+    -webkit-box-shadow:0px 8px 20px #7c7c7c;
+    -moz-box-shadow:0px 8px 20px #7c7c7c;
 }
 
 #block-views-remont-block ul.list1,
