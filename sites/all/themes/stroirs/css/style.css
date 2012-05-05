@@ -11,7 +11,8 @@ body {
     font-size:100%; 
     color:#4b4b4b;
     min-width:1000px;
-    background:url(../images/main-bg.gif) repeat 0 0;
+    /*background:url(../images/main-bg.gif) repeat 0 0;*/
+    background:url(../images/body-bg_new.gif) repeat 0 0;
     padding: 10px 0 0 0;
 }
 
@@ -652,7 +653,7 @@ ul.sf-menu li li li.sfHover ul {
 /*********************************content*************************************/
 #content {
     width:100%; 
-    padding:16px 0 0;
+    padding:16px 0 16px 0;
     position:relative;
     z-index:1;
     overflow: hidden;
@@ -1532,6 +1533,10 @@ body.front h1 {
     background: url(../images/page1-img6.png) no-repeat 0 12px;
     padding-left: 36px;
 }
+.content .node-teaser:last-child {
+    border-bottom:none;
+}
+
 
 .node-teaser h2 {
     padding-bottom: 0;
@@ -1633,4 +1638,20 @@ input[type=submit].form-submit:hover {
     height: 20px;
     width: 150px;
     border: 1px solid #d6d6d6;
+}
+
+.bottom-menu {
+    position: relative;
+}
+#block-menu-menu-bottom-menu ul li{
+    display: inline;
+    padding: 5px 100px 5px 100px;
+    width: 150px;
+}
+
+#block-menu-menu-bottom-menu {
+    position: absolute;
+    top:-38px;
+    z-index: 999;
+        
 }

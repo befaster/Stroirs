@@ -144,50 +144,10 @@
     <!--==============================footer=================================-->
     <footer>
         <div class="main">
+            <div class="bottom-menu"><?php print render($page['footer_first']); ?></div>
             <div class="page-foot">
-                <!--<div class="foot-logo"></div>--->
                 <div class="foot-text">&copy; <?php print date('Y'); ?> | <a href="/">stroirs.com.ua</a></div>
-                <div class="soc-icons">
-                    <!--
-                    <ul class="soc-icon">
-                        <li>
-                            <a class="tooltip" title="Twitter" href="#"><img src="<?php print path_to_theme(); ?>/images/soc-icon1.gif" class="grey" alt="" />
-                                <img src="<?php print path_to_theme(); ?>/images/soc-icon1-grey.gif" class="color" alt="" /></a>
-                        </li>
-                        <li>
-                            <a class="tooltip" title="Facebook" href="#"><img src="<?php print path_to_theme(); ?>/images/soc-icon2.gif" class="grey" alt="" />
-                                <img src="<?php print path_to_theme(); ?>/images/soc-icon2-grey.gif" class="color" alt="" /></a>
-                        </li>
-                        <li>
-                            <a class="tooltip" title="Linkedin" href="#"><img src="<?php print path_to_theme(); ?>/images/soc-icon3.gif" class="grey" alt="" />
-                                <img src="<?php print path_to_theme(); ?>/images/soc-icon3-grey.gif" class="color" alt="" /></a>
-                        </li>
-                        <li>
-                            <a class="tooltip" title="Flickr" href="#"><img src="<?php print path_to_theme(); ?>/images/soc-icon4.gif" class="grey" alt="" />
-                                <img src="<?php print path_to_theme(); ?>/images/soc-icon4-grey.gif" class="color" alt="" /></a>
-                        </li>                            
-                    </ul>
-                    -->
-                    <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('class' => array('secondary-menu', 'links', 'clearfix')))); ?>
-                </div>
-
-                <!--
-                <div id="footer-inside">
-                    <div class="footer-area first">
-                <?php print render($page['footer_first']); ?>
-                    </div>
-
-                    <div class="footer-area second">
-                <?php //print render($page['footer_second']); ?>
-                    </div>
-
-                    <div class="footer-area third">
-                <?php print render($page['footer_third']); ?>
-                    </div>
                 <?php print render($page['footer']); ?>
-                </div>
-                -->
-
                 <div class="clear"></div>
             </div>
             <div class="foot"></div>
