@@ -1,11 +1,11 @@
 <!--==============================header=================================-->
 <div class="bg">
     <header>
-        <div class="head-line"></div>   
+        <div class="head-line"></div>
         <?php if ($logo): ?>
             <div id="logo">
                 <a href="<?php print check_url($front_page); ?>" title="<?php print t('Home'); ?>"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
-            </div>  
+            </div>
         <?php endif; ?>
 
         <div class="main">
@@ -21,16 +21,18 @@
                             <span id="slogan"><?php print $site_slogan; ?></span>
                         <?php endif; ?>
                     </div><!-- /site-name-wrapper -->
-                <?php endif; ?>    
+                <?php endif; ?>
 
                 <?php print render($page['search_area']); ?>
-                <div class="clear"></div> 
+                <div class="clear"></div>
             </div>
 
             <nav>
                 <?php if ($main_menu): ?>
                     <?php
-                    print theme('links__system_main_menu', array(
+
+                    //links__system_main_menu
+                    print theme('nice_menus_main_menu', array(
                                 'links' => $main_menu,
                                 'attributes' => array(
                                     'id' => 'main-menu-links',
@@ -43,12 +45,13 @@
                                 ),
                             ));
                     ?>
+                    <div class="clear"></div>
                 <?php endif; ?>
             </nav>
 
             <div class="clear"></div>
         </div>
-    </header>        
+    </header>
 
     <!--==============================content================================-->
     <section id="content">
@@ -57,7 +60,7 @@
             <div class="bg-3">
                 <div id="banner"><?php print render($page['banner']); ?></div>
             </div>
-        <?php endif; ?>   
+        <?php endif; ?>
 
 
         <div class="main">
@@ -95,7 +98,7 @@
 
                     <?php print render($title_suffix); ?>
 
-                    <?php if ($tabs): ?>    
+                    <?php if ($tabs): ?>
                         <div class="block-tabks">
                             <?php print render($tabs); ?>
                         </div>
@@ -117,10 +120,10 @@
                         <article class="grid_16">
                             <h4 class="p7">About company</h4>
                             <div class="page1-box4">
-                                <span>Est omnis dolore serele dusemp quibd ameto lorem astumode es magna.</span> 
+                                <span>Est omnis dolore serele dusemp quibd ameto lorem astumode es magna.</span>
                                 <p class="p10">Saepe eveniet redums. Etoluptes estudesu usandaeItaque earumuel rerum hic tenetura sapiravi. Reicindis vptatibus ass iliasumes massa dolore ipsum mode enium lorem est.</p>
 
-                                <p class="p10">Asperioreste repellat aurerum odesed necessbus saepe eveniet utoluptatesestuusandaaque omnis doloresedusempq.uibdametoaurerumoms odes necessitatibus saepe eveniet redums toluptates. </p>  
+                                <p class="p10">Asperioreste repellat aurerum odesed necessbus saepe eveniet utoluptatesestuusandaaque omnis doloresedusempq.uibdametoaurerumoms odes necessitatibus saepe eveniet redums toluptates. </p>
                             </div>
                         </article>
                         <article class="grid_7 push_1">
