@@ -30,7 +30,6 @@
             <nav>
                 <?php if ($main_menu): ?>
                     <?php
-
                     //links__system_main_menu
                     print theme('nice_menus_main_menu', array(
                                 'links' => $main_menu,
@@ -62,7 +61,6 @@
             </div>
         <?php endif; ?>
 
-
         <div class="main">
             <div class="container_24">
                 <div id="main">
@@ -70,9 +68,6 @@
                     if (theme_get_setting('breadcrumb_display', 'stroirs')): print $breadcrumb;
                     endif;
                     ?>
-
-                    <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
-
                     <?php if ($messages): ?>
                         <div id="console" class="clearfix">
                             <?php print $messages; ?>
@@ -107,41 +102,13 @@
 
                     <?php print render($page['content']); ?>
 
-                    <?php //print $feed_icons; ?>
+                    <?php //print $feed_icons;  ?>
                 </div><!-- EOF: #main -->
             </div>
         </div>
-
-        <!--
-        <div class="bg-2">
-            <aside>
-                <div class="main">
-                    <div class="container_24">
-                        <article class="grid_16">
-                            <h4 class="p7">About company</h4>
-                            <div class="page1-box4">
-                                <span>Est omnis dolore serele dusemp quibd ameto lorem astumode es magna.</span>
-                                <p class="p10">Saepe eveniet redums. Etoluptes estudesu usandaeItaque earumuel rerum hic tenetura sapiravi. Reicindis vptatibus ass iliasumes massa dolore ipsum mode enium lorem est.</p>
-
-                                <p class="p10">Asperioreste repellat aurerum odesed necessbus saepe eveniet utoluptatesestuusandaaque omnis doloresedusempq.uibdametoaurerumoms odes necessitatibus saepe eveniet redums toluptates. </p>
-                            </div>
-                        </article>
-                        <article class="grid_7 push_1">
-                            <div class="page1-box8">
-                                <blockquote class="page1-box5">
-                                    <h4 class="p11">our standards</h4>
-                                    <a href="#">Est omnis doloresereleduse</a>
-                                    <p>Apquibdameto aerumoms odes neces sitatibus saepe eveniet redus. Eto luptes demos estudesu usandaeItaque earum umel rerum hic tenetura...</p>
-                                    <div class="page1-box6"></div>
-                                </blockquote>
-                                <a class="link2" href="#">Details</a>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </aside>
-        </div>
-        -->
+        <?php if ($page['highlighted']): ?>
+            <div id="highlighted"><?php print render($page['highlighted']); ?></div>
+        <?php endif; ?>
     </section>
 
     <!--==============================footer=================================-->
