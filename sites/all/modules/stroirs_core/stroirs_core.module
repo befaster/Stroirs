@@ -1,8 +1,11 @@
 <?php
 
 function stroirs_core_form_alter(&$form, &$form_state, $form_id) {
-    print '<pre>';
-    print_r($form_id);
-    print '</pre>';
-    
-} 
+    switch ($form_id) {
+        case 'search_block_form':
+            $form['actions']['submit']['#value'] = '';
+        default:
+            break;
+    }
+}
+

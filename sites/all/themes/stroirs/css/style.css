@@ -1755,6 +1755,16 @@ body.front #content {
     display: none;
 }
 
+
+#block-search-form .form-item-search-block-form {
+    float: left;
+    margin-top: 4px;
+}
 #block-search-form .form-submit {
     background: url('../images/search.png') no-repeat;
+    padding: 0!important;
+    margin: 0!important;
+    width: 32px;
+    height: 32px;
+    border: none;
 }
