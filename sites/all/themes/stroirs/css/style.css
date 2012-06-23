@@ -1754,3 +1754,7 @@ body.front #content {
 .page-contact h1 {
     display: none;
 }
+
+#block-search-form .form-submit {
+    background: url('../images/search.png') no-repeat;
+}
