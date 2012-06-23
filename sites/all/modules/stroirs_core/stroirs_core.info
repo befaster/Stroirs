@@ -1,0 +1,11 @@
+name = Stroits core
+description = "Core functionality of site"
+package = Stroirs
+core = 7.x
+
+; Information added by drupal.org packaging script on 2012-04-25
+version = "7.x-1.0-alpha6"
+core = "7.x"
+project = "stroirs"
+datestamp = "1335375980"
+
