@@ -1470,7 +1470,7 @@ dd a {
 footer {
     width:100%;
     padding:15px 0 15px 0;
-    background:#2a2a2a;
+    background:#f7f7f7;
 }
 
 #page2 footer,
@@ -1669,6 +1669,7 @@ body.front h1 {
     padding: 2px;*/
 }
 
+.button,
 input[type=submit].form-submit {
     font-family: 'Oswald', sans-serif;
     text-transform:uppercase;
@@ -1678,6 +1679,7 @@ input[type=submit].form-submit {
     border: 1px solid #d6d6d6;
     background-color: #f9f9f9;
 }
+.button:hover,
 input[type=submit].form-submit:hover {
     background-color:#f1f1f1; color:#a3c900;
 }
@@ -1691,7 +1693,7 @@ input[type=submit].form-submit:hover {
 .bottom-menu {
     position: relative;
 }
-#block-menu-menu-bottom-menu ul li{
+#block-menu-menu-bottom-menu ul li {
     display: inline;
     padding: 5px 50px 5px 50px;
     margin: 0 0 0 100px;
@@ -1723,7 +1725,7 @@ input[type=submit].form-submit:hover {
 
 #block-menu-menu-bottom-menu ul li:hover,
 #block-menu-menu-bottom-menu ul li.active-trail {
-    background: #2A2A2A;
+    background: #f7f7f7;
     box-shadow: none;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -1767,4 +1769,22 @@ body.front #content {
     width: 32px;
     height: 32px;
     border: none;
+}
+
+div.price-buttons {
+    padding: 20px 0 20px 0;
+}
+
+body.page-node-2 table {
+    width: 100%;
+    border: 1px solid #e7e7e7;
+}
+
+body.page-node-2 table td {
+    border: 1px solid #e7e7e7;
+    padding: 4px;
+}
+
+body.page-node-2 table th {
+    background: #e7e7e7;
 }
