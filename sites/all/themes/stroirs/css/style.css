@@ -1791,3 +1791,7 @@ body.page-node-2 table td {
 body.page-node-2 table th {
     background: #e7e7e7;
 }
+
+.node-readmore  {
+    display: none!important;
+}
