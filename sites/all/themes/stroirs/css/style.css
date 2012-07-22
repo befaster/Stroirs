@@ -129,6 +129,7 @@ header {
     width:100%;
     position:relative;
     z-index:2;
+   background: url('../images/header_bg.jpg') no-repeat;
 }
 
 .head-line {
@@ -312,7 +313,7 @@ h5 {
     overflow:hidden;
     margin-bottom:18px;
     padding-top:1px;
-    min-height:70px;
+    min-height:140px;
 }
 
 /*** MENU ***/
