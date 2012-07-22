@@ -1776,6 +1776,7 @@ body.front #content {
 
 div.price-buttons {
     padding: 20px 0 20px 0;
+    float: right;
 }
 
 body.page-node-2 table {
@@ -1794,4 +1795,8 @@ body.page-node-2 table th {
 
 .node-readmore  {
     display: none!important;
+}
+
+h2 a {
+    text-decoration: underline;
 }
