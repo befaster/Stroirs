@@ -2,10 +2,11 @@ jQuery(function($){
     $('.slider').mobilyslider({
         content: '.sliderContent',
         children: 'img',
-        transition: 'fade',
+        transition: 'vertical',
         animationSpeed: 800,
-        bullets: true,
-        arrowsHide: false
+        bullets: false,
+        arrowsHide: true,
+        autoplay: true
     });
 	
 });
