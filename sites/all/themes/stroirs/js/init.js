@@ -5,7 +5,7 @@ jQuery(function($){
 		children: 'div',
 		transition: 'horizontal',
 		animationSpeed: 1000,
-		/*autoplay: true,*/
+		autoplay: true,
 		autoplaySpeed: 2000,
 		pauseOnHover: false,
 		bullets: false,
