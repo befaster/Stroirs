@@ -4,7 +4,6 @@ jQuery(function($){
             content: '.sliderContent',
             children: 'div',
             transition: 'fade',
-            animationSpeed: 800,
             /*autoplay: true,*/
             autoplaySpeed: 3000,
             pauseOnHover: false,
