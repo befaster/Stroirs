@@ -2,7 +2,7 @@ jQuery(function($){
 	
 	$('.slider').mobilyslider({
 		content: '.sliderContent',
-		children: 'div',
+		children: 'img',
 		transition: 'fade',
 		animationSpeed: 800,
 		autoplay: true,
