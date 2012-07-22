@@ -4,8 +4,8 @@ jQuery(function($){
 		children: 'div',
 		transition: 'fade',
 		animationSpeed: 800,
-		/*autoplay: true,*/
-		autoplaySpeed: 3000,
+		autoplay: true,
+		autoplaySpeed: 2000,
 		pauseOnHover: false,
 		bullets: false,
 		arrows: true,
