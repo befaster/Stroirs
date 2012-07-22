@@ -1,14 +1,16 @@
+/*
 jQuery(function($){	
     $('document').ready(function() { 
 	$('.slider').mobilyslider({
 		content: '.sliderContent',
-		/*children: 'div',*/
+		children: 'div',
                 transition: 'fade',
 		animationSpeed: 800,
 		bullets: true,
-		arrowsHide: true,
+		arrowsHide: false,
                 autoplay: true
 	});
     });
 	
 });
+*/
