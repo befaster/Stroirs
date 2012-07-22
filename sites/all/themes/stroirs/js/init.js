@@ -3,7 +3,7 @@ jQuery(function($){
 	$('.slider').mobilyslider({
 		content: '.sliderContent',
 		children: 'div',
-		transition: 'vertical',
+		transition: 'horizontal',
 		animationSpeed: 1000,
 		/*autoplay: true,*/
 		autoplaySpeed: 2000,
