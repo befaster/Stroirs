@@ -1471,6 +1471,7 @@ footer {
     width:100%;
     padding:15px 0 15px 0;
     background:#f7f7f7;
+    border-top: 1px solid #d6d6d6;
 }
 
 #page2 footer,
@@ -1694,17 +1695,18 @@ input[type=submit].form-submit:hover {
     position: relative;
 }
 #block-menu-menu-bottom-menu ul li {
-    display: inline;
+    display: inline-block;
     padding: 5px 50px 5px 50px;
     margin: 0 0 0 100px;
-    width: 150px;
+    width: 90px;
     border: 1px solid #D6D6D6;
     border-bottom: none;
+    text-align: center;
 }
 
 #block-menu-menu-bottom-menu {
     position: absolute;
-    top:-38px;
+    top:-45px;
     z-index: 1;
 }
 
