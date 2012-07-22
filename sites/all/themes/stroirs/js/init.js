@@ -1,7 +1,7 @@
 jQuery(function($){	
     $('.slider').mobilyslider({
         content: '.sliderContent',
-        children: 'img',
+        children: 'div',
         transition: 'fade',
         animationSpeed: 800,
         bullets: false,
