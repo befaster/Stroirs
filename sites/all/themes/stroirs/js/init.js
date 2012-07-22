@@ -1,4 +1,4 @@
-jQuery(function($){	
+/*jQuery(function($){	
 	$('.slider').mobilyslider({
 		content: '.sliderContent',
 		children: 'div',
@@ -15,3 +15,4 @@ jQuery(function($){
 	});
 	
 });
+*/
