@@ -6,7 +6,8 @@ jQuery(function($){
                 transition: 'fade',
 		animationSpeed: 800,
 		bullets: true,
-		arrowsHide: false
+		arrowsHide: false,
+                autoplay: true
 	});
     });
 	
