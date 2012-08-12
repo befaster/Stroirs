@@ -106,3 +106,8 @@
     color: white;
     background: url("../images/gray-trns-bg.png") 0 0 repeat;
 }
+
+
+.slider div.gbutton {
+    position: absolute;
+}
