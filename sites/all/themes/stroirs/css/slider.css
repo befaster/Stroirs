@@ -111,15 +111,11 @@
 .slider div.gbutton {
     position: absolute;
     padding: 5px 50px 5px 50px;
-    margin: 0 0 0 100px;
     width: 88px;
     border: 1px solid #D6D6D6;
     border-bottom: none;
     text-align: center;
     top: 336px;
-    left: 60px;    
-     box-shadow: 0 -2px 5px #7c7c7c;
-    -webkit-box-shadow:0 -2px 5px #7c7c7c;;
-    -moz-box-shadow: 0 -2px 5px #7c7c7c;
-     border-radius: 10px 10px 0 0px;
+    margin: 0 auto
+     
 }
