@@ -1,3 +1,4 @@
+/*
 jQuery(function($){
     $('document').ready(function() {
         $('.slider').mobilyslider({
@@ -15,4 +16,14 @@ jQuery(function($){
         });
     });
 	
+});
+*/
+
+jQuery(function($){
+    $('document').ready(function() {
+        $(".slider").easySlider({
+            auto: true,
+            continuous: true,          
+        });
+    });	
 });
