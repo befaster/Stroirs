@@ -1,11 +1,11 @@
 jQuery(function($){
     $('document').ready(function() {
-        $('.sliderContent').mobilyslider({
-           /* content: '.views-field-field-gallery-image',*/
+        $('.slider').mobilyslider({
+            content: '.views-field-field-gallery-image',
             children: 'div',
-            transition: 'horizontal',
+            transition: 'fade',
             autoplay: true,
-            pauseOnHover: true,
+            pauseOnHover: false,
             bullets: false,
             arrows: true,
             arrowsHide: true,
