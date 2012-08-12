@@ -6,7 +6,7 @@ jQuery(function($){
             transition: 'fade',
             autoplay: true,
             autoplaySpeed: 3000,
-            pauseOnHover: false,
+            pauseOnHover: true,
             bullets: false,
             arrows: true,
             arrowsHide: true,
