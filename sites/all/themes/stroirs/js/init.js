@@ -5,15 +5,13 @@ jQuery(function($){
             children: 'div',
             transition: 'fade',
             autoplay: true,
-            autoplaySpeed: 3000,
+            /*autoplaySpeed: 3000,*/
             pauseOnHover: true,
             bullets: false,
             arrows: true,
             arrowsHide: true,
             prev: 'prev',
-            next: 'next',
-            animationStart: function(){},
-            animationComplete: function(){}
+            next: 'next'
         });
     });
 	
