@@ -121,4 +121,5 @@
      box-shadow: 0 -2px 5px #7c7c7c;
     -webkit-box-shadow:0 -2px 5px #7c7c7c;;
     -moz-box-shadow: 0 -2px 5px #7c7c7c;
+     border-radius: 10px 10px 0 0px;
 }
