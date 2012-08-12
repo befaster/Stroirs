@@ -3,7 +3,7 @@ jQuery(function($){
         $('.slider').mobilyslider({
             content: '.sliderContent',
             children: 'div',
-            transition: 'fade',
+            transition: 'vertical',
             autoplay: true,
             pauseOnHover: true,
             bullets: false,
