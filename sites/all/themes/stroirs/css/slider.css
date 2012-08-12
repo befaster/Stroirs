@@ -53,11 +53,15 @@
     background-position:-44px -44px;
 }
 
-.sliderContent .item {
+.sliderContent .item, .sliderContent .wiews-field {
     position:absolute;
     width:450px;
     height:350px;
     background:#fff;
+}
+
+.sliderContent img {
+    position:absolute;
 }
 
 .sliderBullets {

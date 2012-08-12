@@ -3,9 +3,9 @@ jQuery(function($){
         $('.slider').mobilyslider({
             content: '.sliderContent',
             children: 'div',
-            transition: 'horizontal',
+            transition: 'fade',
             autoplay: false,
-            pauseOnHover: true,
+            pauseOnHover: false,
             bullets: false,
             arrows: true,
             arrowsHide: true,
