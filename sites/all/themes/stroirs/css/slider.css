@@ -116,6 +116,8 @@
     border-bottom: none;
     text-align: center;
     top: 336px;
-    margin: 0 auto
-     
+    left:150px;
+}
+.slider div.gbutton a {
+    color: black;
 }
