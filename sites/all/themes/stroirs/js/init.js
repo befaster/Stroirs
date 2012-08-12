@@ -15,8 +15,7 @@ jQuery(function($){
     });
     
     setInterval(function(){
-        stop();
         //$('.slider a.next').click();
-    },3000);     
+    },5000);     
 	
 });
