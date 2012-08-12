@@ -3,8 +3,8 @@ jQuery(function($){
         $('.slider').mobilyslider({
             content: '.sliderContent',
             children: 'div',
-            transition: 'horizontal',
-            autoplay: true,
+            transition: 'fade',
+            autoplay: false,
             pauseOnHover: true,
             bullets: false,
             arrows: true,
@@ -13,5 +13,9 @@ jQuery(function($){
             next: 'next'
         });
     });
+    
+    setInterval(function(){
+        $('.slider a.next').click();
+    },3000);     
 	
 });
