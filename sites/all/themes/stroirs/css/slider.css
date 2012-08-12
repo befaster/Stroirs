@@ -108,7 +108,7 @@
 }
 
 
-.slider div.gbutton {
+.slider a.gbutton {
     position: absolute;
     padding: 5px 50px 5px 50px;
     width: 88px;
@@ -117,7 +117,7 @@
     text-align: center;
     top: 336px;
     left:150px;
-}
-.slider div.gbutton a {
-    color: black;
+     border-radius: 10px 10px 0 0px;
+     color: black;
+     display: block;
 }
