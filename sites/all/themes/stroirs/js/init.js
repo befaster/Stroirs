@@ -12,10 +12,6 @@ jQuery(function($){
             prev: 'prev',
             next: 'next'
         });
-    });
-    
-    setInterval(function(){
-        //$('.slider a.next').click();
-    },5000);     
+    });  
 	
 });
