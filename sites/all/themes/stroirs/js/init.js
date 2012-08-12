@@ -1,7 +1,7 @@
 jQuery(function($){
     $('document').ready(function() {
         $('.slider').mobilyslider({
-            content: '.sliderContent',
+            content: '.views-field-field-gallery-image',
             children: 'div',
             transition: 'horizontal',
             autoplay: true,
