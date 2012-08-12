@@ -1621,6 +1621,7 @@ body.front h1 {
 #block-views-gallery-block {
     width: 500px;
     margin: 0 250px 0 267px;
+    z-index: 999;
 }
 
 #block-views-mebel-block .content,
