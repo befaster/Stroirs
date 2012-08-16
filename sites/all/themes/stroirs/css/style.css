@@ -1808,7 +1808,7 @@ h2 a {
     margin: 8px;
     border: 1px solid #D7D7D7;      
 }
-#nice-menu-1 {
+#nice-menu-1 li{
     border: none!important;
     background: none!important;
 }
