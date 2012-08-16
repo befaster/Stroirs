@@ -12,6 +12,14 @@ jQuery(function($){
             prev: 'prev',
             next: 'next'
         });
+        
+        $('.slider').everyTime(3000, function() {
+            $('.sliderArrows a.next').trigger('click');
+        });
+        
     });  
+    
+    
+    
 	
 });
