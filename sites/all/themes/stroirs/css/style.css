@@ -1654,6 +1654,7 @@ body.front h1 {
 #block-nice-menus-1 ul li a:hover,
 #block-views-mebel-block ul li a:hover{
     color:#a3c900!important;
+    background-color:#f1f1f1!important; 
 }
 
 #block-nice-menus-1 h2, #block-views-mebel-block h2 {
