@@ -129,7 +129,7 @@ header {
     width:100%;
     position:relative;
     z-index:2;
-   background: url('../images/header_bg.jpg') no-repeat 0 -4px;
+    background: url('../images/header_bg.jpg') no-repeat 0 -4px;
 }
 
 .head-line {
@@ -1800,4 +1800,9 @@ body.page-node-2 table th {
 
 h2 a {
     text-decoration: underline;
+}
+
+.wiew-display-id-page_1 .views-field-field-gallery-image {
+    margin: 10px;
+    border: 1px solid #D7D7D7;
 }
