@@ -14,8 +14,10 @@ jQuery(function($){
         });
                        
         setInterval(function() {
-           $('.sliderArrows a.next').trigger('click');
-        }, 2567);
+            $('.slider').stop();
+            $('.sliderArrows a.next').trigger('click');
+            $('.slider').stop();
+        }, 3000);
         
     }); 
 });
