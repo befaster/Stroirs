@@ -1805,4 +1805,7 @@ h2 a {
 .view-display-id-page_1 .views-field-field-gallery-image {
     margin: 8px;
     border: 1px solid #D7D7D7;
+      box-shadow: 4px 4px 8px #7c7c7c;
+    -webkit-box-shadow: 4px 4px 8px #7c7c7c;
+    -moz-box-shadow: 4px 4px 8px #7c7c7c;
 }
