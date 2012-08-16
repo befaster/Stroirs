@@ -833,31 +833,31 @@ html ul.tabs li.active a {
 }
 
 .list1 a, #block-nice-menus-1 ul a {
-    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
-    font-size:13px;
-    color:#222222;
+    font-family:"Trebuchet MS", Arial, Helvetica, sans-serif!important;
+    font-size:13px!important;
+    color:#222222!important;
     /*text-transform:uppercase;*/
-    background:#f9f9f9;
+    background:#f9f9f9!important;
     /*letter-spacing: -1px;*/
-    padding-bottom: 5px;
-    padding-left: 43px;
-    padding-top: 5px;
-    display:block;
-    background:url(../images/marker2.png) no-repeat 29px 11px;
+    padding-bottom: 5px!important;
+    padding-left: 43px!important;
+    padding-top: 5px!important;
+    display:block!important;
+    background:url(../images/marker2.png) no-repeat 29px 11px!important;
 }
 
 
 .list1 li, #block-nice-menus-1 ul li {
-    border-top:1px solid #fff;
+    border-top:1px solid #fff!important;
 }
 
 .list1, #block-nice-menus-1 ul {
-    background:#f9f9f9;
-    padding-top: 11px;
-    border:1px solid #eeeeee;
-    padding-bottom: 6px;
+    background:#f9f9f9!important;
+    padding-top: 11px!important;
+    border:1px solid #eeeeee!important;
+    padding-bottom: 6px!important;
 }
-.list1 a:hover , #block-nice-menus-1 ul a.hover { background-color:#f1f1f1; color:#8eb02b;}
+.list1 a:hover , #block-nice-menus-1 ul a.hover { background-color:#f1f1f1!important; color:#8eb02b!important;}
 
 .p6 {
     border-bottom:1px solid #bdbdbd;
