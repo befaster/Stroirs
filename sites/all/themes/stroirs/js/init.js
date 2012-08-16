@@ -14,7 +14,7 @@ jQuery(function($){
         });
                        
         setTimeout(function() {
-            ('.sliderArrows a.next').trigger('click');
+           $('.sliderArrows a.next').trigger('click');
         }, 2000);
         
     }); 
