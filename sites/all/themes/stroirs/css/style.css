@@ -854,7 +854,7 @@ html ul.tabs li.active a {
 .list1, #block-nice-menus-1 ul {
     background:#f9f9f9;
     padding-top: 11px;
-    border:1px solid #eeeeee;
+    /*border:1px solid #eeeeee;*/
     padding-bottom: 6px;
 }
 .list1 a:hover , #nice-menu-1 a.hover { background-color:#f1f1f1!important; color:#8eb02b!important;}
