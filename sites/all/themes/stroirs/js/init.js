@@ -15,7 +15,7 @@ jQuery(function($){
                        
         setInterval(function() {
            $('.sliderArrows a.next').trigger('click');
-        }, 2700);
+        }, 2567);
         
     }); 
 });
