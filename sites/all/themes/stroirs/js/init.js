@@ -3,7 +3,7 @@ jQuery(function($){
         $('.slider').mobilyslider({
             content: '.sliderContent',
             children: 'div',
-            transition: 'vertical',
+            transition: 'fade',            	
             animationSpeed: 500,
             autoplay: false,
             pauseOnHover: false,
@@ -12,7 +12,8 @@ jQuery(function($){
             arrowsHide: true,
             prev: 'prev',
             next: 'next'
-        });                      
+        });
+                       
         
     }); 
 });
