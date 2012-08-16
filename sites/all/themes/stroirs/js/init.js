@@ -3,8 +3,8 @@ jQuery(function($){
         $('.slider').mobilyslider({
             content: '.sliderContent',
             children: 'div',
-            transition: 'fade',            	
-            animationSpeed: 1000,
+            transition: 'vertical',            	
+            animationSpeed: 500,
             autoplay: true,
             pauseOnHover: false,
             bullets: false,
@@ -12,8 +12,8 @@ jQuery(function($){
             arrowsHide: true,
             prev: 'prev',
             next: 'next',
-            animationStart: function(){  $('document').stop(true, true);}, // call the function on start transition
-            animationComplete: function(){$('document').stop(true, true);} // call the function when transition completed
+            animationStart: function(){}, // call the function on start transition
+            animationComplete: function(){} // call the function when transition completed
         });
                        
         
