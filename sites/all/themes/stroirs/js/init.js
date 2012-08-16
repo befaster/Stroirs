@@ -5,7 +5,7 @@ jQuery(function($){
             children: 'div',
             transition: 'fade',            	
             animationSpeed: 500,
-            autoplay: false,
+            autoplay: true,
             pauseOnHover: false,
             bullets: false,
             arrows: true,
