@@ -12,14 +12,10 @@ jQuery(function($){
             prev: 'prev',
             next: 'next'
         });
+                       
+        setTimeout(function() {
+            ('.sliderArrows a.next').trigger('click');
+        }, 2000);
         
-        $('.slider').everyTime(3000, function() {
-            $('.sliderArrows a.next').trigger('click');
-        });
-        
-    });  
-    
-    
-    
-	
+    }); 
 });
