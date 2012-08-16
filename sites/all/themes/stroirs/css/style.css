@@ -832,7 +832,7 @@ html ul.tabs li.active a {
     margin-bottom: 13px;
 }
 
-.list1 a, #block-nice-menus-1 ul a {
+.list1 a, #block-nice-menus-1 ul a, #block-nice-menus-2 ul a {
     font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
     font-size:13px;
     color:#7C7C7C;
@@ -847,17 +847,17 @@ html ul.tabs li.active a {
 }
 
 
-.list1 li, #block-nice-menus-1 ul li {
+.list1 li, #block-nice-menus-1 ul li, #block-nice-menus-2 ul li{
     border-top:1px solid #fff;
 }
 
-.list1, #block-nice-menus-1 ul {
+.list1, #block-nice-menus-1 ul, #block-nice-menus-2 ul{
     background:#f9f9f9;
     padding-top: 11px;
     /*border:1px solid #eeeeee;*/
     padding-bottom: 6px;
 }
-.list1 a:hover , #nice-menu-1 a.hover { background-color:#f1f1f1!important; color:#8eb02b!important;}
+.list1 a:hover , #nice-menu-1 a.hover, #nice-menu-2 a.hover { background-color:#f1f1f1!important; color:#8eb02b!important;}
 
 .p6 {
     border-bottom:1px solid #bdbdbd;
@@ -1607,13 +1607,13 @@ body.front h1 {
     border-bottom: 1px dashed #c7c7c7;
 }
 
-#block-nice-menus-1 {
+#block-nice-menus-1, #block-nice-menus-2 {
     width: 200px;
     margin: 0 0 0 25px;
     float: left;
     z-index: 10;
 }
-#block-views-mebel-block {
+#block-nice-menus-2 {
     width: 200px;
     margin: 0 25px 0 0px;
     float: right;
@@ -1626,7 +1626,7 @@ body.front h1 {
     z-index: 9;
 }
 
-#block-views-mebel-block .content,
+#block-nice-menus-2 .content,
 #block-nice-menus-1 .content,
 #block-views-gallery-block .sliderContent {
     box-shadow: 0px 8px 20px #7c7c7c;
@@ -1635,16 +1635,16 @@ body.front h1 {
 }
 
 #block-nice-menus-1 ul,
-#block-views-mebel-block ul {
+#block-nice-menus-2 ul {
     padding: 0;
     margin: 0;
 }
 #block-nice-menus-1 ul li,
-#block-views-mebel-block ul li{
+#block-nice-menus-2 ul li{
     margin: 0;
 }
-#block-nice-menus-1 ul li a,
-#block-views-mebel-block ul a {
+#block-nice-menus-1 ul a,
+#block-nice-menus-2 ul a {
     padding: 6px 2px 6px 15px;
     font-size: 13px;
     font-family: 'Oswald', sans-serif;
@@ -1652,12 +1652,12 @@ body.front h1 {
 }
 
 #block-nice-menus-1 ul li a:hover,
-#block-views-mebel-block ul li a:hover{
+#block-nice-menus-2 ul li a:hover{
     color:#a3c900!important;
     background-color:#f1f1f1!important; 
 }
 
-#block-nice-menus-1 h2, #block-views-mebel-block h2 {
+#block-nice-menus-1 h2, #block-nice-menus-2 h2 {
     font-family: 'Oswald', sans-serif;
     /*color:#a3c900;*/
     color:#7c7c7c;
@@ -1810,7 +1810,7 @@ h2 a {
     border: 1px solid #D7D7D7;      
 }
 
-#nice-menu-1 li{
+#nice-menu-1 li, #nice-menu-2 li{
     /*border: 1px solid #D6D6D6!important;*/
     background-color: #F9F9F9!important;
 }
