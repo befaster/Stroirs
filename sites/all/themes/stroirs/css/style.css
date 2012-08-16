@@ -1607,7 +1607,7 @@ body.front h1 {
     border-bottom: 1px dashed #c7c7c7;
 }
 
-#block-views-remont-block {
+#block-nice-menus-1 {
     width: 200px;
     margin: 0 0 0 25px;
     float: left;
@@ -1627,23 +1627,23 @@ body.front h1 {
 }
 
 #block-views-mebel-block .content,
-#block-views-remont-block .content,
+#block-nice-menus-1 .content,
 #block-views-gallery-block .sliderContent {
     box-shadow: 0px 8px 20px #7c7c7c;
     -webkit-box-shadow:0px 8px 20px #7c7c7c;
     -moz-box-shadow:0px 8px 20px #7c7c7c;
 }
 
-#block-views-remont-block ul.list1,
+#block-nice-menus-1 ul.list1,
 #block-views-mebel-block ul.list1 {
     padding: 0;
     margin: 0;
 }
-#block-views-remont-block ul.list1 li,
+#block-nice-menus-1 ul.list1 li,
 #block-views-mebel-block ul.list1 li{
     margin: 0;
 }
-#block-views-remont-block ul.list1 li a,
+#block-nice-menus-1 ul.list1 li a,
 #block-views-mebel-block ul.list1 a {
     padding: 6px 2px 6px 15px;
     font-size: 13px;
@@ -1651,12 +1651,12 @@ body.front h1 {
     letter-spacing: 0px;
 }
 
-#block-views-remont-block ul.list1 li a:hover,
+#block-nice-menus-1 ul.list1 li a:hover,
 #block-views-mebel-block ul.list1 li a:hover{
     color:#a3c900;
 }
 
-#block-views-remont-block h2, #block-views-mebel-block h2 {
+#block-nice-menus-1 h2, #block-views-mebel-block h2 {
     font-family: 'Oswald', sans-serif;
     /*color:#a3c900;*/
     color:#7c7c7c;
