@@ -12,12 +12,12 @@ jQuery(function($){
             prev: 'prev',
             next: 'next'
         });
-                       
+                   /*    
         setInterval(function() {
             $('.slider').stop();
             $('.sliderArrows a.next').trigger('click');
             $('.slider').stop();
-        }, 3000);
+        }, 3000);*/
         
     }); 
 });
