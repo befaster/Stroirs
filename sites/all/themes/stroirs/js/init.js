@@ -4,7 +4,7 @@ jQuery(function($){
             content: '.sliderContent',
             children: 'div',
             transition: 'fade',            	
-            animationSpeed: 0,
+            animationSpeed: 1000,
             autoplay: true,
             pauseOnHover: false,
             bullets: false,
@@ -12,8 +12,8 @@ jQuery(function($){
             arrowsHide: true,
             prev: 'prev',
             next: 'next',
-            animationStart: function(){$('.slider').stop();}, // call the function on start transition
-            animationComplete: function(){$('.slider').stop();} // call the function when transition completed
+            animationStart: function(){$('body').clearQueue();}, // call the function on start transition
+            animationComplete: function(){$('body').clearQueue();} // call the function when transition completed
         });
                        
         
