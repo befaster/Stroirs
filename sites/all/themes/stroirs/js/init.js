@@ -4,14 +4,16 @@ jQuery(function($){
             content: '.sliderContent',
             children: 'div',
             transition: 'fade',            	
-            animationSpeed: 500,
+            animationSpeed: 1000,
             autoplay: true,
             pauseOnHover: false,
             bullets: false,
             arrows: true,
             arrowsHide: true,
             prev: 'prev',
-            next: 'next'
+            next: 'next',
+            animationStart: function(){$('.slider').stop();}, // call the function on start transition
+            animationComplete: function(){$('.slider').stop();} // call the function when transition completed
         });
                        
         
