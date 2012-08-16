@@ -3,8 +3,8 @@ jQuery(function($){
         $('.slider').mobilyslider({
             content: '.sliderContent',
             children: 'div',
-            transition: 'vertical',            	
-            animationSpeed: 500,
+            transition: 'fade',            	
+            animationSpeed: 0,
             autoplay: true,
             pauseOnHover: false,
             bullets: false,
