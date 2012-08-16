@@ -1815,6 +1815,6 @@ h2 a {
 }
 
 #nice-menu-1 li{
-    border: 1px solid #D6D6D6!important;
+    /*border: 1px solid #D6D6D6!important;*/
     background-color: #F9F9F9!important;
 }
