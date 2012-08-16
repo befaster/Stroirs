@@ -848,14 +848,14 @@ html ul.tabs li.active a {
 
 
 .list1 li, #block-nice-menus-1 ul li {
-    border-top:1px solid #fff!important;
+    border-top:1px solid #fff;
 }
 
 .list1, #block-nice-menus-1 ul {
-    background:#f9f9f9!important;
-    padding-top: 11px!important;
-    border:1px solid #eeeeee!important;
-    padding-bottom: 6px!important;
+    background:#f9f9f9;
+    padding-top: 11px;
+    border:1px solid #eeeeee;
+    padding-bottom: 6px;
 }
 .list1 a:hover , #block-nice-menus-1 ul a.hover { background-color:#f1f1f1!important; color:#8eb02b!important;}
 
