@@ -1809,6 +1809,6 @@ h2 a {
     border: 1px solid #D7D7D7;      
 }
 #nice-menu-1 li{
-    border: none!important;
+    /*border: none!important;*/
     background-color: #F9F9F9!important;
 }
