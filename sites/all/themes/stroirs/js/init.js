@@ -13,9 +13,9 @@ jQuery(function($){
             next: 'next'
         });
                        
-        setTimeout(function() {
+        setInterval(function() {
            $('.sliderArrows a.next').trigger('click');
-        }, 2000);
+        }, 3000);
         
     }); 
 });
