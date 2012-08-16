@@ -12,8 +12,8 @@ jQuery(function($){
             arrowsHide: true,
             prev: 'prev',
             next: 'next',
-            animationStart: function(){$('body').clearQueue();}, // call the function on start transition
-            animationComplete: function(){$('body').clearQueue();} // call the function when transition completed
+            animationStart: function(){  $('document').stop(true, true);}, // call the function on start transition
+            animationComplete: function(){$('document').stop(true, true);} // call the function when transition completed
         });
                        
         
