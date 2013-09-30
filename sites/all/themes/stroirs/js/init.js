@@ -20,6 +20,7 @@ jQuery('document').ready(function() {
     });
 
     setInterval(function() {
+        event.stopImmediatePropagation();
         jQuery('.slider a.next').click();
     }, 3000);
 
