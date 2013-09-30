@@ -12,11 +12,9 @@ jQuery('document').ready(function() {
         arrowsHide: true,
         prev: 'prev',
         next: 'next',
-        animationStart: function() {
-             this.pause();
+        animationStart: function() {            
         }, // call the function on start transition
-        animationComplete: function() {
-            this.pause();
+        animationComplete: function() {            
         } // call the function when transition completed
     });
 
