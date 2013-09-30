@@ -4,8 +4,8 @@ jQuery('document').ready(function() {
         content: '.sliderContent',
         children: 'div',
         transition: 'fade',
-        animationSpeed: 1000,
-        autoplaySpeed: 3000,
+        animationSpeed: 900,
+        autoplaySpeed: 5000,
         autoplay: false,
         pauseOnHover: true,
         bullets: false,
@@ -18,11 +18,5 @@ jQuery('document').ready(function() {
         animationComplete: function() {
         } // call the function when transition completed
     });
-
-    setInterval(function() {
-        event.stopImmediatePropagation();
-        jQuery('.slider a.next').click();
-    }, 3000);
-
 });
 
