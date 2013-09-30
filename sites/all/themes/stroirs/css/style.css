@@ -1645,8 +1645,8 @@ body.front h1 {
 }
 #block-nice-menus-1 ul a,
 #block-nice-menus-2 ul a {
-    padding: 6px 2px 6px 15px;
-    font-size: 13px;
+    padding: 6px 15px 6px 15px;
+    font-size: 12px;
     font-family: 'Oswald', sans-serif;
     letter-spacing: 0px;
 }
@@ -1677,6 +1677,10 @@ body.front h1 {
 
 #block-nice-menus-1 ul#nice-menu-1 li ul li a, #block-nice-menus-2 ul#nice-menu-2  li ul li a {
     text-transform: none;
+}
+
+ul.nice-menu-right li.menuparent, ul.nice-menu-right li li.menuparent {
+    background-position: 98% 50%;
 }
 
 .head-box .region-search-area {
