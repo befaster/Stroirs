@@ -13,7 +13,7 @@ jQuery('document').ready(function() {
         prev: 'prev',
         next: 'next',
         animationStart: function() {   
-            jQuery('.sliderContent .views-field-field-gallery-image').css('display', 'none');
+            jQuery('.sliderContent .views-field-field-gallery-image').fadeOut();
         }, // call the function on start transition
         animationComplete: function() {            
         } // call the function when transition completed
