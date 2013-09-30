@@ -3,7 +3,7 @@ jQuery('document').ready(function() {
         content: '.sliderContent',
         children: 'div',
         transition: 'fade',
-        animationSpeed: 1000,
+        animationSpeed: 1500,
         autoplaySpeed:5000,
         autoplay: true,
         pauseOnHover: true,
