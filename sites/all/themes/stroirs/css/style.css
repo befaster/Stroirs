@@ -1693,7 +1693,9 @@ input[type=submit].form-submit:hover {
 #block-search-form input[type=text] {
     height: 20px;
     width: 150px;
-    border: 1px solid #d6d6d6;
+    /*border: 1px solid #d6d6d6;*/
+    border:none;
+    background: transparent;
 }
 
 .bottom-menu {
@@ -1826,4 +1828,13 @@ h2 a {
 
 #banner_img:hover {
      background: url('../images/akciya-active.png') no-repeat;
+}
+
+/* search */
+form#search-block-form .container-inline {
+    background: url('../images/search_bg.png') no-repeat;
+}
+
+form#search-block-form .container-inline:hover {
+    background: url('../images/search_bg_a.png') no-repeat;
 }
