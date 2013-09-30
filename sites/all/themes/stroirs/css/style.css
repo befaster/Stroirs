@@ -1816,5 +1816,9 @@ h2 a {
 }
 
 #banner_img {
-     background: url('../images/search.png') no-repeat;
+     background: url('../images/akciya.png') no-repeat;
+}
+
+#banner_img:hover {
+     background: url('../images/akciya-active.png') no-repeat;
 }
