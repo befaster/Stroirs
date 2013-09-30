@@ -1,6 +1,5 @@
-jQuery.noConflic();
-
 jQuery(function($){
+    jQuery.noConflic();
     $('document').ready(function() {
         $('.slider').mobilyslider({
             content: '.sliderContent',
