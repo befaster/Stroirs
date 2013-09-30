@@ -1,6 +1,6 @@
 jQuery(function($){
-    jQuery.noConflic();
-    $('document').ready(function() {
+    
+  
         $('.slider').mobilyslider({
             content: '.sliderContent',
             children: 'div',
@@ -18,5 +18,5 @@ jQuery(function($){
         });
                        
         
-    }); 
+  
 });
