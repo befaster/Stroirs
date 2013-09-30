@@ -1,11 +1,11 @@
-jQuery('document').ready(function() {   
-    
+jQuery('document').ready(function() {
+
     jQuery('.slider').mobilyslider({
         content: '.sliderContent',
         children: 'div',
         transition: 'fade',
         animationSpeed: 1000,
-        autoplaySpeed:3000,
+        autoplaySpeed: 3000,
         autoplay: false,
         pauseOnHover: true,
         bullets: false,
@@ -13,13 +13,15 @@ jQuery('document').ready(function() {
         arrowsHide: true,
         prev: 'prev',
         next: 'next',
-        animationStart: function() {                
+        animationStart: function() {
         }, // call the function on start transition
-        animationComplete: function() {            
+        animationComplete: function() {
         } // call the function when transition completed
     });
 
-    setTimeout(jQuery('.slider a.next').click(), 3000);
+    setInterval(function() {
+        jQuery('.slider a.next').click();
+    }, 3000);
 
 });
 
