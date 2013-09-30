@@ -1659,8 +1659,16 @@ body.front h1 {
 
 #block-nice-menus-1 h2, #block-nice-menus-2 h2 {
     font-family: 'Oswald', sans-serif;
-    /*color:#a3c900;*/
-    color:#7c7c7c;
+    color:white;
+    display: block;
+    background: #a3c901;
+    text-transform: uppercase;
+    border-radius: 0px;
+    box-shadow: 0px 8px 20px #7c7c7c;
+    -webkit-box-shadow: 0px 8px 20px #7c7c7c;
+    -moz-box-shadow: 0px 8px 20px #7c7c7c;
+    width: 171px;
+    padding: 10px 15px 10px 15px;
 }
 
 .head-box .region-search-area {
