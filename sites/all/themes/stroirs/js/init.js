@@ -4,10 +4,10 @@ jQuery(function($){
             content: '.sliderContent',
             children: 'div',
             transition: 'fade',            	
-            animationSpeed: 1000,
+            /*animationSpeed: 2,*/
             autoplay: true,
             pauseOnHover: true,
-            bullets: true,
+            bullets: false,
             arrows: true,
             arrowsHide: true,
             prev: 'prev',
