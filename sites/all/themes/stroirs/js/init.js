@@ -1,12 +1,12 @@
 jQuery('document').ready(function() {
-    jQuery('.sliderContent .views-field-field-gallery-image').css('display', 'none');
+   
     
     jQuery('.slider').mobilyslider({
         content: '.sliderContent',
         children: 'div',
         transition: 'fade',
-        animationSpeed: 1500,
-        autoplaySpeed:5000,
+        animationSpeed: 1000,
+        autoplaySpeed:3000,
         autoplay: true,
         pauseOnHover: true,
         bullets: false,
@@ -15,6 +15,7 @@ jQuery('document').ready(function() {
         prev: 'prev',
         next: 'next',
         animationStart: function() {            
+          jQuery('.sliderContent .views-field-field-gallery-image').css('display', 'none');
         }, // call the function on start transition
         animationComplete: function() {            
         } // call the function when transition completed
