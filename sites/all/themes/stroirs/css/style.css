@@ -1865,3 +1865,7 @@ h2 a {
     float:right;
     clear: both;
 }
+
+body.page-contact #block-block-1{
+   margin-left: 600px;
+}
