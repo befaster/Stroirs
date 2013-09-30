@@ -6,19 +6,20 @@ jQuery('document').ready(function() {
         transition: 'fade',
         animationSpeed: 1000,
         autoplaySpeed:3000,
-        autoplay: true,
+        autoplay: false,
         pauseOnHover: true,
         bullets: false,
         arrows: true,
         arrowsHide: true,
         prev: 'prev',
         next: 'next',
-        animationStart: function() {    
-            jQuery('.slider').stop();
+        animationStart: function() {                
         }, // call the function on start transition
         animationComplete: function() {            
         } // call the function when transition completed
     });
+
+    setTimeout(jQuery('.slider').mobilyslider.next(), 3000);
 
 });
 
