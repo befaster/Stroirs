@@ -1853,8 +1853,7 @@ h2 a {
     background: url('../images/akciya.png') no-repeat;
     width: 209px;
     height: 191px;
-    display: block;
-    float: right;
+    display: block;    
     margin: 30px 16px 30px 30px;
 }
 
@@ -1862,4 +1861,7 @@ h2 a {
      background: url('../images/akciya-active.png') no-repeat;
 }
 
-
+#block-block-2 {
+    float:right;
+    clear: both;
+}
