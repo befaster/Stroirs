@@ -4,7 +4,7 @@ jQuery(function($){
             content: '.sliderContent',
             children: 'div',
             transition: 'fade',            	
-            animationSpeed: 0,
+            animationSpeed: 1,
             autoplay: true,
             pauseOnHover: false,
             bullets: false,
