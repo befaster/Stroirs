@@ -1,12 +1,11 @@
 jQuery('document').ready(function() {
-
     jQuery('.slider').mobilyslider({
         content: '.sliderContent',
         children: 'div',
         transition: 'fade',
-        animationSpeed: 900,
-        autoplaySpeed: 5000,
-        autoplay: false,
+        animationSpeed: 1000,
+        autoplaySpeed: 1000,
+        autoplay: true,
         pauseOnHover: true,
         bullets: false,
         arrows: true,
