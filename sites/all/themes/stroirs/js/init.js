@@ -19,7 +19,7 @@ jQuery('document').ready(function() {
         } // call the function when transition completed
     });
 
-    setTimeout(jQuery('.slider').mobilyslider.next(), 3000);
+    setTimeout(jQuery('.slider a.next').click(), 3000);
 
 });
 
