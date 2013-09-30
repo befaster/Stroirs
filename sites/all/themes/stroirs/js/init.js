@@ -1,5 +1,4 @@
-jQuery('document').ready(function() {
-   
+jQuery('document').ready(function() {   
     
     jQuery('.slider').mobilyslider({
         content: '.sliderContent',
@@ -14,8 +13,7 @@ jQuery('document').ready(function() {
         arrowsHide: true,
         prev: 'prev',
         next: 'next',
-        animationStart: function() {            
-          jQuery('.sliderContent .views-field-field-gallery-image').css('display', 'none');
+        animationStart: function() {                      
         }, // call the function on start transition
         animationComplete: function() {            
         } // call the function when transition completed
