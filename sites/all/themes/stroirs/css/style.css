@@ -1665,7 +1665,7 @@ body.front h1 {
 
 .head-box .region-search-area {
     float: right;
-    margin: 18px 10px 0 0;
+    margin: 18px 0px 0 0;
 }
 .head-box .region-search-area #block-search-form .content {
     /*
@@ -1691,11 +1691,11 @@ input[type=submit].form-submit:hover {
 }
 
 #block-search-form input[type=text] {
-    height: 20px;
-    width: 150px;
+    height: 24px;
+    width: 202px;
     /*border: 1px solid #d6d6d6;*/
     border:none;
-    background: transparent;
+    background: url('../images/search_bg.png') no-repeat;
 }
 
 .bottom-menu {
@@ -1772,12 +1772,24 @@ body.front #content {
     margin-top: 4px;
 }
 #block-search-form .form-submit {
-    background: url('../images/search.png') no-repeat;
+    background: url('../images/search_bg.png') no-repeat -176px 0;
     padding: 0!important;
     margin: 0!important;
-    width: 32px;
-    height: 32px;
+    width: 24px;
+    height: 24px;
     border: none;
+    position: absolute;
+    right:3px;
+    top:4px;
+}
+
+#block-search-form .form-submit:hover {
+    background: url('../images/search_bg_a.png') no-repeat -176px 0;
+    cursor: pointer;
+}
+
+#block-search-form .form-actions {
+    position: relative;
 }
 
 div.price-buttons {
@@ -1830,11 +1842,4 @@ h2 a {
      background: url('../images/akciya-active.png') no-repeat;
 }
 
-/* search */
-form#search-block-form .container-inline {
-    background: url('../images/search_bg.png') no-repeat;
-}
 
-form#search-block-form .container-inline:hover {
-    background: url('../images/search_bg_a.png') no-repeat;
-}
