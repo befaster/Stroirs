@@ -1816,7 +1816,12 @@ h2 a {
 }
 
 #banner_img {
-     background: url('../images/akciya.png') no-repeat;
+    background: url('../images/akciya.png') no-repeat;
+    width: 209px;
+    height: 191px;
+    display: block;
+    float: right;
+    margin: 30px 16px 30px 30px;
 }
 
 #banner_img:hover {
