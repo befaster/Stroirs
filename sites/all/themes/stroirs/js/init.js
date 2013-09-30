@@ -1,4 +1,6 @@
-jQuery(function($){
+jQuery.noConflic();
+
+Query(function($){
     $('document').ready(function() {
         $('.slider').mobilyslider({
             content: '.sliderContent',
