@@ -12,7 +12,8 @@ jQuery('document').ready(function() {
         arrowsHide: true,
         prev: 'prev',
         next: 'next',
-        animationStart: function() {            
+        animationStart: function() {   
+            jQuery('.sliderContent .views-field-field-gallery-image').css('display', 'none');
         }, // call the function on start transition
         animationComplete: function() {            
         } // call the function when transition completed
