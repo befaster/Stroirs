@@ -13,7 +13,8 @@ jQuery('document').ready(function() {
         arrowsHide: true,
         prev: 'prev',
         next: 'next',
-        animationStart: function() {                      
+        animationStart: function() {    
+            jQuery('.slider').stop();
         }, // call the function on start transition
         animationComplete: function() {            
         } // call the function when transition completed
