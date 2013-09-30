@@ -3,7 +3,8 @@ jQuery('document').ready(function() {
         content: '.sliderContent',
         children: 'div',
         transition: 'fade',
-        animationSpeed: 2000,
+        animationSpeed: 300,
+        autoplaySpeed:3000,
         autoplay: true,
         pauseOnHover: true,
         bullets: false,
@@ -12,8 +13,10 @@ jQuery('document').ready(function() {
         prev: 'prev',
         next: 'next',
         animationStart: function() {
+             this.pause();
         }, // call the function on start transition
         animationComplete: function() {
+            this.pause();
         } // call the function when transition completed
     });
 
