@@ -4,7 +4,7 @@ jQuery('document').ready(function() {
         children: 'div',
         transition: 'fade',
         animationSpeed: 2000,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 4000,
         autoplay: true,
         pauseOnHover: true,
         bullets: false,
