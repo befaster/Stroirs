@@ -1,7 +1,10 @@
-jQuery('#panel1').slidePanel({
-    triggerName: '#trigger1',
-    triggerTopPos: '220px',
-    panelTopPos: '200px',
-    ajax: true,
-    ajaxSource: 'http://stroirs.com.uastroirs_panel/panel'
+jQuery(document).ready(function() {
+    jQuery('#panel1').slidePanel({
+        triggerName: '#trigger1',
+        triggerTopPos: '220px',
+        panelTopPos: '200px',
+        ajax: true,
+        ajaxSource: '/stroirs_panel/panel'
+
+    });
 });
