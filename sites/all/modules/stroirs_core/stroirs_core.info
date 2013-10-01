@@ -1,4 +1,4 @@
-name = Stroits core
+name = Stroits Core
 description = "Core functionality of site"
 package = Stroirs
 core = 7.x

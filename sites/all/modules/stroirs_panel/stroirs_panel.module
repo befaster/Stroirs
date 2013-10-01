@@ -1,3 +1,55 @@
 <?php
 
+function stroirs_panel_init() {
+    drupal_add_js(drupal_get_path('module', 'stroirs_panel') . '/js/jquery.slidePanel.js');
+    drupal_add_js(drupal_get_path('module', 'stroirs_panel') . '/js/stroirs_panel.js');
+}
 
+function _stroirs_panel_form() {
+
+}
+
+/**
+ * Implementation of hook_theme()
+ */
+function stroirs_panel_theme() {
+    $path = drupal_get_path('module', 'stroirs_panel') . '/templates';
+
+    return array(
+        'stroirs_panel_mail_block_theme' => array(
+            'arguments' => array(),
+            'template' => 'stroirs_panel_mail_block',
+            'path' => $path,
+        ),
+    );
+}
+
+/**
+ * Implements hook_block_info().
+ */
+function stroirs_panel_block_info() {
+    $blocks['stroirs_panel_main_panel'] = array(
+        'info' => t('Stroirs Main Panel'),
+        'cache' => DRUPAL_NO_CACHE
+    );
+
+    return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ *
+ * Prepares the contents of the block.
+ */
+function  stroirs_panel_block_view($delta = '') {
+    $block = array();
+    switch ($delta) {
+        case 'stroirs_panel_main_panel':
+            $block['subject'] = t('Stroirs Main Panel');
+            $block['content'] = theme('stroirs_panel_mail_block_theme', array());
+            break;
+        default:
+            break;
+    }
+    return $block;
+}
