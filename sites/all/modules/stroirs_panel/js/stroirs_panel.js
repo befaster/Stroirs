@@ -3,5 +3,5 @@ jQuery(document).ready(function() {
         triggerName: '#trigger1',
         triggerTopPos: '220px',
         panelTopPos: '200px'
-    }, alert('sdf'));
+    });
 });
