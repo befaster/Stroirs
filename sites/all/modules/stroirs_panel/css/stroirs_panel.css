@@ -37,7 +37,7 @@ a.active.trigger {
 .panel {
 	color:#CCC;
 	position: absolute;
-
+	display: none;
 	background: #fff;
 	width: 300px;
 	height: auto;
