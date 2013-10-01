@@ -22,7 +22,7 @@ function stroirs_panel_menu() {
 }
 
 function _stroirs_panel_content() {
-    print 'sdfdsafda';
+    print 'sdfdsafda<br/>sfsdfsdsdfsdfsdsd<br />sdffdsfsdafsdadsfsdsdsf<br/>';
     exit;
     
 }
