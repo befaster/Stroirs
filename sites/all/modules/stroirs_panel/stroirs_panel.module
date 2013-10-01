@@ -6,8 +6,26 @@ function stroirs_panel_init() {
     drupal_add_css(drupal_get_path('module', 'stroirs_panel') . '/js/stroirs_panel.css');
 }
 
-function _stroirs_panel_form() {
+/**
+ * Implements of hook_menu()
+ */
+function stroirs_panel_menu() {
+    $items = array();
 
+    $items['stroirs_panel/panel'] = array(
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('_stroirs_panel_form'),
+        'access arguments' => array('access content'),
+        'type' => MENU_CALLBACK,
+    );
+
+    return $items;
+}
+
+function _stroirs_panel_form() {
+    $form = array();
+    
+    return $form;
 }
 
 /**
