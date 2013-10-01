@@ -3,5 +3,5 @@ jQuery('#panel1').slidePanel({
     triggerTopPos: '220px',
     panelTopPos: '200px',
     ajax: true,
-    ajaxSource: 'ajax.html'
+    ajaxSource: '/stroirs_panel/panel'
 });
