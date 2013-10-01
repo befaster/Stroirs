@@ -13,14 +13,20 @@ function stroirs_panel_menu() {
     $items = array();
 
     $items['stroirs_panel/panel'] = array(
-        'page callback' => 'drupal_get_form',
-        'page arguments' => array('_stroirs_panel_form'),
+        'page callback' => '_stroirs_panel_content',        
         'access arguments' => array('access content'),
         'type' => MENU_CALLBACK,
     );
 
     return $items;
 }
+
+function _stroirs_panel_content() {
+    print 'sdfdsafda';
+    exit;
+    
+}
+
 
 function _stroirs_panel_form() {
     $form = array();
