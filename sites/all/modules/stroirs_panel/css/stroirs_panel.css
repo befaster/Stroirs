@@ -1,4 +1,4 @@
-a.trigger{
+a.strigger{
 	position: absolute;
 	background:#a3c901 url(../images/plus.png) 6% 55% no-repeat;
 	text-decoration: none;
@@ -10,7 +10,7 @@ a.trigger{
 	
 	z-index:2;
 }
-a.trigger.left {
+a.strigger.sleft {
 	left: 0;
 	border-top-right-radius: 5px;
 	-moz-border-radius-topright: 5px;
@@ -19,7 +19,7 @@ a.trigger.left {
 	-webkit-border-bottom-right-radius: 5px;
 	border-bottom-right-radius: 5px;
 }
-a.trigger.right {
+a.strigger.sright {
 	right: 0;
 	border-bottom-left-radius: 5px;
 	border-top-left-radius: 5px;
@@ -28,13 +28,13 @@ a.trigger.right {
 	-webkit-border-bottom-left-radius: 5px;
 	-webkit-border-top-left-radius: 5px;
 }
-a.trigger:hover {
+a.strigger:hover {
 	background-color:#86A502;
 }
-a.active.trigger {
+a.active.strigger {
 	background:#666 url(../images/minus.png) 6% 55% no-repeat;
 }
-.panel {
+.spanel {
 	color:#CCC;
 	position: absolute;
 	display: none;
@@ -43,7 +43,7 @@ a.active.trigger {
 	height: auto;
 	z-index:1;
 }
-.panel.left {
+.spanel.sleft {
 	left: 0;
 	padding: 20px 30px 20px 100px;
 	border-top-right-radius: 15px;
@@ -53,7 +53,7 @@ a.active.trigger {
 	-webkit-border-bottom-right-radius: 15px;
 	border-bottom-right-radius: 15px;
 }
-.panel.right {
+.spanel.rsight {
 	right: 0;
 	padding: 20px 100px 20px 30px;
 	border-bottom-left-radius: 15px;
