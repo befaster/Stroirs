@@ -46,9 +46,9 @@ function stroirs_panel_theme() {
     $path = drupal_get_path('module', 'stroirs_panel') . '/templates';
 
     return array(
-        'stroirs_panel_mail_block_theme' => array(
+        'stroirs_panel_main_block_theme' => array(
             'arguments' => array(),
-            'template' => 'stroirs_panel_mail_block',
+            'template' => 'stroirs_panel_main_block',
             'path' => $path,
         ),
     );
@@ -76,7 +76,7 @@ function stroirs_panel_block_view($delta = '') {
     switch ($delta) {
         case 'stroirs_panel_main_panel':
             $block['subject'] = t('Stroirs Main Panel');
-            $block['content'] = theme('stroirs_panel_mail_block_theme', array());
+            $block['content'] = theme('stroirs_panel_main_block_theme', array());
             break;
         default:
             break;
