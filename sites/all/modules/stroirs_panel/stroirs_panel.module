@@ -13,7 +13,8 @@ function stroirs_panel_menu() {
     $items = array();
 
     $items['stroirs_panel/panel'] = array(
-        'page callback' => '_stroirs_panel_form',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('_stroirs_panel_form'),
         'access arguments' => array('access content'),
         'type' => MENU_CALLBACK,
     );
@@ -22,7 +23,14 @@ function stroirs_panel_menu() {
 }
 
 function _stroirs_panel_form() {
-    return '123';
+    $form = array();
+    $form['_stroirs_panel_form'] = array(
+        '#type' => 'fieldset',
+        '#title' => t('test'),
+        '#collapsible' => TRUE,
+        '#collapsed' => FALSE,
+    );
+    return $form;
 }
 
 /**
