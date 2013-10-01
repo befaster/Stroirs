@@ -12,7 +12,7 @@ function stroirs_preprocess_html(&$vars) {
     drupal_add_css(drupal_get_path('theme', 'stroirs') . '/css/grid.css', array('group' => CSS_THEME, 'preprocess' => FALSE));
     drupal_add_css(drupal_get_path('theme', 'stroirs') . '/css/slider.css', array('group' => CSS_THEME, 'preprocess' => FALSE));
 
-   // drupal_add_css('http://fonts.googleapis.com/css?family=Oswald', array('group' => CSS_THEME, 'preprocess' => FALSE));
+    drupal_add_css('http://fonts.googleapis.com/css?family=Oswald', array('group' => CSS_THEME, 'preprocess' => FALSE));
 
     //drupal_add_js('jQuery(document).ready(function() {});', 'inline');
 }
