@@ -1862,8 +1862,9 @@ h2 a {
 }
 
 #block-block-2 {
-    float:right;
+    float:left;
     clear: both;
+    margin-top: -230px;
 }
 
 body.page-contact #block-block-1{
