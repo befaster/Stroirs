@@ -1,3 +1,4 @@
+<?php print render($page['after_body_tag']); ?>
 <!--==============================header=================================-->
 <div class="bg">
     <header>
