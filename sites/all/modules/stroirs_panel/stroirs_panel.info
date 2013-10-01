@@ -1,0 +1,11 @@
+name = Stroits Panel
+description = "Slider Palel functionality"
+package = Stroirs
+core = 7.x
+
+; Information added by drupal.org packaging script on 2013-10-01
+version = "7.x-1.0-alpha6"
+core = "7.x"
+project = "stroirs"
+datestamp = "1335375980"
+
