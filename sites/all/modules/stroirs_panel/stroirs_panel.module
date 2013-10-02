@@ -252,8 +252,9 @@ function stroirs_panel_block_view($delta = '') {
     $block = array();
     switch ($delta) {
         case 'stroirs_panel_main_panel':
+            $form = drupal_get_form('multistep_example_form');
             $block['subject'] = t('Stroirs Main Panel');
-            $block['content'] = theme('stroirs_panel_main_block_theme', array());
+            $block['content'] = theme('stroirs_panel_main_block_theme', array('form' => $form));
             break;
         default:
             break;
