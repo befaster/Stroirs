@@ -4,6 +4,6 @@ jQuery(document).ready(function() {
         triggerTopPos: '220px',
         panelTopPos: '200px',
         position: 'fixed',
-        clickOutsideToClose: flase
+        clickOutsideToClose: false
     });
 });
