@@ -5,5 +5,5 @@ jQuery(document).ready(function() {
         panelTopPos: '200px',
         position: 'fixed',
         clickOutsideToClose: false
-    });
+    }).css('display', 'block');
 });
