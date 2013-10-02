@@ -13,7 +13,7 @@ function stroirs_panel_menu() {
     $items = array();
 
     $items['stroirs_panel/panel'] = array(
-        'page callback' => '_stroirs_panel_content',        
+        'page callback' => '_stroirs_panel_content',
         'access arguments' => array('access content'),
         'type' => MENU_CALLBACK,
     );
@@ -22,11 +22,196 @@ function stroirs_panel_menu() {
 }
 
 function _stroirs_panel_content() {
-    print 'sdfdsafda<br/>sfsdfsdsdfsdfsdsd<br />sdffdsfsdafsdadsfsdsdsf<br/>';
+    drupal_get_form('multistep_example_form');
     exit;
-    
 }
 
+function multistep_example_ajax_callback($form, $form_state) {
+    return $form;
+}
+
+function multistep_example_form($form, &$form_state) {
+
+    $form['#prefix'] = '<div id="multistep-example-form-wrapper">';
+    $form['#suffix'] = '</div>';
+
+
+    $form['#tree'] = TRUE;
+
+    $step = empty($form_state['storage']['step']) ? 1 : $form_state['storage']['step'];
+    $form_state['storage']['step'] = $step;
+
+
+    switch ($step) {
+        case 1:
+
+            $form['step1'] = array(
+                '#type' => 'fieldset',
+                '#title' => 'Шаг первый. Выбор возраста и пола.',
+            );
+
+            $form['step1']['age'] = array(
+                '#type' => 'select',
+                '#title' => 'Выберите ваш возраст',
+                '#options' => drupal_map_assoc(array('10-25', '26-50', '51-76', '77-123')),
+                '#field_suffix' => 'лет',
+            );
+
+            if (isset($form_state['values']['step1']['age'])) {
+                $form['step1']['age']['#default_value'] = $form_state['values']['step1']['age'];
+            }
+
+            $form['step1']['sex'] = array(
+                '#type' => 'select',
+                '#title' => 'Укажите ваш пол',
+                '#options' => drupal_map_assoc(array('Не определён', 'Мужской', 'Женский')),
+            );
+
+            if (isset($form_state['values']['step1']['sex'])) {
+                $form['step1']['sex']['#default_value'] = $form_state['values']['step1']['sex'];
+            }
+
+            break;
+
+        case 2:
+
+            $form['step2'] = array(
+                '#type' => 'fieldset',
+                '#title' => t('Шаг второй. Предпочтения.'),
+            );
+
+            $default_value = empty($form_state['values']['step2']['module']) ? '' : $form_state['values']['step2']['module'];
+            $form['step2']['module'] = array(
+                '#type' => 'textfield',
+                '#title' => 'Укажите ваш любимый модуль в Друпале',
+                '#default_value' => $default_value,
+                '#required' => TRUE,
+            );
+
+            $default_value = empty($form_state['values']['step2']['blog']) ? '' : $form_state['values']['step2']['blog'];
+            $form['step2']['blog'] = array(
+                '#type' => 'textfield',
+                '#title' => 'Введите адрес любимого блога о Друпале',
+                '#default_value' => $default_value,
+                '#field_prefix' => 'http://',
+                '#description' => 'Правильный ответ: drupalace.ru',
+            );
+
+            break;
+
+        case 3:
+            $form['step3'] = array(
+                '#type' => 'fieldset',
+                '#title' => 'Шаг третий. Восторг.',
+            );
+
+            $form['step3']['drupal'] = array(
+                '#type' => 'checkboxes',
+                '#title' => 'А вы уже успели оценить всю мощь Друпала?',
+                '#options' => drupal_map_assoc(array('Да', 'Да, конечно', 'Да, и я в восторге', 'Да, и это прекрасно', 'В процессе')),
+                '#required' => TRUE,
+            );
+            if (isset($form_state['values']['step3']['drupal'])) {
+                $form['step3']['drupal']['#default_value'] = $form_state['values']['step3']['drupal'];
+            }
+
+            break;
+    }
+
+    $form['actions'] = array('#type' => 'actions');
+
+    if ($step == 3) {
+        $form['actions']['submit'] = array(
+            '#type' => 'submit',
+            '#value' => 'Хватит',
+        );
+    }
+
+
+    if ($step < 3) {
+        $form['actions']['next'] = array(
+            '#type' => 'submit',
+            '#value' => 'Следующий шаг',
+            '#ajax' => array(
+                'wrapper' => 'multistep-example-form-wrapper',
+                'callback' => 'multistep_example_ajax_callback',
+            ),
+        );
+    }
+
+    if ($step > 1) {
+        $form['actions']['prev'] = array(
+            '#type' => 'submit',
+            '#value' => 'Предыдущий шаг',
+            '#limit_validation_errors' => array(),
+            '#submit' => array('multistep_example_form_submit'),
+            '#ajax' => array(
+                'wrapper' => 'multistep-example-form-wrapper',
+                'callback' => 'multistep_example_ajax_callback',
+            ),
+        );
+    }
+
+    return $form;
+}
+
+function multistep_example_form_submit($form, &$form_state) {
+
+    // Сохраняем состояние формы, полученное при переходе на новый шаг.
+    $current_step = 'step' . $form_state['storage']['step'];
+    if (!empty($form_state['values'][$current_step])) {
+        $form_state['storage']['values'][$current_step] = $form_state['values'][$current_step];
+    }
+
+    // Если перешли на следующий шаг - то увеличиваем счётчик шагов.
+    if (isset($form['actions']['next']['#value']) && $form_state['triggering_element']['#value'] == $form['actions']['next']['#value']) {
+        $form_state['storage']['step']++;
+
+        // Если данные для следующего шага были уже введены пользователем,
+        // то восстанавливаем их и передаём в форму.
+        $step_name = 'step' . $form_state['storage']['step'];
+        if (!empty($form_state['storage']['values'][$step_name])) {
+            $form_state['values'][$step_name] = $form_state['storage']['values'][$step_name];
+        }
+    }
+
+    // Если вернулись на шаг назад - уменьшаем счётчик шагов.
+    if (isset($form['actions']['prev']['#value']) && $form_state['triggering_element']['#value'] == $form['actions']['prev']['#value']) {
+        $form_state['storage']['step']--;
+
+        // Забираем из хранилища данные по предыдущему шагу и возвращаем их в форму.
+        $step_name = 'step' . $form_state['storage']['step'];
+        $form_state['values'][$step_name] = $form_state['storage']['values'][$step_name];
+    }
+
+    // Если пользователь прошёл все шаги и нажал на кнопку "Хватит",
+    // то обрабатываем полученные данные со всех шагов.
+    if (isset($form['actions']['submit']['#value']) && $form_state['triggering_element']['#value'] == $form['actions']['submit']['#value']) {
+
+        // Показываем сообщение с введёнными данными.  
+        $message = 'Введённые данные: <br/>';
+        foreach ($form_state['storage']['values'] as $step => $values) {
+            $message .= "<br/>$step: <br/>";
+            foreach ($values as $key => $value) {
+                $output = '';
+                if (is_array($value)) {
+                    foreach ($value as $val) {
+                        $output .= $val ? $val . '; ' : '';
+                    }
+                    $value = implode(', ', $value);
+                } else {
+                    $output = $value;
+                }
+                $message .= "$key = $output<br/>";
+            }
+        }
+        drupal_set_message($message);
+        $form_state['rebuild'] = FALSE;
+        return;
+    }
+   
+    $form_state['rebuild'] = TRUE;
+}
 
 function _stroirs_panel_form() {
     $form = array();
