@@ -22,7 +22,7 @@
         <?php
         print $page_top;
         print $page;
-        print $scripts;
+        //print $scripts;
         print $page_bottom;
         ?>        
     </body>
