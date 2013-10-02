@@ -22,8 +22,8 @@ function stroirs_panel_menu() {
 }
 
 function _stroirs_panel_content() {
-    print drupal_get_form('multistep_example_form');
-    exit;
+    drupal_get_form('multistep_example_form');
+    //exit;
 }
 
 function multistep_example_ajax_callback($form, $form_state) {
