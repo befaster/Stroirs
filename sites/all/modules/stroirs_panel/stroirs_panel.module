@@ -107,15 +107,19 @@ function stroirs_panel_form($form, &$form_state) {
                 '#title' => 'Шаг 1',
             );
 
-            $form['step1']['name'] = array(
+            $form['step1']['material_name'] = array(
                 '#type' => 'radios',
                 '#required' => TRUE,
                 '#title' => 'Выбор строиматериала',
                 '#options' => $names,
+                '#default_value' => 0,
+                '#attributes' => array(
+                    'onchange' => ""
+                )
             );
 
-            if (isset($form_state['values']['step1']['name'])) {
-                $form['step1']['name']['#default_value'] = $form_state['values']['step1']['name'];
+            if (isset($form_state['values']['step1']['material_name'])) {
+                $form['step1']['name']['#default_value'] = $form_state['values']['step1']['material_name'];
             }
             break;
         case 2:
@@ -124,7 +128,7 @@ function stroirs_panel_form($form, &$form_state) {
                 '#title' => t('Шаг 2'),
             );
 
-            $material_params = taxonomy_term_load($form_state['values']['step1']['name']);
+            $material_params = taxonomy_term_load($form_state['values']['step1']['material_name']);
 
             if (empty($material_params->name)) {
                 return;
@@ -148,7 +152,7 @@ function stroirs_panel_form($form, &$form_state) {
 
                     $form['step2']['type_avto'] = array(
                         '#type' => 'radios',
-                        '#title' => '',
+                        '#title' => 'Выберите тип авто',
                         '#default_value' => $default_value,
                         '#options' => $type_avto_options,
                         '#required' => TRUE,
@@ -162,12 +166,13 @@ function stroirs_panel_form($form, &$form_state) {
                     $form['step2']['distance'] = array(
                         '#type' => 'textfield',
                         '#title' => t('Расстояние от окружной'),
-                        '#field_sufix' => 'км',
+                        '#field_suffix' => 'км',
+                        '#size' => 10,
                         '#states' => array(
                             'visible' => array(
                                 'input[name="step2[dostavka_za_gorod]"]' => array('checked' => true)
                             )
-                        ),                        
+                        ),
                     );
                     break;
                 default:
@@ -183,7 +188,31 @@ function stroirs_panel_form($form, &$form_state) {
                 '#title' => 'Шаг 3',
             );
 
+            $material_params = taxonomy_term_load($form_state['storage']['values']['step1']['material_name']);
 
+            if (empty($material_params->name)) {
+                return;
+            }
+
+            switch ($material_params->name) {
+                case 'Песок':
+                    $entity_details = entity_load('field_collection_item', array($form_state['values']['step2']['type_avto']));
+
+                    if (!empty($entity_details[$form_state['values']['step2']['type_avto']]->field_sta_price[LANGUAGE_NONE][0]['value'])) {
+                        $result['price'] = $entity_details[$form_state['values']['step2']['type_avto']]->field_sta_price[LANGUAGE_NONE][0]['value'];
+                        $result['type_avto'] = $entity_details[$form_state['values']['step2']['type_avto']]->field_sta_name[LANGUAGE_NONE][0]['value'];
+
+                        $form['step3']['result'] = array(
+                            '#markup' => 'Цена ' . $result['price'] . 'грн.  с доставкой автомобилем ' . $result['type_avto']
+                        );
+                    }
+
+
+                    break;
+                default:
+                    drupal_set_message(t('Для выбраного строиматериала услуга временно не доступна'), 'warning');
+                    break;
+            }
             break;
     }
 
