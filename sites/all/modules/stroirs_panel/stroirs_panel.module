@@ -104,7 +104,7 @@ function stroirs_panel_form($form, &$form_state) {
         case 1:
             $form['step1'] = array(
                 '#type' => 'fieldset',
-                '#title' => 'Шаг 1',
+                '#title' => '',
             );
 
             $form['step1']['material_name'] = array(
@@ -125,7 +125,7 @@ function stroirs_panel_form($form, &$form_state) {
         case 2:
             $form['step2'] = array(
                 '#type' => 'fieldset',
-                '#title' => t('Шаг 2'),
+                '#title' => ''
             );
 
             $material_params = taxonomy_term_load($form_state['values']['step1']['material_name']);
@@ -185,7 +185,7 @@ function stroirs_panel_form($form, &$form_state) {
         case 3:
             $form['step3'] = array(
                 '#type' => 'fieldset',
-                '#title' => 'Шаг 3',
+                '#title' => '',
             );
 
             $material_params = taxonomy_term_load($form_state['storage']['values']['step1']['material_name']);
@@ -202,8 +202,12 @@ function stroirs_panel_form($form, &$form_state) {
                         $result['price'] = $entity_details[$form_state['values']['step2']['type_avto']]->field_sta_price[LANGUAGE_NONE][0]['value'];
                         $result['type_avto'] = $entity_details[$form_state['values']['step2']['type_avto']]->field_sta_name[LANGUAGE_NONE][0]['value'];
 
+                        if (!empty($form_state['values']['step2']['distance']) && !empty($entity_details[$form_state['values']['step2']['type_avto']]->field_sta_add_price[LANGUAGE_NONE][0]['value'])) {
+                            $result['price'] += (float)$form_state['values']['step2']['distance'] * $entity_details[$form_state['values']['step2']['type_avto']]->field_sta_add_price[LANGUAGE_NONE][0]['value'];
+                        }
+                        
                         $form['step3']['result'] = array(
-                            '#markup' => 'Цена ' . $result['price'] . 'грн.  с доставкой автомобилем ' . $result['type_avto']
+                            '#markup' => '<br /><p>' . 'Цена' .' <b>' . $result['price'] . 'грн.</b>' . ' с доставкой автомобилем ' . $result['type_avto'] . '</p>'
                         );
                     }
 
