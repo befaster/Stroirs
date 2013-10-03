@@ -43,6 +43,10 @@ a.active.strigger {
 	height: auto;
 	z-index:100;
 }
+
+.spanel h3 {            
+                      
+}
 .spanel.sleft {
 	left: 0;
 	padding: 40px 20px 20px 80px;

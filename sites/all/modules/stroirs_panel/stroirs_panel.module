@@ -10,18 +10,18 @@ function stroirs_panel_init() {
  * Implements of hook_menu()
  */
 /*
-  function stroirs_panel_menu() {
-  $items = array();
+function stroirs_panel_menu() {
+    $items = array();
 
-  $items['stroirs_panel/panel'] = array(
-  'page callback' => 'drupal_get_form',
-  'page arguments' => array('_stroirs_panel_form'),
-  'access arguments' => array('access content'),
-  'type' => MENU_CALLBACK,
-  );
+    $items['stroirs_panel/panel'] = array(
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('stroirs_panel_form'),
+        'access arguments' => array('access content'),
+        'type' => MENU_CALLBACK,
+    );
 
-  return $items;
-  } */
+    return $items;
+}*/
 
 /**
  * Implementation of hook_theme()
@@ -87,11 +87,11 @@ function stroirs_panel_form($form, &$form_state) {
 
     if (!empty($stroimaterial_vocabulary->vid)) {
         $stroimaterial_details = taxonomy_get_tree($stroimaterial_vocabulary->vid);
-        
+
         if (!empty($stroimaterial_details) && count($stroimaterial_details)) {
             $names = array();
             foreach ($stroimaterial_details as $material) {
-                $names[] = $material->name;
+                $names[$material->tid] = $material->name;
             }
         } else {
             return;
@@ -104,13 +104,14 @@ function stroirs_panel_form($form, &$form_state) {
         case 1:
             $form['step1'] = array(
                 '#type' => 'fieldset',
-                '#title' => 'Шаг 1. Выбор строиматериала',
+                '#title' => 'Шаг 1',
             );
 
             $form['step1']['name'] = array(
                 '#type' => 'radios',
-                '#title' => 'Выберите что перевозить',
-                '#options' => drupal_map_assoc($names),                
+                '#required' => TRUE,
+                '#title' => 'Выбор строиматериала',
+                '#options' => $names,
             );
 
             if (isset($form_state['values']['step1']['name'])) {
@@ -118,46 +119,53 @@ function stroirs_panel_form($form, &$form_state) {
             }
             break;
         case 2:
-
             $form['step2'] = array(
                 '#type' => 'fieldset',
-                '#title' => t('Шаг второй. Предпочтения.'),
+                '#title' => t('Шаг 2'),
             );
 
-            $default_value = empty($form_state['values']['step2']['module']) ? '' : $form_state['values']['step2']['module'];
-            $form['step2']['module'] = array(
-                '#type' => 'textfield',
-                '#title' => 'Укажите ваш любимый модуль в Друпале',
-                '#default_value' => $default_value,
-                '#required' => TRUE,
-            );
+            $material_params = taxonomy_term_load($form_state['values']['step1']['name']);
 
-            $default_value = empty($form_state['values']['step2']['blog']) ? '' : $form_state['values']['step2']['blog'];
-            $form['step2']['blog'] = array(
-                '#type' => 'textfield',
-                '#title' => 'Введите адрес любимого блога о Друпале',
-                '#default_value' => $default_value,
-                '#field_prefix' => 'http://',
-                '#description' => 'Правильный ответ: drupalace.ru',
-            );
+            if (empty($material_params->name)) {
+                return;
+            }
+
+            switch ($material_params->name) {
+                case 'Песок':
+                    if (!empty($material_params->field_stoimaterial_type_avto[LANGUAGE_NONE]) && count($material_params->field_stoimaterial_type_avto[LANGUAGE_NONE])) {
+                        $type_avto_options = array();
+
+                        foreach ($material_params->field_stoimaterial_type_avto[LANGUAGE_NONE] as $value) {
+                            $entity_details = entity_load('field_collection_item', array($value['value']));
+                            
+                            if (!empty($entity_details[$value['value']]->field_sta_name[LANGUAGE_NONE][0]['value'])) {
+                                $type_avto_options[$value['value']] = $entity_details[$value['value']]->field_sta_name[LANGUAGE_NONE][0]['value'];
+                            }
+                        }
+                    }
+                    
+                    $default_value = empty($form_state['values']['step2']['type_avto']) ? '' : $form_state['values']['step2']['type_avto'];
+
+                    $form['step2']['type_avto'] = array(
+                        '#type' => 'radios',
+                        '#title' => '',
+                        '#default_value' => $default_value,
+                        '#options' => $type_avto_options,
+                        '#required' => TRUE,
+                    );
+                    break;
+                default:
+                    drupal_set_message(t('Для выбраного строиматериала услуга временно не доступна'), 'warning');
+                    break;
+            }
 
             break;
 
         case 3:
             $form['step3'] = array(
                 '#type' => 'fieldset',
-                '#title' => 'Шаг третий. Восторг.',
+                '#title' => 'Шаг 3',
             );
-
-            $form['step3']['drupal'] = array(
-                '#type' => 'checkboxes',
-                '#title' => 'А вы уже успели оценить всю мощь Друпала?',
-                '#options' => drupal_map_assoc(array('Да', 'Да, конечно', 'Да, и я в восторге', 'Да, и это прекрасно', 'В процессе')),
-                '#required' => TRUE,
-            );
-            if (isset($form_state['values']['step3']['drupal'])) {
-                $form['step3']['drupal']['#default_value'] = $form_state['values']['step3']['drupal'];
-            }
 
             break;
     }
@@ -171,11 +179,12 @@ function stroirs_panel_form($form, &$form_state) {
         );
     }
 
-
-    if ($step < 3) {
-        $form['actions']['next'] = array(
+    if ($step > 1) {
+        $form['actions']['prev'] = array(
             '#type' => 'submit',
-            '#value' => 'Следующий шаг',
+            '#value' => 'Предыдущий шаг',
+            '#limit_validation_errors' => array(),
+            '#submit' => array('stroirs_panel_form_submit'),
             '#ajax' => array(
                 'wrapper' => 'stroirs-panel-form-wrapper',
                 'callback' => 'stroirs_panel_form_ajax_callback',
@@ -183,12 +192,10 @@ function stroirs_panel_form($form, &$form_state) {
         );
     }
 
-    if ($step > 1) {
-        $form['actions']['prev'] = array(
+    if ($step < 3) {
+        $form['actions']['next'] = array(
             '#type' => 'submit',
-            '#value' => 'Предыдущий шаг',
-            '#limit_validation_errors' => array(),
-            '#submit' => array('stroirs_panel_form_submit'),
+            '#value' => 'Следующий шаг',
             '#ajax' => array(
                 'wrapper' => 'stroirs-panel-form-wrapper',
                 'callback' => 'stroirs_panel_form_ajax_callback',
@@ -247,4 +254,3 @@ function stroirs_panel_form_submit($form, &$form_state) {
 
     $form_state['rebuild'] = TRUE;
 }
-
