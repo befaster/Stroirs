@@ -10,18 +10,18 @@ function stroirs_panel_init() {
  * Implements of hook_menu()
  */
 /*
-function stroirs_panel_menu() {
-    $items = array();
+  function stroirs_panel_menu() {
+  $items = array();
 
-    $items['stroirs_panel/panel'] = array(
-        'page callback' => 'drupal_get_form',
-        'page arguments' => array('_stroirs_panel_form'),
-        'access arguments' => array('access content'),
-        'type' => MENU_CALLBACK,
-    );
+  $items['stroirs_panel/panel'] = array(
+  'page callback' => 'drupal_get_form',
+  'page arguments' => array('_stroirs_panel_form'),
+  'access arguments' => array('access content'),
+  'type' => MENU_CALLBACK,
+  );
 
-    return $items;
-}*/
+  return $items;
+  } */
 
 /**
  * Implementation of hook_theme()
@@ -78,43 +78,45 @@ function stroirs_panel_form($form, &$form_state) {
     $form['#prefix'] = '<div id="stroirs-panel-form-wrapper">';
     $form['#suffix'] = '</div>';
 
-
     $form['#tree'] = TRUE;
 
     $step = empty($form_state['storage']['step']) ? 1 : $form_state['storage']['step'];
     $form_state['storage']['step'] = $step;
 
+    $stroimaterial_vocabulary = taxonomy_vocabulary_machine_name_load('stoimaterial');
+
+    if (!empty($stroimaterial_vocabulary->vid)) {
+        $stroimaterial_details = taxonomy_get_tree($stroimaterial_vocabulary->vid);
+        
+        if (!empty($stroimaterial_details) && count($stroimaterial_details)) {
+            $names = array();
+            foreach ($stroimaterial_details as $material) {
+                $names[] = $material->name;
+            }
+        } else {
+            return;
+        }
+    } else {
+        return;
+    }
+
     switch ($step) {
         case 1:
-
             $form['step1'] = array(
                 '#type' => 'fieldset',
-                '#title' => 'Шаг первый. Выбор возраста и пола.',
+                '#title' => 'Шаг 1. Выбор строиматериала',
             );
 
-            $form['step1']['age'] = array(
-                '#type' => 'select',
-                '#title' => 'Выберите ваш возраст',
-                '#options' => drupal_map_assoc(array('10-25', '26-50', '51-76', '77-123')),
-                '#field_suffix' => 'лет',
+            $form['step1']['name'] = array(
+                '#type' => 'radios',
+                '#title' => 'Выберите что перевозить',
+                '#options' => drupal_map_assoc($names),                
             );
 
-            if (isset($form_state['values']['step1']['age'])) {
-                $form['step1']['age']['#default_value'] = $form_state['values']['step1']['age'];
+            if (isset($form_state['values']['step1']['name'])) {
+                $form['step1']['name']['#default_value'] = $form_state['values']['step1']['name'];
             }
-
-            $form['step1']['sex'] = array(
-                '#type' => 'select',
-                '#title' => 'Укажите ваш пол',
-                '#options' => drupal_map_assoc(array('Не определён', 'Мужской', 'Женский')),
-            );
-
-            if (isset($form_state['values']['step1']['sex'])) {
-                $form['step1']['sex']['#default_value'] = $form_state['values']['step1']['sex'];
-            }
-
             break;
-
         case 2:
 
             $form['step2'] = array(

@@ -7,8 +7,7 @@ a.strigger{
 	padding:4px 12px 6px 24px;
 	font-family: 'Oswald', sans-serif;
     color: white;
-	
-	z-index:2;
+	z-index:101;
 }
 a.strigger.sleft {
 	left: 0;
@@ -32,20 +31,21 @@ a.strigger:hover {
 	background-color:#86A502;
 }
 a.active.strigger {
-	background:#666 url(../images/minus.png) 6% 55% no-repeat;
+	background:#86A502 url(../images/minus.png) 6% 55% no-repeat;
 }
 .spanel {
-	color:#CCC;
+    font-family: 'Oswald', sans-serif;
+	color:#7C7C7C;
 	position: absolute;
 	display: none;
 	background: #fff;
-	width: 300px;
+	width: 400px;
 	height: auto;
-	z-index:1;
+	z-index:100;
 }
 .spanel.sleft {
 	left: 0;
-	padding: 20px 30px 20px 100px;
+	padding: 40px 20px 20px 80px;
 	border-top-right-radius: 15px;
 	-moz-border-radius-topright: 15px;
 	-webkit-border-top-right-radius: 15px;
