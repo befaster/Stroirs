@@ -39,7 +39,7 @@ a.active.strigger {
     position: absolute;
     display: none;
     background: #f9f9f9;
-    width: 300px;
+    width: 320px;
     height: auto;
     z-index:100;    
     box-shadow: 0px 0px 20px #7c7c7c;
@@ -52,7 +52,7 @@ a.active.strigger {
 }
 .spanel.sleft {
     left: 0;
-    padding: 60px 15px 15px 80px;
+    padding: 60px 15px 20px 40px;
     border-top-right-radius: 15px;
     -moz-border-radius-topright: 15px;
     -webkit-border-top-right-radius: 15px;
