@@ -4,6 +4,7 @@ jQuery(document).ready(function() {
         triggerTopPos: '240px',
         panelTopPos: '230px',
         position: 'fixed',
-        clickOutsideToClose: false
+        panelOpacity: '0.9',
+        clickOutsideToClose: true
     });
 });

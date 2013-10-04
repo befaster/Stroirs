@@ -110,7 +110,7 @@ function stroirs_panel_form($form, &$form_state) {
             $form['step1']['material_name'] = array(
                 '#type' => 'radios',
                 '#required' => TRUE,
-                '#title' => 'Выбор перевозимого груза',
+                '#title' => 'Выберите перевозимый груз',
                 '#options' => $names,
                 '#default_value' => 0,
                 '#attributes' => array(
