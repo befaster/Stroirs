@@ -136,6 +136,8 @@ function stroirs_panel_form($form, &$form_state) {
 
             switch ($material_params->name) {
                 case 'Песок':
+                case 'Чернозем':
+                case 'Навоз/перегной':
                     if (!empty($material_params->field_stoimaterial_type_avto[LANGUAGE_NONE]) && count($material_params->field_stoimaterial_type_avto[LANGUAGE_NONE])) {
                         $type_avto_options = array();
 
@@ -196,6 +198,8 @@ function stroirs_panel_form($form, &$form_state) {
 
             switch ($material_params->name) {
                 case 'Песок':
+                case 'Чернозем':
+                case 'Навоз/перегной':
                     $entity_details = entity_load('field_collection_item', array($form_state['values']['step2']['type_avto']));
 
                     if (!empty($entity_details[$form_state['values']['step2']['type_avto']]->field_sta_price[LANGUAGE_NONE][0]['value'])) {
@@ -203,11 +207,11 @@ function stroirs_panel_form($form, &$form_state) {
                         $result['type_avto'] = $entity_details[$form_state['values']['step2']['type_avto']]->field_sta_name[LANGUAGE_NONE][0]['value'];
 
                         if (!empty($form_state['values']['step2']['distance']) && !empty($entity_details[$form_state['values']['step2']['type_avto']]->field_sta_add_price[LANGUAGE_NONE][0]['value'])) {
-                            $result['price'] += (float)$form_state['values']['step2']['distance'] * $entity_details[$form_state['values']['step2']['type_avto']]->field_sta_add_price[LANGUAGE_NONE][0]['value'];
+                            $result['price'] += (float) $form_state['values']['step2']['distance'] * $entity_details[$form_state['values']['step2']['type_avto']]->field_sta_add_price[LANGUAGE_NONE][0]['value'];
                         }
-                        
+
                         $form['step3']['result'] = array(
-                            '#markup' => '<br /><p>' . 'Цена' .' <b>' . $result['price'] . 'грн.</b>' . ' с доставкой автомобилем ' . $result['type_avto'] . '</p>'
+                            '#markup' => '<br /><p>' . 'Цена' . ' <b>' . $result['price'] . 'грн.</b>' . ' с доставкой автомобилем ' . $result['type_avto'] . '</p>'
                         );
                     }
 
@@ -230,7 +234,7 @@ function stroirs_panel_form($form, &$form_state) {
       );
       } */
 
-    if ($step > 1) {
+    if ($step > 1 && $step < 3) {
         $form['actions']['prev'] = array(
             '#type' => 'submit',
             '#value' => 'Предыдущий шаг',
@@ -280,28 +284,30 @@ function stroirs_panel_form_submit($form, &$form_state) {
         $form_state['values'][$step_name] = $form_state['storage']['values'][$step_name];
     }
 
-    if (isset($form['actions']['submit']['#value']) && $form_state['triggering_element']['#value'] == $form['actions']['submit']['#value']) {
+    /*
+      if (isset($form['actions']['submit']['#value']) && $form_state['triggering_element']['#value'] == $form['actions']['submit']['#value']) {
 
-        $message = 'Введённые данные: <br/>';
-        foreach ($form_state['storage']['values'] as $step => $values) {
-            $message .= "<br/>$step: <br/>";
-            foreach ($values as $key => $value) {
-                $output = '';
-                if (is_array($value)) {
-                    foreach ($value as $val) {
-                        $output .= $val ? $val . '; ' : '';
-                    }
-                    $value = implode(', ', $value);
-                } else {
-                    $output = $value;
-                }
-                $message .= "$key = $output<br/>";
-            }
-        }
-        drupal_set_message($message);
-        $form_state['rebuild'] = FALSE;
-        return;
-    }
+      $message = 'Введённые данные: <br/>';
+      foreach ($form_state['storage']['values'] as $step => $values) {
+      $message .= "<br/>$step: <br/>";
+      foreach ($values as $key => $value) {
+      $output = '';
+      if (is_array($value)) {
+      foreach ($value as $val) {
+      $output .= $val ? $val . '; ' : '';
+      }
+      $value = implode(', ', $value);
+      } else {
+      $output = $value;
+      }
+      $message .= "$key = $output<br/>";
+      }
+      }
+      drupal_set_message($message);
+      $form_state['rebuild'] = FALSE;
+      return;
+      }
+     */
 
     $form_state['rebuild'] = TRUE;
 }
