@@ -211,7 +211,7 @@ function stroirs_panel_form($form, &$form_state) {
                         }
 
                         $form['step3']['result'] = array(
-                            '#markup' => '<br /><p><strong>Материал</strong>: "'. $material_params->name .'"</p><p><strong>' . 'Цена</strong>: ' . $result['price'] . 'грн.</b>' . ' с доставкой автомобилем ' . $result['type_avto'] . '</p>'
+                            '#markup' => '<br /><p><strong>Груз</strong>: "'. $material_params->name .'"</p><p><strong>' . 'Цена</strong>: ' . $result['price'] . 'грн.</b>' . ' с доставкой автомобилем ' . $result['type_avto'] . '</p>'
                         );
                     }
 
