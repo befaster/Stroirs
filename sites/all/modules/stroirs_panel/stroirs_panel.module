@@ -168,7 +168,7 @@ function stroirs_panel_form($form, &$form_state) {
                 case 'Керамзит':
                     $kol_kubov_options = array();
                     if (!empty($material_params->field_stoimaterial_kol_kubov[LANGUAGE_NONE]) && count($material_params->field_stoimaterial_kol_kubov[LANGUAGE_NONE])) {
-                        
+
                         foreach ($material_params->field_stoimaterial_kol_kubov[LANGUAGE_NONE] as $value) {
                             $entity_details = entity_load('field_collection_item', array($value['value']));
 
@@ -244,8 +244,28 @@ function stroirs_panel_form($form, &$form_state) {
                             '#markup' => '<p><strong>Перевозимый груз</strong>: "' . $material_params->name . '"</p><p><strong>' . 'Цена</strong>: ' . $result['price'] . 'грн.</b>' . ' с доставкой автомобилем ' . $result['type_avto'] . '</p>'
                         );
                     }
+                    break;
+                case 'Гранотсев':
+                case 'Керамзит':
+                    $entity_details = entity_load('field_collection_item', array($form_state['values']['step2']['kol_kubov_options']));
 
+                    if (!empty($entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_kol_kubov[LANGUAGE_NONE][0]['value'])) {
+                        $result['kol_kubov'] = $entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_kol_kubov[LANGUAGE_NONE][0]['value'];
+                        $result['type_avto'] = $entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_ta_name[LANGUAGE_NONE][0]['value'];
+                        echo '<pre>';
+                        print_r($material_params);
+                        echo '</pre>';die;
+                        $result['price'] = ($result['kol_kubov'] * $material_params->field_stoimaterial_price) + $entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_price[LANGUAGE_NONE][0]['value'];
 
+                
+                        if (!empty($form_state['values']['step2']['distance']) && !empty($entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_add_price[LANGUAGE_NONE][0]['value'])) {
+                            $result['price'] += (float) $form_state['values']['step2']['distance'] * $entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_add_price[LANGUAGE_NONE][0]['value'];
+                        }
+
+                        $form['step3']['result'] = array( 
+                            '#markup' => '<p><strong>Перевозимый груз</strong>: "' . $material_params->name . '"</p><p><strong>' . 'Цена</strong>: ' . $result['price'] . 'грн.</b>' . ' с доставкой автомобилем ' . $result['type_avto'] . '</p>'
+                        );
+                    }
                     break;
                 default:
                     drupal_set_message(t('Для выбраного строиматериала услуга временно не доступна'), 'warning');
