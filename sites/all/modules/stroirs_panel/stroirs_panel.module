@@ -262,7 +262,7 @@ function stroirs_panel_form($form, &$form_state) {
                         }
 
                         $form['step3']['result'] = array(
-                            '#markup' => '<p>Cтоимость ' . $result['kol_kubov'] . ' кубов  "' . $material_params->name . '" по цене ' . $result['material_price'] . ' грн/куб с доставкой автомобилем "' . $result['type_avto'] . '" ' . ($result['price'] - $result['type_avto'])  . ' грн. составляет <strong>' . $result['price']  . ' грн</strong></p>'
+                            '#markup' => '<p>Cтоимость ' . $result['kol_kubov'] . ' кубов  "' . $material_params->name . '" по цене ' . $result['material_price'] . ' грн/куб с доставкой автомобилем "' . $result['type_avto'] . '" ' . ($result['price'] - $material_sum_price)  . ' грн. составляет <strong>' . $result['price']  . ' грн</strong></p>'
                         );
                     }
                     break;
