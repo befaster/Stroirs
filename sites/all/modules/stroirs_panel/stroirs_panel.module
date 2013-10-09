@@ -198,7 +198,7 @@ function stroirs_panel_form($form, &$form_state) {
                             $entity_details = entity_load('field_collection_item', array($value['value']));
 
                             if (!empty($entity_details[$value['value']]->field_ss_name[LANGUAGE_NONE][0]['value'])) {
-                                $kol_kubov_options[$value['value']] = $entity_details[$value['value']]->field_ss_name[LANGUAGE_NONE][0]['value'];
+                                $size_options[$value['value']] = $entity_details[$value['value']]->field_ss_name[LANGUAGE_NONE][0]['value'];
                             }
                         }
                     }
