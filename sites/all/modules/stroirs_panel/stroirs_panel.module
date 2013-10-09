@@ -252,15 +252,18 @@ function stroirs_panel_form($form, &$form_state) {
                     if (!empty($entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_kol_kubov[LANGUAGE_NONE][0]['value'])) {
                         $result['kol_kubov'] = $entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_kol_kubov[LANGUAGE_NONE][0]['value'];
                         $result['type_avto'] = $entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_ta_name[LANGUAGE_NONE][0]['value'];
-                    
-                        $result['price'] = ($result['kol_kubov'] * $material_params->field_stoimaterial_price[LANGUAGE_NONE][0]['value']) + $entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_price[LANGUAGE_NONE][0]['value'];
-                
+                        $result['material_price'] = $material_params->field_stoimaterial_price[LANGUAGE_NONE][0]['value'];
+
+                        $result['price'] = ($result['kol_kubov'] * $result['material_price']) + $entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_price[LANGUAGE_NONE][0]['value'];
+
                         if (!empty($form_state['values']['step2']['distance']) && !empty($entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_add_price[LANGUAGE_NONE][0]['value'])) {
                             $result['price'] += (float) $form_state['values']['step2']['distance'] * $entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_add_price[LANGUAGE_NONE][0]['value'];
                         }
 
-                        $form['step3']['result'] = array( 
-                            '#markup' => '<p><strong>Перевозимый груз</strong>: "' . $material_params->name . '"</p><p><strong>' . 'Цена</strong>: ' . $result['price'] . 'грн.</b>' . ' с доставкой автомобилем ' . $result['type_avto'] . '</p>'
+                        $form['step3']['result'] = array(
+                            '#markup' => '<p><strong>Перевозимый груз</strong>: "' . $material_params->name . '"</p>' .
+                            '<p><strong>Кол-во кубов</strong>: ' . $result['kol_kubov'] . ' по цене ' . $result['material_price'] . ' грн/куб</p>' .
+                            '<p><strong>Цена</strong>: ' . $result['price'] . 'грн.</b>' . ' с доставкой автомобилем ' . $result['type_avto'] . '</p>'
                         );
                     }
                     break;
