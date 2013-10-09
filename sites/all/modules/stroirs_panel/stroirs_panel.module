@@ -128,6 +128,7 @@ function stroirs_panel_form($form, &$form_state) {
                 '#title' => ''
             );
 
+            $dostavka = false;
             $material_params = taxonomy_term_load($form_state['values']['step1']['material_name']);
 
             if (empty($material_params->name)) {
@@ -160,28 +161,56 @@ function stroirs_panel_form($form, &$form_state) {
                         '#required' => TRUE,
                     );
 
-                    $form['step2']['dostavka_za_gorod'] = array(
-                        '#type' => 'checkbox',
-                        '#title' => 'Доставка за город',
-                    );
+                    $dostavka = true;
+                    break;
+                case 'Гранотсев':
+                case 'Керамзит':
+                    if (!empty($material_params->field_stoimaterial_kol_kubov[LANGUAGE_NONE]) && count($material_params->field_stoimaterial_kol_kubov->field_stoimaterial_type_avto[LANGUAGE_NONE])) {
+                        $kol_kubov_options = array();
 
-                    $form['step2']['distance'] = array(
-                        '#type' => 'textfield',
-                        '#title' => t('Расстояние от окружной'),
-                        '#field_suffix' => 'км',
-                        '#size' => 10,
-                        '#states' => array(
-                            'visible' => array(
-                                'input[name="step2[dostavka_za_gorod]"]' => array('checked' => true)
-                            )
-                        ),
+                        foreach ($material_params->field_stoimaterial_kol_kubov[LANGUAGE_NONE] as $value) {
+                            $entity_details = entity_load('field_collection_item', array($value['value']));
+
+                            if (!empty($entity_details[$value['value']]->field_skk_kol_kubov[LANGUAGE_NONE][0]['value'])) {
+                                $kol_kubov_options[$value['value']] = $entity_details[$value['value']]->field_skk_kol_kubov[LANGUAGE_NONE][0]['value'];
+                            }
+                        }
+                    }
+
+                    $default_value = empty($form_state['values']['step2']['kol_kubov_options']) ? '' : $form_state['values']['step2']['kol_kubov_options'];
+
+                    $form['step2']['kol_kubov_options'] = array(
+                        '#type' => 'radios',
+                        '#title' => 'Количество кубов',
+                        '#default_value' => $default_value,
+                        '#options' => $kol_kubov_options,
+                        '#required' => TRUE,
                     );
+                    $dostavka = true;
                     break;
                 default:
                     drupal_set_message(t('Для выбраного строиматериала услуга временно не доступна'), 'warning');
                     break;
             }
 
+            if ($dostavka) {
+                $form['step2']['dostavka_za_gorod'] = array(
+                    '#type' => 'checkbox',
+                    '#title' => 'Доставка за город',
+                );
+
+                $form['step2']['distance'] = array(
+                    '#type' => 'textfield',
+                    '#title' => t('Расстояние от окружной'),
+                    '#field_suffix' => 'км',
+                    '#size' => 10,
+                    '#states' => array(
+                        'visible' => array(
+                            'input[name="step2[dostavka_za_gorod]"]' => array('checked' => true)
+                        )
+                    ),
+                );
+            }
             break;
 
         case 3:
@@ -211,7 +240,7 @@ function stroirs_panel_form($form, &$form_state) {
                         }
 
                         $form['step3']['result'] = array(
-                            '#markup' => '<p><strong>Перевозимый груз</strong>: "'. $material_params->name .'"</p><p><strong>' . 'Цена</strong>: ' . $result['price'] . 'грн.</b>' . ' с доставкой автомобилем ' . $result['type_avto'] . '</p>'
+                            '#markup' => '<p><strong>Перевозимый груз</strong>: "' . $material_params->name . '"</p><p><strong>' . 'Цена</strong>: ' . $result['price'] . 'грн.</b>' . ' с доставкой автомобилем ' . $result['type_avto'] . '</p>'
                         );
                     }
 
