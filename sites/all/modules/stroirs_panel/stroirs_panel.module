@@ -298,27 +298,6 @@ function stroirs_panel_form($form, &$form_state) {
                     if (!empty($entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_kol_kubov[LANGUAGE_NONE][0]['value'])) {
                         $result['kol_kubov'] = $entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_kol_kubov[LANGUAGE_NONE][0]['value'];
                         $result['type_avto'] = $entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_ta_name[LANGUAGE_NONE][0]['value'];
-                        $result['material_size'] =  $entity_details[$form_state['values']['step2']['size_options']]->field_ss_name[LANGUAGE_NONE][0]['value'];
-                        $result['material_price'] =  $entity_details[$form_state['values']['step2']['size_options']]->field_ss_price[LANGUAGE_NONE][0]['value'];
-
-                        $material_sum_price = ($result['kol_kubov'] * $result['material_price']);
-                        $result['price'] = $material_sum_price + $entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_price[LANGUAGE_NONE][0]['value'];
-
-                        if (!empty($form_state['values']['step2']['distance']) && !empty($entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_add_price[LANGUAGE_NONE][0]['value'])) {
-                            $result['price'] += (float) $form_state['values']['step2']['distance'] * $entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_add_price[LANGUAGE_NONE][0]['value'];
-                        }
-
-                        $form['step3']['result'] = array(
-                            '#markup' => '<p>Cтоимость ' . $result['kol_kubov'] . ' кубов  "' . $material_params->name . '" (' .  $result['material_size'] . ') по цене ' . $result['material_price'] . ' грн/куб с доставкой автомобилем "' . $result['type_avto'] . '" ' . ($result['price'] - $material_sum_price) . ' грн. составляет <strong>' . $result['price'] . ' грн</strong></p>'
-                        );
-                    }
-                    break;
-                case 'Щебень':
-                    $entity_details = entity_load('field_collection_item', array($form_state['values']['step2']['kol_kubov_options']));
-
-                    if (!empty($entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_kol_kubov[LANGUAGE_NONE][0]['value'])) {
-                        $result['kol_kubov'] = $entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_kol_kubov[LANGUAGE_NONE][0]['value'];
-                        $result['type_avto'] = $entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_ta_name[LANGUAGE_NONE][0]['value'];
                         $result['material_price'] = $material_params->field_stoimaterial_price[LANGUAGE_NONE][0]['value'];
 
                         $material_sum_price = ($result['kol_kubov'] * $result['material_price']);
@@ -330,6 +309,27 @@ function stroirs_panel_form($form, &$form_state) {
 
                         $form['step3']['result'] = array(
                             '#markup' => '<p>Cтоимость ' . $result['kol_kubov'] . ' кубов  "' . $material_params->name . '" по цене ' . $result['material_price'] . ' грн/куб с доставкой автомобилем "' . $result['type_avto'] . '" ' . ($result['price'] - $material_sum_price) . ' грн. составляет <strong>' . $result['price'] . ' грн</strong></p>'
+                        );
+                    }
+                    break;
+                case 'Щебень':
+                    $entity_details = entity_load('field_collection_item', array($form_state['values']['step2']['kol_kubov_options']));
+                    
+                    if (!empty($entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_kol_kubov[LANGUAGE_NONE][0]['value'])) {
+                        $result['kol_kubov'] = $entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_kol_kubov[LANGUAGE_NONE][0]['value'];
+                        $result['type_avto'] = $entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_ta_name[LANGUAGE_NONE][0]['value'];
+                        $result['material_size'] = $entity_details[$form_state['values']['step2']['size_options']]->field_ss_name[LANGUAGE_NONE][0]['value'];
+                        $result['material_price'] = $entity_details[$form_state['values']['step2']['size_options']]->field_ss_price[LANGUAGE_NONE][0]['value'];
+
+                        $material_sum_price = ($result['kol_kubov'] * $result['material_price']);
+                        $result['price'] = $material_sum_price + $entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_price[LANGUAGE_NONE][0]['value'];
+
+                        if (!empty($form_state['values']['step2']['distance']) && !empty($entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_add_price[LANGUAGE_NONE][0]['value'])) {
+                            $result['price'] += (float) $form_state['values']['step2']['distance'] * $entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_add_price[LANGUAGE_NONE][0]['value'];
+                        }
+
+                        $form['step3']['result'] = array(
+                            '#markup' => '<p>Cтоимость ' . $result['kol_kubov'] . ' кубов  "' . $material_params->name . '" (' . $result['material_size'] . ') по цене ' . $result['material_price'] . ' грн/куб с доставкой автомобилем "' . $result['type_avto'] . '" ' . ($result['price'] - $material_sum_price) . ' грн. составляет <strong>' . $result['price'] . ' грн</strong></p>'
                         );
                     }
                     break;
