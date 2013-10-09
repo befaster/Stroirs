@@ -139,8 +139,9 @@ function stroirs_panel_form($form, &$form_state) {
                 case 'Песок':
                 case 'Чернозем':
                 case 'Навоз/перегной':
+                    $type_avto_options = array();
                     if (!empty($material_params->field_stoimaterial_type_avto[LANGUAGE_NONE]) && count($material_params->field_stoimaterial_type_avto[LANGUAGE_NONE])) {
-                        $type_avto_options = array();
+
 
                         foreach ($material_params->field_stoimaterial_type_avto[LANGUAGE_NONE] as $value) {
                             $entity_details = entity_load('field_collection_item', array($value['value']));
@@ -165,9 +166,9 @@ function stroirs_panel_form($form, &$form_state) {
                     break;
                 case 'Гранотсев':
                 case 'Керамзит':
-                    if (!empty($material_params->field_stoimaterial_kol_kubov[LANGUAGE_NONE]) && count($material_params->field_stoimaterial_kol_kubov->field_stoimaterial_type_avto[LANGUAGE_NONE])) {
-                        $kol_kubov_options = array();
-
+                    $kol_kubov_options = array();
+                    if (!empty($material_params->field_stoimaterial_kol_kubov[LANGUAGE_NONE]) && count($material_params->field_stoimaterial_kol_kubov[LANGUAGE_NONE])) {
+                        
                         foreach ($material_params->field_stoimaterial_kol_kubov[LANGUAGE_NONE] as $value) {
                             $entity_details = entity_load('field_collection_item', array($value['value']));
 
