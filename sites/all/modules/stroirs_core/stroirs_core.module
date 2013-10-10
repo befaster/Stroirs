@@ -4,6 +4,11 @@ function stroirs_core_form_alter(&$form, &$form_state, $form_id) {
     switch ($form_id) {
         case 'search_block_form':
             $form['actions']['submit']['#value'] = '';
+        case 'taxonomy_form_term';
+            echo '<pre>';
+            print_r($form);
+            echo '</pre>';die;
+            break;
         default:
             break;
     }
