@@ -219,7 +219,7 @@ function stroirs_panel_form($form, &$form_state) {
                         }
                     }
 
-                    $kol_kubov_default_value = empty($form_state['values']['step2']['kol_kubov_options']) ? $kol_kubov_options[0] : $form_state['values']['step2']['kol_kubov_options'];
+                    $kol_kubov_default_value = empty($form_state['values']['step2']['kol_kubov_options']) ? key($kol_kubov_options) : $form_state['values']['step2']['kol_kubov_options'];
                     $form['step2']['kol_kubov_options'] = array(
                         '#type' => 'radios',
                         '#title' => 'Количество кубов',
@@ -242,8 +242,8 @@ function stroirs_panel_form($form, &$form_state) {
                         }
                     }
                  
-                    $def_ind = key($size_options);
-                    $size_default_value = empty($form_state['values']['step2']['size_options']) ? $size_options[$def_ind] : $form_state['values']['step2']['size_options'];
+                    
+                    $size_default_value = empty($form_state['values']['step2']['size_options']) ? key($size_options) : $form_state['values']['step2']['size_options'];
                     $form['step2']['size_options'] = array(
                         '#type' => 'radios',
                         '#title' => 'Размер',
