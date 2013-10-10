@@ -323,7 +323,7 @@ function stroirs_panel_form($form, &$form_state) {
                         }
 
                         $form['step3']['result'] = array(
-                            '#markup' => '<p><strong>Перевозимый груз</strong>: "' . $material_params->name . '"</p><p><strong>' . 'Цена</strong>: ' . $result['price'] . 'грн.</b>' . ' с доставкой автомобилем ' . $result['type_avto'] . '</p>'
+                            '#markup' => '<p>Цена ' . $result['price'] . 'грн.' . $material_params->name . '" с доставкой автомобилем ' . $result['type_avto'] . '</p>'
                         );
                     }
                     break;
@@ -412,7 +412,7 @@ function stroirs_panel_form($form, &$form_state) {
                         }
 
                         $form['step3']['result'] = array(
-                            '#markup' => '<p>Cтоимость ' . $result['kol_meshkov'] . ' мешков  "' . $material_params->name . '" (' . $result['material_size'] . ') по цене ' . $result['material_price'] . ' грн/меш с доставкой автомобилем "' . $result['type_avto'] . '" ' . ($result['price'] - $material_sum_price) . ' грн. составляет <strong>' . $result['price'] . ' грн</strong></p>'
+                            '#markup' => '<p>Cтоимость ' . $result['kol_meshkov'] . ' мешков  "' . $material_params->name . '" (' . $result['material_size'] . ') <br/>по цене ' . $result['material_price'] . ' грн/меш с доставкой автомобилем "' . $result['type_avto'] . '" ' . ($result['price'] - $material_sum_price) . ' грн. составляет <strong>' . $result['price'] . ' грн</strong></p>'
                         );
                     }
                     break;
