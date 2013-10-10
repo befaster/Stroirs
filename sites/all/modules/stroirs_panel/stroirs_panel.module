@@ -306,6 +306,8 @@ function stroirs_panel_form($form, &$form_state) {
                 return;
             }
 
+            $result = array();
+            
             switch ($material_params->name) {
                 case 'Песок':
                 case 'Чернозем':
@@ -370,12 +372,7 @@ function stroirs_panel_form($form, &$form_state) {
                         );
                     }
                     break;
-                case 'Цемент':
-                    if (empty($form_state['values']['step2']['kol_meshkov_options'])) {
-                        return;
-                    }
-
-                    $result = array();
+                case 'Цемент':                    
                     $result['kol_meshkov'] = (int) $form_state['values']['step2']['kol_meshkov_options'];
 
                     if (!empty($material_params->field_stoimaterial_kol_meshkov[LANGUAGE_NONE]) && count($material_params->field_stoimaterial_kol_meshkov[LANGUAGE_NONE])) {
