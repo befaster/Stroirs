@@ -257,14 +257,14 @@ function stroirs_panel_form($form, &$form_state) {
                         '#required' => TRUE,
                     );
 
-                    $kol_default_value = empty($form_state['values']['step2']['kol_options']) ? '' : $form_state['values']['step2']['kol_options'];
-                    $form['step2']['kol_options'] = array(
+                    $kol_meshkov_default_value = empty($form_state['values']['step2']['kol_meshkov_options']) ? '' : $form_state['values']['step2']['kol_meshkov_options'];
+                    $form['step2']['kol_meshkov_options'] = array(
                         '#type' => 'textfield',
                         '#title' => 'Количество мешков',
-                        '#default_value' => $kol_default_value,
+                        '#default_value' => $kol_meshkov_default_value,
                         '#size' => 10,
                         '#descripton' => 'от 10 до 200',
-                        '#required' => TRUE,                       
+                        '#required' => TRUE,
                     );
 
                     $dostavka = true;
@@ -367,6 +367,31 @@ function stroirs_panel_form($form, &$form_state) {
 
                         $form['step3']['result'] = array(
                             '#markup' => '<p>Cтоимость ' . $result['kol_kubov'] . ' кубов  "' . $material_params->name . '" (' . $result['material_size'] . ') по цене ' . $result['material_price'] . ' грн/куб с доставкой автомобилем "' . $result['type_avto'] . '" ' . ($result['price'] - $material_sum_price) . ' грн. составляет <strong>' . $result['price'] . ' грн</strong></p>'
+                        );
+                    }
+                    break;
+                case 'Цемент':
+                    $entity_details = entity_load('field_collection_item', array($form_state['values']['step2']['kol_meshkov_options']));
+
+                    if (!empty($entity_details[$form_state['values']['step2']['kol_meshkov_options']]->field_skm_kol_meshkov_from[LANGUAGE_NONE][0]['value']) && !empty($entity_details[$form_state['values']['step2']['kol_meshkov_options']]->field_skm_kol_meshkov_to[LANGUAGE_NONE][0]['value'])) {
+                        $result['kol_meshkov_from'] = $entity_details[$form_state['values']['step2']['kol_meshkov_options']]->field_skm_kol_meshkov_from[LANGUAGE_NONE][0]['value'];
+                        $result['kol_meshkov_to'] = $entity_details[$form_state['values']['step2']['kol_meshkov_options']]->field_skm_kol_meshkov_to[LANGUAGE_NONE][0]['value'];
+                        $result['type_avto'] = $entity_details[$form_state['values']['step2']['kol_meshkov_options']]->field_skm_ta_name[LANGUAGE_NONE][0]['value'];
+                        
+                        $entity_details_size = entity_load('field_collection_item', array($form_state['values']['step2']['size_options']));
+
+                        $result['material_size'] = $entity_details_size[$form_state['values']['step2']['size_options']]->field_ss_name[LANGUAGE_NONE][0]['value'];
+                        $result['material_price'] = $entity_details_size[$form_state['values']['step2']['size_options']]->field_ss_price[LANGUAGE_NONE][0]['value'] - $entity_details[$form_state['values']['step2']['kol_meshkov_options']]->field_skm_discount[LANGUAGE_NONE][0]['value'];;
+
+                        $material_sum_price = ($result['kol_kubov'] * $result['material_price']);
+                        $result['price'] = $material_sum_price + $entity_details[$form_state['values']['step2']['kol_meshkov_options']]->field_skm_price[LANGUAGE_NONE][0]['value'];
+
+                        if (!empty($form_state['values']['step2']['distance']) && !empty($entity_details[$form_state['values']['step2']['kol_meshkov_options']]->field_skm_add_price[LANGUAGE_NONE][0]['value'])) {
+                            $result['price'] += (float) $form_state['values']['step2']['distance'] * $entity_details[$form_state['values']['step2']['kol_meshkov_options']]->field_skm_add_price[LANGUAGE_NONE][0]['value'];
+                        }
+
+                        $form['step3']['result'] = array(
+                            '#markup' => '<p>Cтоимость ' . $form_state['values']['step2']['kol_meshkov_options'] . ' кубов  "' . $material_params->name . '" (' . $result['material_size'] . ') по цене ' . $result['material_price'] . ' грн/куб с доставкой автомобилем "' . $result['type_avto'] . '" ' . ($result['price'] - $material_sum_price) . ' грн. составляет <strong>' . $result['price'] . ' грн</strong></p>'
                         );
                     }
                     break;
