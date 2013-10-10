@@ -373,7 +373,7 @@ function stroirs_panel_form($form, &$form_state) {
                 case 'Цемент':
                     if (!empty($material_params->field_stoimaterial_kol_meshkov[LANGUAGE_NONE]) && count($material_params->field_stoimaterial_kol_meshkov[LANGUAGE_NONE])) {
                         foreach ($material_params->field_stoimaterial_kol_meshkov[LANGUAGE_NONE] as $entity) {
-                           $entity_details = entity_load('field_collection_item', array($entity->value));
+                           $entity_details = entity_load('field_collection_item', array($entity['value']));
                             
                             echo '<pre>';
                             print_r($entity_details);
