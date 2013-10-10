@@ -218,7 +218,8 @@ function stroirs_panel_form($form, &$form_state) {
                             }
                         }
                     }
-
+                    
+                    reset($kol_kubov_options);
                     $kol_kubov_default_value = empty($form_state['values']['step2']['kol_kubov_options']) ? key($kol_kubov_options) : $form_state['values']['step2']['kol_kubov_options'];
                     $form['step2']['kol_kubov_options'] = array(
                         '#type' => 'radios',
