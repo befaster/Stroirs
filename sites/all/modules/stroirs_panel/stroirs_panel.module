@@ -241,8 +241,8 @@ function stroirs_panel_form($form, &$form_state) {
                             }
                         }
                     }
-                 print key($size_options);
-                    $size_default_value = empty($form_state['values']['step2']['size_options']) ? $size_options : $form_state['values']['step2']['size_options'];
+                 
+                    $size_default_value = empty($form_state['values']['step2']['size_options']) ? $size_options[key($size_options)] : $form_state['values']['step2']['size_options'];
                     $form['step2']['size_options'] = array(
                         '#type' => 'radios',
                         '#title' => 'Размер',
