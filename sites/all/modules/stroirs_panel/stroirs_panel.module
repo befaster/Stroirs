@@ -256,27 +256,20 @@ function stroirs_panel_form($form, &$form_state) {
                         '#options' => $size_options,
                         '#required' => TRUE,
                     );
-                    /*
-                    $kol_kubov_options = array();
-                    if (!empty($material_params->field_stoimaterial_kol_kubov[LANGUAGE_NONE]) && count($material_params->field_stoimaterial_kol_kubov[LANGUAGE_NONE])) {
 
-                        foreach ($material_params->field_stoimaterial_kol_kubov[LANGUAGE_NONE] as $value) {
-                            $entity_details = entity_load('field_collection_item', array($value['value']));
-
-                            if (!empty($entity_details[$value['value']]->field_skk_kol_kubov[LANGUAGE_NONE][0]['value'])) {
-                                $kol_kubov_options[$value['value']] = $entity_details[$value['value']]->field_skk_kol_kubov[LANGUAGE_NONE][0]['value'];
-                            }
-                        }
-                    }
-
-                    $kol_kubov_default_value = empty($form_state['values']['step2']['kol_kubov_options']) ? '' : $form_state['values']['step2']['kol_kubov_options'];
-                    $form['step2']['kol_kubov_options'] = array(
-                        '#type' => 'radios',
-                        '#title' => 'Количество кубов',
-                        '#default_value' => $kol_kubov_default_value,
-                        '#options' => $kol_kubov_options,
+                    $kol_default_value = empty($form_state['values']['step2']['kol_options']) ? '' : $form_state['values']['step2']['kol_options'];
+                    $form['step2']['kol_options'] = array(
+                        '#type' => 'textfield',
+                        '#title' => 'Количество мешков',
+                        '#default_value' => $kol_default_value,
+                        '#descripton' => 'от 10 до 200',
                         '#required' => TRUE,
-                    );*/
+                        '#states' => array(
+                            'visible' => array(
+                                'input[name="step2[kol_options]"]' => array('checked' => true)
+                            )
+                        )
+                    );
 
                     $dostavka = true;
                     break;
