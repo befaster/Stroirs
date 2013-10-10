@@ -266,7 +266,7 @@ function stroirs_panel_form($form, &$form_state) {
                         '#required' => TRUE,
                         '#states' => array(
                             'visible' => array(
-                                'input[name="step2[kol_options]"]' => array('checked' => true)
+                                'input[name="step2[size_options]"]' => array('checked' => true)
                             )
                         )
                     );
