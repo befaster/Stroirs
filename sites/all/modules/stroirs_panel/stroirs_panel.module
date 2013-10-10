@@ -371,6 +371,8 @@ function stroirs_panel_form($form, &$form_state) {
                     }
                     break;
                 case 'Цемент':
+                    //if (!empty())
+                    
                     $entity_details = entity_load('field_collection_item', $material_params->field_stoimaterial_kol_meshkov[LANGUAGE_NONE]);
 
                     echo '<pre>';
