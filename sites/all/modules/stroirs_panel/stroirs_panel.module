@@ -459,12 +459,7 @@ function stroirs_panel_form_validate($form, &$form_state) {
     $current_step = 'step' . $form_state['storage']['step'];
     if (!empty($form_state['values'][$current_step])) {
         $form_state['storage']['values'][$current_step] = $form_state['values'][$current_step];
-    }
-
-    echo '<pre>';
-    print_r($form_state);
-    echo '</pre>';
-    die;
+    }    
 }
 
 function stroirs_panel_form_submit($form, &$form_state) {
