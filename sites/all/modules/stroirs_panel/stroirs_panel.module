@@ -147,7 +147,7 @@ function stroirs_panel_form($form, &$form_state) {
                         }
                     }
 
-                    $default_value = empty($form_state['values']['step2']['type_avto']) ? '' : $form_state['values']['step2']['type_avto'];
+                    $default_value = empty($form_state['values']['step2']['type_avto']) ? '1' : $form_state['values']['step2']['type_avto'];
 
                     $form['step2']['type_avto'] = array(
                         '#type' => 'radios',
@@ -233,7 +233,6 @@ function stroirs_panel_form($form, &$form_state) {
                 case 'Цемент':
                     $size_options = array();
                     if (!empty($material_params->field_stoimaterial_size[LANGUAGE_NONE]) && count($material_params->field_stoimaterial_size[LANGUAGE_NONE])) {
-
                         foreach ($material_params->field_stoimaterial_size[LANGUAGE_NONE] as $value) {
                             $entity_details = entity_load('field_collection_item', array($value['value']));
 
