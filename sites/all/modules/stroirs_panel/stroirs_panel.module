@@ -235,6 +235,51 @@ function stroirs_panel_form($form, &$form_state) {
 
                     $dostavka = true;
                     break;
+                case 'Цемент':
+                    $size_options = array();
+                    if (!empty($material_params->field_stoimaterial_size[LANGUAGE_NONE]) && count($material_params->field_stoimaterial_size[LANGUAGE_NONE])) {
+
+                        foreach ($material_params->field_stoimaterial_size[LANGUAGE_NONE] as $value) {
+                            $entity_details = entity_load('field_collection_item', array($value['value']));
+
+                            if (!empty($entity_details[$value['value']]->field_ss_name[LANGUAGE_NONE][0]['value'])) {
+                                $size_options[$value['value']] = $entity_details[$value['value']]->field_ss_name[LANGUAGE_NONE][0]['value'];
+                            }
+                        }
+                    }
+
+                    $size_default_value = empty($form_state['values']['step2']['size_options']) ? '' : $form_state['values']['step2']['size_options'];
+                    $form['step2']['size_options'] = array(
+                        '#type' => 'radios',
+                        '#title' => 'Размер',
+                        '#default_value' => $size_default_value,
+                        '#options' => $size_options,
+                        '#required' => TRUE,
+                    );
+                    /*
+                    $kol_kubov_options = array();
+                    if (!empty($material_params->field_stoimaterial_kol_kubov[LANGUAGE_NONE]) && count($material_params->field_stoimaterial_kol_kubov[LANGUAGE_NONE])) {
+
+                        foreach ($material_params->field_stoimaterial_kol_kubov[LANGUAGE_NONE] as $value) {
+                            $entity_details = entity_load('field_collection_item', array($value['value']));
+
+                            if (!empty($entity_details[$value['value']]->field_skk_kol_kubov[LANGUAGE_NONE][0]['value'])) {
+                                $kol_kubov_options[$value['value']] = $entity_details[$value['value']]->field_skk_kol_kubov[LANGUAGE_NONE][0]['value'];
+                            }
+                        }
+                    }
+
+                    $kol_kubov_default_value = empty($form_state['values']['step2']['kol_kubov_options']) ? '' : $form_state['values']['step2']['kol_kubov_options'];
+                    $form['step2']['kol_kubov_options'] = array(
+                        '#type' => 'radios',
+                        '#title' => 'Количество кубов',
+                        '#default_value' => $kol_kubov_default_value,
+                        '#options' => $kol_kubov_options,
+                        '#required' => TRUE,
+                    );*/
+
+                    $dostavka = true;
+                    break;
                 default:
                     drupal_set_message(t('Для выбраного строиматериала услуга временно не доступна'), 'warning');
                     break;
@@ -314,13 +359,13 @@ function stroirs_panel_form($form, &$form_state) {
                     break;
                 case 'Щебень':
                     $entity_details = entity_load('field_collection_item', array($form_state['values']['step2']['kol_kubov_options']));
-                    
+
                     if (!empty($entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_kol_kubov[LANGUAGE_NONE][0]['value'])) {
                         $result['kol_kubov'] = $entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_kol_kubov[LANGUAGE_NONE][0]['value'];
                         $result['type_avto'] = $entity_details[$form_state['values']['step2']['kol_kubov_options']]->field_skk_ta_name[LANGUAGE_NONE][0]['value'];
-                        
+
                         $entity_details_size = entity_load('field_collection_item', array($form_state['values']['step2']['size_options']));
-                        
+
                         $result['material_size'] = $entity_details_size[$form_state['values']['step2']['size_options']]->field_ss_name[LANGUAGE_NONE][0]['value'];
                         $result['material_price'] = $entity_details_size[$form_state['values']['step2']['size_options']]->field_ss_price[LANGUAGE_NONE][0]['value'];
 
