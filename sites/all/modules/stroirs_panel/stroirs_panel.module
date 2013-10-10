@@ -371,7 +371,16 @@ function stroirs_panel_form($form, &$form_state) {
                     }
                     break;
                 case 'Цемент':
-                    //if (!empty())
+                    if (!empty($material_params->field_stoimaterial_kol_meshkov[LANGUAGE_NONE]) && count($material_params->field_stoimaterial_kol_meshkov[LANGUAGE_NONE])) {
+                        foreach ($material_params->field_stoimaterial_kol_meshkov[LANGUAGE_NONE] as $val) {
+                           //$entity_details = entity_load('field_collection_item', array($val));
+                            
+                            echo '<pre>';
+                            print_r($val);
+                            echo '</pre>';
+                        }
+                    }
+                        die;
                     
                     $entity_details = entity_load('field_collection_item', $material_params->field_stoimaterial_kol_meshkov[LANGUAGE_NONE]);
 
