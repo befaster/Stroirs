@@ -371,13 +371,12 @@ function stroirs_panel_form($form, &$form_state) {
                     }
                     break;
                 case 'Цемент':
-                    
+                    $entity_details = entity_load('field_collection_item', array($material_params->field_stoimaterial_kol_meshkov[LANGUAGE_NONE]));
+
                     echo '<pre>';
-                    print_r($material_params);
+                    print_r($entity_details);
                     echo '</pre>';die;
                     
-                    $entity_details = entity_load('field_collection_item', array($form_state['values']['step2']['kol_meshkov_options']));
-
                     if (!empty($entity_details[$form_state['values']['step2']['kol_meshkov_options']]->field_skm_kol_meshkov_from[LANGUAGE_NONE][0]['value']) && !empty($entity_details[$form_state['values']['step2']['kol_meshkov_options']]->field_skm_kol_meshkov_to[LANGUAGE_NONE][0]['value'])) {
                         $result['kol_meshkov_from'] = $entity_details[$form_state['values']['step2']['kol_meshkov_options']]->field_skm_kol_meshkov_from[LANGUAGE_NONE][0]['value'];
                         $result['kol_meshkov_to'] = $entity_details[$form_state['values']['step2']['kol_meshkov_options']]->field_skm_kol_meshkov_to[LANGUAGE_NONE][0]['value'];
