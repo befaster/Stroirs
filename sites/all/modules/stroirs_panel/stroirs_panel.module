@@ -262,13 +262,9 @@ function stroirs_panel_form($form, &$form_state) {
                         '#type' => 'textfield',
                         '#title' => 'Количество мешков',
                         '#default_value' => $kol_default_value,
+                        '#size' => 10,
                         '#descripton' => 'от 10 до 200',
-                        '#required' => TRUE,
-                        '#states' => array(
-                            'visible' => array(
-                                'input[name="step2[size_options]"]' => array('checked' => true)
-                            )
-                        )
+                        '#required' => TRUE,                       
                     );
 
                     $dostavka = true;
