@@ -147,7 +147,7 @@ function stroirs_panel_form($form, &$form_state) {
                         }
                     }
 
-                    $default_value = empty($form_state['values']['step2']['type_avto']) ? $type_avto_options[0] : $form_state['values']['step2']['type_avto'];
+                    $default_value = empty($form_state['values']['step2']['type_avto']) ? key($type_avto_options) : $form_state['values']['step2']['type_avto'];
 
                     $form['step2']['type_avto'] = array(
                         '#type' => 'radios',
@@ -173,7 +173,7 @@ function stroirs_panel_form($form, &$form_state) {
                         }
                     }
 
-                    $default_value = empty($form_state['values']['step2']['kol_kubov_options']) ? $kol_kubov_options[0] : $form_state['values']['step2']['kol_kubov_options'];
+                    $default_value = empty($form_state['values']['step2']['kol_kubov_options']) ? key($kol_kubov_options) : $form_state['values']['step2']['kol_kubov_options'];
 
                     $form['step2']['kol_kubov_options'] = array(
                         '#type' => 'radios',
@@ -198,7 +198,7 @@ function stroirs_panel_form($form, &$form_state) {
                         }
                     }
 
-                    $size_default_value = empty($form_state['values']['step2']['size_options']) ? $size_options[0] : $form_state['values']['step2']['size_options'];
+                    $size_default_value = empty($form_state['values']['step2']['size_options']) ? key($size_options) : $form_state['values']['step2']['size_options'];
                     $form['step2']['size_options'] = array(
                         '#type' => 'radios',
                         '#title' => 'Размер',
