@@ -307,7 +307,7 @@ function stroirs_panel_form($form, &$form_state) {
             }
 
             $result = array();
-            
+
             switch ($material_params->name) {
                 case 'Песок':
                 case 'Чернозем':
@@ -323,7 +323,7 @@ function stroirs_panel_form($form, &$form_state) {
                         }
 
                         $form['step3']['result'] = array(
-                            '#markup' => '<p>Цена ' . $result['price'] . 'грн. за "'  . $material_params->name . '" с доставкой автомобилем ' . $result['type_avto'] . '</p>'
+                            '#markup' => '<p>Цена ' . $result['price'] . 'грн. за "' . $material_params->name . '" с доставкой автомобилем ' . $result['type_avto'] . '</p>'
                         );
                     }
                     break;
@@ -372,7 +372,7 @@ function stroirs_panel_form($form, &$form_state) {
                         );
                     }
                     break;
-                case 'Цемент':                    
+                case 'Цемент':
                     $result['kol_meshkov'] = (int) $form_state['values']['step2']['kol_meshkov_options'];
 
                     if (!empty($material_params->field_stoimaterial_kol_meshkov[LANGUAGE_NONE]) && count($material_params->field_stoimaterial_kol_meshkov[LANGUAGE_NONE])) {
@@ -390,7 +390,7 @@ function stroirs_panel_form($form, &$form_state) {
                         }
                     }
 
-                    if (empty($result['kol_meshkov_entity_id'])) {                        
+                    if (empty($result['kol_meshkov_entity_id'])) {
                         return;
                     }
 
@@ -403,10 +403,10 @@ function stroirs_panel_form($form, &$form_state) {
 
                         $result['material_size'] = $entity_details_size[$form_state['values']['step2']['size_options']]->field_ss_name[LANGUAGE_NONE][0]['value'];
                         $result['material_price'] = $entity_details_size[$form_state['values']['step2']['size_options']]->field_ss_price[LANGUAGE_NONE][0]['value'] - $entity_details[$result['kol_meshkov_entity_id']]->field_skm_discount[LANGUAGE_NONE][0]['value'];
-                       
+
                         $material_sum_price = ($result['kol_meshkov'] * $result['material_price']);
                         $result['price'] = $material_sum_price + $entity_details[$result['kol_meshkov_entity_id']]->field_skm_price[LANGUAGE_NONE][0]['value'];
-                        
+
                         if (!empty($form_state['values']['step2']['distance']) && !empty($entity_details[$result['kol_meshkov_entity_id']]->field_skm_add_price[LANGUAGE_NONE][0]['value'])) {
                             $result['price'] += (float) $form_state['values']['step2']['distance'] * $entity_details[$result['kol_meshkov_entity_id']]->field_skm_add_price[LANGUAGE_NONE][0]['value'];
                         }
@@ -458,6 +458,18 @@ function stroirs_panel_form($form, &$form_state) {
     }
 
     return $form;
+}
+
+function stroirs_panel_form_validate($form, &$form_state) {
+    $current_step = 'step' . $form_state['storage']['step'];
+    if (!empty($form_state['values'][$current_step])) {
+        $form_state['storage']['values'][$current_step] = $form_state['values'][$current_step];
+    }
+    
+    echo '<pre>';
+    print_r($form_state);
+    echo '</pre>';die;
+    
 }
 
 function stroirs_panel_form_submit($form, &$form_state) {
