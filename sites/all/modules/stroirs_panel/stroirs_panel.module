@@ -173,7 +173,7 @@ function stroirs_panel_form($form, &$form_state) {
                         }
                     }
 
-                    $default_value = empty($form_state['values']['step2']['kol_kubov_options']) ? '' : $form_state['values']['step2']['kol_kubov_options'];
+                    $default_value = empty($form_state['values']['step2']['kol_kubov_options']) ? '20' : $form_state['values']['step2']['kol_kubov_options'];
 
                     $form['step2']['kol_kubov_options'] = array(
                         '#type' => 'radios',
