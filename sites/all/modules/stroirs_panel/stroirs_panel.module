@@ -406,7 +406,7 @@ function stroirs_panel_form($form, &$form_state) {
                        
                         $material_sum_price = ($result['kol_meshkov'] * $result['material_price']);
                         $result['price'] = $material_sum_price + $entity_details[$result['kol_meshkov_entity_id']]->field_skm_price[LANGUAGE_NONE][0]['value'];
-                        print $entity_details[$result['kol_meshkov_entity_id']]->field_skm_price[LANGUAGE_NONE][0]['value'];die;
+                        print $entity_details[$result['kol_meshkov_entity_id']]->field_skm_price[LANGUAGE_NONE][0]['value'];
                         
                         if (!empty($form_state['values']['step2']['distance']) && !empty($entity_details[$result['kol_meshkov_entity_id']]->field_skm_add_price[LANGUAGE_NONE][0]['value'])) {
                             $result['price'] += (float) $form_state['values']['step2']['distance'] * $entity_details[$result['kol_meshkov_entity_id']]->field_skm_add_price[LANGUAGE_NONE][0]['value'];
