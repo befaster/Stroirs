@@ -107,20 +107,17 @@ function stroirs_panel_form($form, &$form_state) {
                 '#title' => '',
             );
 
+            $default_value = empty($form_state['values']['step1']['material_name']) ? '140' : $form_state['values']['step1']['material_name'];
             $form['step1']['material_name'] = array(
                 '#type' => 'radios',
                 '#required' => TRUE,
                 '#title' => 'Выберите перевозимый груз',
                 '#options' => $names,
-                '#default_value' => 0,
+                '#default_value' => $default_value,
                 '#attributes' => array(
                     'onchange' => ""
                 )
             );
-
-            if (isset($form_state['values']['step1']['material_name'])) {
-                $form['step1']['name']['#default_value'] = $form_state['values']['step1']['material_name'];
-            }
             break;
         case 2:
             $form['step2'] = array(
@@ -141,8 +138,6 @@ function stroirs_panel_form($form, &$form_state) {
                 case 'Навоз/перегной':
                     $type_avto_options = array();
                     if (!empty($material_params->field_stoimaterial_type_avto[LANGUAGE_NONE]) && count($material_params->field_stoimaterial_type_avto[LANGUAGE_NONE])) {
-
-
                         foreach ($material_params->field_stoimaterial_type_avto[LANGUAGE_NONE] as $value) {
                             $entity_details = entity_load('field_collection_item', array($value['value']));
 
@@ -465,11 +460,11 @@ function stroirs_panel_form_validate($form, &$form_state) {
     if (!empty($form_state['values'][$current_step])) {
         $form_state['storage']['values'][$current_step] = $form_state['values'][$current_step];
     }
-    
+
     echo '<pre>';
     print_r($form_state);
-    echo '</pre>';die;
-    
+    echo '</pre>';
+    die;
 }
 
 function stroirs_panel_form_submit($form, &$form_state) {
