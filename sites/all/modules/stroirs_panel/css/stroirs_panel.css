@@ -90,14 +90,9 @@ a.active.strigger {
     margin: 0 10px 0 0
 }
 
-#stroirs-panel-form-wrapper form .form-type-radio.form-item-step2-kol-kubov-options:nth-child(5) {
-    float:right;
-    margin-top: -100px;
-    margin-right: 169px;
-}
 #stroirs-panel-form-wrapper form .form-type-radio.form-item-step2-kol-kubov-options:nth-child(6) {
     float:right;
-    margin-top: -90px;
+    margin-top: -100px;
     margin-right: 169px;
 }
 #stroirs-panel-form-wrapper form .form-type-radio.form-item-step2-kol-kubov-options:nth-child(7) {
@@ -107,11 +102,11 @@ a.active.strigger {
 }
 #stroirs-panel-form-wrapper form .form-type-radio.form-item-step2-kol-kubov-options:nth-child(8) {
     float:right;
-    margin-top: -70px;
+    margin-top: -60px;
     margin-right: 169px;
 }
 #stroirs-panel-form-wrapper form .form-type-radio.form-item-step2-kol-kubov-options:nth-child(9) {
     float:right;
-    margin-top: -60px;
+    margin-top: -40px;
     margin-right: 169px;
 }
