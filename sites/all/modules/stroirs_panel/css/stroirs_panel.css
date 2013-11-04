@@ -90,6 +90,6 @@ a.active.strigger {
     margin: 0 10px 0 0
 }
 
-#stroirs-panel-form-wrapper form .form-type-radio.form-item-step2-kol-kubov-options:nth-child(5) {
+#stroirs-panel-form-wrapper form .form-type-radio.form-item-step2-kol-kubov-options:nth-child(5+n) {
     float:right;
 }
